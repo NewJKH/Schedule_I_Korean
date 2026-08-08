@@ -10806,3 +10806,5 @@ You can now order =이제 주문할 수 있습니다:
 Fungal Phil's Stash=펑갈 필의 은닉처
 Insert cash and exit stash to pay off your debt=현금을 넣고 은닉처에서 나가면 빚이 정산됩니다
 Reduce the Benzies' influence in a region by defeating ambushes, interrupting their deals, unlocking customers, and spraying graffiti.=매복을 격퇴하고, 그들의 거래를 방해하고, 고객을 확보하고, 그래피티를 뿌려서 해당 지역의 벤지스 영향력을 줄이세요. Reduce the Benzies' influence in a region by defeating ambushes, interrupting their deals, unlocking customers, and spraying graffiti. =매복을 격퇴하고, 그들의 거래를 방해하고, 고객을 확보하고, 그래피티를 뿌려서 해당 지역의 벤지스 영향력을 줄이세요. <color\=#FF6455>Deal Expired</color>=<color\=#FF6455>거래 만료됨</color> <color\=#FF6455>Quest Expired</color>=<color\=#FF6455>퀘스트 만료됨</color> <color\=#FFB43C>Deal Expiring Soon</color>=<color\=#FFB43C>거래 곧 만료</color> <color\=#FFB43C>Quest Expiring Soon</color>=<color\=#FFB43C>퀘스트 곧 만료</color> + More      <color\=#FFC73D>Spray Paint</color> available at Gas-Mart=+ 더 많은 <color\=#FFC73D>스프레이 페인트</color>를 가스마트에서 구매 가능 Spray Paint=스프레이 페인트 Deal Expired=거래 만료됨 Quest Expired=퀘스트 만료됨 Deal Expiring Soon=거래 곧 만료 Quest Expiring Soon=퀘스트 곧 만료
+escape tunnel=탈출 터널
+bomb=폭탄

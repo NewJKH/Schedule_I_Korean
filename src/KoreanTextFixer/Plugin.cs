@@ -13,11 +13,13 @@ using TMPro;
 
 namespace KoreanTextFixer
 {
-    [BepInPlugin("kr.schedule1.textfixer", "Korean Text Fixer", "1.1.0")]
+    [BepInPlugin("kr.schedule1.textfixer", "Korean Text Fixer", "1.2.0")]
     public class Plugin : BasePlugin
     {
         internal static ManualLogSource Logger;
         internal static Dictionary<string, string> Dict = new Dictionary<string, string>(StringComparer.Ordinal);
+        internal static Dictionary<string, string> StrippedDict = new Dictionary<string, string>(StringComparer.Ordinal);
+        internal static readonly Regex TagRx = new Regex("<[^<>]{1,60}>", RegexOptions.Compiled);
         internal static Dictionary<string, string> Regions = new Dictionary<string, string>
         {
             { "Northtown", "노스타운" }, { "Westville", "웨스트빌" }, { "Downtown", "다운타운" },
@@ -32,7 +34,7 @@ namespace KoreanTextFixer
                 LoadDictionaries();
                 ClassInjector.RegisterTypeInIl2Cpp<FixerBehaviour>();
                 AddComponent<FixerBehaviour>();
-                Logger.LogInfo("KoreanTextFixer 1.1.0 loaded. entries=" + Dict.Count);
+                Logger.LogInfo("KoreanTextFixer 1.2.0 loaded. entries=" + Dict.Count);
             }
             catch (Exception e)
             {
@@ -61,6 +63,13 @@ namespace KoreanTextFixer
                     string v = Unescape(line.Substring(eq + 1));
                     if (v.Length == 0) continue;
                     if (!Dict.ContainsKey(k)) Dict[k] = v;
+                    string kt = k.Trim();
+                    if (kt.Length > 0 && !Dict.ContainsKey(kt)) Dict[kt] = v.Trim();
+                    if (k.IndexOf('<') >= 0)
+                    {
+                        string ks = TagRx.Replace(k, "").Trim();
+                        if (ks.Length > 10) StrippedDict[ks] = v;
+                    }
                 }
             }
         }
@@ -184,6 +193,27 @@ namespace KoreanTextFixer
             // 1) 통짜 매칭
             string v;
             if (Plugin.Dict.TryGetValue(t, out v)) return src.Replace(t, v);
+
+            // 1-b) 태그 무시 매칭: 게임이 <h1> 등을 <color>로 바꿔 표시하는 경우 대응
+            if (src.IndexOf('<') >= 0)
+            {
+                string stripped = Plugin.TagRx.Replace(src, "").Trim();
+                string sv;
+                if (stripped.Length > 10 && Plugin.StrippedDict.TryGetValue(stripped, out sv))
+                {
+                    // 사전 값의 <h1>..</h> 강조를 화면의 색상 태그로 치환
+                    var cm = Regex.Match(src, "<color[^<>]*>");
+                    if (cm.Success)
+                    {
+                        sv = sv.Replace("<h1>", cm.Value).Replace("</h>", "</color>");
+                    }
+                    else
+                    {
+                        sv = Plugin.TagRx.Replace(sv, "");
+                    }
+                    return sv;
+                }
+            }
 
             // 2) 리치텍스트 태그를 보존하며 조각별 번역
             if (src.IndexOf('<') >= 0)
