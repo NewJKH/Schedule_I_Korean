@@ -7,9 +7,6 @@ sr:"^([0-9]+x) ([\s\S]+)$"=$1 $2
 sr:"^([0-9]+) x ([\s\S]+)$"=$1 x $2
 sr:"^([0-9]+x [^\n]+)\n([\s\S]+)$"=$1\n$2
 sr:"^<color\=#([0-9A-Fa-f]{3,8})>([A-Za-z][^<>]*)</color>$"=<color\=#$1>$2</color>
-sr:"^(.*?)<color\=#([0-9A-Fa-f]{3,8})>([A-Za-z][^<>]*)</color>(.*?)$"=$1<color\=#$2>$3</color>$4
-sr:"^<b>([\s\S]+)</b>$"=<b>$1</b>
-sr:"^<i>([\s\S]+)</i>$"=<i>$1</i>
 sr:"^• ([\s\S]+)$"=• $1
 sr:"^- ([\s\S]+)$"=- $1
 sr:"^I need a dead drop:\n([\s\S]+)$"=나 데드 드랍이 필요해:\n$1
@@ -238,3 +235,4 @@ sr:"^([^()\n<>]+) \(([^()\n<>]+)\)$"=$1 ($2)
 sr:"^(?!(?:It|He|She|That|What|Who|There|Let|Here)'s)([A-Z][a-z]+(?: [A-Z][a-z]+)?)'s ([A-Z][^\n<>]+)$"=$1의 $2
 sr:"^([\s\S]+?) will draw (?:his|her|their) daily wage of ([^ ]+) from this locker$"=$1이(가) 이 사물함에서 일당 $2을(를) 가져갑니다
 sr:"^(\d{1,2}:\d{2} [AP]M) (Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)$"=$1 $2
+r:"^You owe ([\s\S]+?) (<color\=#[0-9A-Fa-f]{3,8}>)?(\$[0-9,]+)(</color>)?\. Insert cash and exit stash to pay off your debt$"=$1에게 $2$3$4 빚졌습니다. 현금을 넣고 은닉처에서 나가면 정산됩니다
