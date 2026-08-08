@@ -13,7 +13,7 @@ using TMPro;
 
 namespace KoreanTextFixer
 {
-    [BepInPlugin("kr.schedule1.textfixer", "Korean Text Fixer", "1.2.0")]
+    [BepInPlugin("kr.schedule1.textfixer", "Korean Text Fixer", "1.3.0")]
     public class Plugin : BasePlugin
     {
         internal static ManualLogSource Logger;
@@ -34,7 +34,7 @@ namespace KoreanTextFixer
                 LoadDictionaries();
                 ClassInjector.RegisterTypeInIl2Cpp<FixerBehaviour>();
                 AddComponent<FixerBehaviour>();
-                Logger.LogInfo("KoreanTextFixer 1.2.0 loaded. entries=" + Dict.Count);
+                Logger.LogInfo("KoreanTextFixer 1.3.0 loaded. entries=" + Dict.Count);
             }
             catch (Exception e)
             {
@@ -84,13 +84,18 @@ namespace KoreanTextFixer
     {
         public FixerBehaviour(IntPtr ptr) : base(ptr) { }
 
-        private float _next;
+        private float _nextRefresh;
         private float _nextStat;
         private int _errors;
         private bool _dead;
         private int _replaced;
+        private int _cursor;
+        private readonly List<TMP_Text> _tmps = new List<TMP_Text>(512);
+        private readonly List<UnityEngine.UI.Text> _uis = new List<UnityEngine.UI.Text>(128);
         private readonly Dictionary<int, string> _seen = new Dictionary<int, string>();
-        // 리치텍스트 태그 또는 텍스트 조각 단위 분해
+        private const int PerFrame = 30;      // 프레임당 처리 개수 (스파이크 방지)
+        private const float RefreshEvery = 3f; // 목록 재수집 주기
+
         private static readonly Regex Token = new Regex("<[^<>]{1,60}>|[^<]+", RegexOptions.Compiled);
         private static readonly Regex Paren = new Regex("^(\\s*)\\((.+)\\)(\\s*)$", RegexOptions.Compiled);
         private static readonly Regex Core = new Regex("^(\\s*)(.*?)(\\s*)$", RegexOptions.Compiled | RegexOptions.Singleline);
@@ -98,71 +103,70 @@ namespace KoreanTextFixer
         public void Update()
         {
             if (_dead) return;
-            if (Time.unscaledTime < _next) return;
-            _next = Time.unscaledTime + 1.0f;
             try
             {
-                Sweep();
+                int total = _tmps.Count + _uis.Count;
+                if (_cursor >= total && Time.unscaledTime >= _nextRefresh)
+                {
+                    RefreshLists();
+                    _nextRefresh = Time.unscaledTime + RefreshEvery;
+                    _cursor = 0;
+                    total = _tmps.Count + _uis.Count;
+                }
+                int end = Math.Min(_cursor + PerFrame, total);
+                for (; _cursor < end; _cursor++)
+                {
+                    if (_cursor < _tmps.Count) ProcessTmp(_tmps[_cursor]);
+                    else ProcessUi(_uis[_cursor - _tmps.Count]);
+                }
             }
             catch (Exception e)
             {
                 _errors++;
-                Plugin.Logger.LogWarning("sweep error(" + _errors + "): " + e.Message);
+                Plugin.Logger.LogWarning("fixer error(" + _errors + "): " + e.Message);
                 if (_errors >= 5) { _dead = true; Plugin.Logger.LogError("too many errors - fixer disabled"); }
             }
             if (Time.unscaledTime >= _nextStat)
             {
-                _nextStat = Time.unscaledTime + 30f;
-                Plugin.Logger.LogInfo("stats: replaced=" + _replaced + " cache=" + _seen.Count);
+                _nextStat = Time.unscaledTime + 60f;
+                Plugin.Logger.LogInfo("stats: replaced=" + _replaced + " tracked=" + (_tmps.Count + _uis.Count));
             }
         }
 
-        private void Sweep()
+        private void RefreshLists()
         {
-            int budget = 400; // 스윕당 처리 상한 (프레임 부담/위험 최소화)
-
-            var tmps = UnityEngine.Object.FindObjectsOfType(Il2CppType.Of<TMP_Text>());
-            if (tmps != null)
-            {
-                foreach (var o in tmps)
-                {
-                    if (budget <= 0) return;
-                    var tmp = o.TryCast<TMP_Text>();
-                    if (tmp == null) continue;
-                    budget--;
-                    try
-                    {
-                        if (!tmp.isActiveAndEnabled) continue;
-                        string cur = tmp.text;
-                        string outp = Check(cur, tmp.GetInstanceID());
-                        if (outp != null) { tmp.text = outp; _replaced++; }
-                    }
-                    catch { }
-                }
-            }
-
-            var uis = UnityEngine.Object.FindObjectsOfType(Il2CppType.Of<UnityEngine.UI.Text>());
-            if (uis != null)
-            {
-                foreach (var o in uis)
-                {
-                    if (budget <= 0) return;
-                    var ut = o.TryCast<UnityEngine.UI.Text>();
-                    if (ut == null) continue;
-                    budget--;
-                    try
-                    {
-                        if (!ut.isActiveAndEnabled) continue;
-                        string cur = ut.text;
-                        string outp = Check(cur, ut.GetInstanceID());
-                        if (outp != null) { ut.text = outp; _replaced++; }
-                    }
-                    catch { }
-                }
-            }
+            _tmps.Clear();
+            _uis.Clear();
+            var t = UnityEngine.Object.FindObjectsOfType(Il2CppType.Of<TMP_Text>());
+            if (t != null) { foreach (var o in t) { var c = o.TryCast<TMP_Text>(); if (c != null) _tmps.Add(c); } }
+            var u = UnityEngine.Object.FindObjectsOfType(Il2CppType.Of<UnityEngine.UI.Text>());
+            if (u != null) { foreach (var o in u) { var c = o.TryCast<UnityEngine.UI.Text>(); if (c != null) _uis.Add(c); } }
         }
 
-        // 교체가 필요하면 새 문자열, 아니면 null
+        private void ProcessTmp(TMP_Text tmp)
+        {
+            try
+            {
+                if (tmp == null || !tmp.isActiveAndEnabled) return;
+                string cur = tmp.text;
+                string outp = Check(cur, tmp.GetInstanceID());
+                if (outp != null) { tmp.text = outp; _replaced++; }
+            }
+            catch { }
+        }
+
+        private void ProcessUi(UnityEngine.UI.Text ut)
+        {
+            try
+            {
+                if (ut == null || !ut.isActiveAndEnabled) return;
+                string cur = ut.text;
+                string outp = Check(cur, ut.GetInstanceID());
+                if (outp != null) { ut.text = outp; _replaced++; }
+            }
+            catch { }
+        }
+
         private string Check(string cur, int id)
         {
             if (string.IsNullOrEmpty(cur)) return null;
@@ -181,7 +185,6 @@ namespace KoreanTextFixer
 
         private static string Translate(string src)
         {
-            // 이미 한글 포함 시 무시
             for (int i = 0; i < src.Length; i++)
             {
                 char c = src[i];
@@ -194,28 +197,21 @@ namespace KoreanTextFixer
             string v;
             if (Plugin.Dict.TryGetValue(t, out v)) return src.Replace(t, v);
 
-            // 1-b) 태그 무시 매칭: 게임이 <h1> 등을 <color>로 바꿔 표시하는 경우 대응
+            // 1-b) 태그 무시 매칭 (게임이 <h1>을 <color>로 바꿔 표시하는 경우)
             if (src.IndexOf('<') >= 0)
             {
                 string stripped = Plugin.TagRx.Replace(src, "").Trim();
                 string sv;
                 if (stripped.Length > 10 && Plugin.StrippedDict.TryGetValue(stripped, out sv))
                 {
-                    // 사전 값의 <h1>..</h> 강조를 화면의 색상 태그로 치환
                     var cm = Regex.Match(src, "<color[^<>]*>");
-                    if (cm.Success)
-                    {
-                        sv = sv.Replace("<h1>", cm.Value).Replace("</h>", "</color>");
-                    }
-                    else
-                    {
-                        sv = Plugin.TagRx.Replace(sv, "");
-                    }
+                    if (cm.Success) sv = sv.Replace("<h1>", cm.Value).Replace("</h>", "</color>");
+                    else sv = Plugin.TagRx.Replace(sv, "");
                     return sv;
                 }
             }
 
-            // 2) 리치텍스트 태그를 보존하며 조각별 번역
+            // 2) 태그 보존 조각 번역
             if (src.IndexOf('<') >= 0)
             {
                 var sb = new StringBuilder(src.Length + 16);
@@ -232,12 +228,10 @@ namespace KoreanTextFixer
                 return null;
             }
 
-            // 3) 태그 없는 평문 조각
-            string plain = TranslatePlain(src);
-            return plain;
+            // 3) 평문 조각
+            return TranslatePlain(src);
         }
 
-        // 평문 조각 번역 (앞뒤 공백 보존). 실패 시 null
         private static string TranslatePlain(string tok)
         {
             var cm = Core.Match(tok);
