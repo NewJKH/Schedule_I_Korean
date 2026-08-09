@@ -1,5 +1,8 @@
 # Schedule I 한글패치 (비공식)
 
+<img width="1920" height="1080" alt="{A50707AD-12B4-482B-8CA8-96F1409AC7BA}" src="https://github.com/user-attachments/assets/3256d8d2-eb2d-4bc2-a8c3-87d871081dcb" />
+
+
 [Schedule I](https://store.steampowered.com/app/3164500/Schedule_I/) 게임의 비공식 한글패치입니다.
 
 - 번역 항목 **58,000개 이상** (대사, UI, 아이템 설명, 퀘스트, 튜토리얼 등)
