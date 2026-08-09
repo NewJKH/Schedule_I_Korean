@@ -1,4 +1,5 @@
-﻿# Schedule I 폰트 교체 (fs-sevegment, LegacyRuntime 제외 전체를 을지로체로)
+﻿param([switch]$NoPause)
+# Schedule I 폰트 교체 (fs-sevegment, LegacyRuntime 제외 전체를 을지로체로)
 $ErrorActionPreference = "Stop"
 $here = Split-Path -Parent $MyInvocation.MyCommand.Path
 $game = "C:\Program Files (x86)\Steam\steamapps\common\Schedule I\Schedule I_Data\sharedassets0.assets"
@@ -95,4 +96,4 @@ if ($patched -gt 0) {
     $am.UnloadAll()
     Write-Host ("교체할 폰트 없음 (이미 적용됨: " + $skipped + "개)") -ForegroundColor Green
 }
-pause
+if (-not $NoPause) { pause }

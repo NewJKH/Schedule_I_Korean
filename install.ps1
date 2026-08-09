@@ -87,9 +87,35 @@ Copy-Item (Join-Path $here "payload\config\AutoTranslatorConfig.ini") $cfg -Forc
 & icacls "$cfg" /deny "${me}:(WD,AD,WEA,WA)" 2>&1 | Out-Null
 Write-Host "  설정 적용 및 잠금 완료 (게임이 설정을 되돌리는 것 방지)" -ForegroundColor Green
 
+# ---------- 6) 폰트 적용 여부 확인 ----------
+Write-Host ""
+Write-Host "----------------------------------------------" -ForegroundColor Yellow
+Write-Host " 한글 폰트(을지로체)도 적용할까요?" -ForegroundColor Yellow
+Write-Host ""
+Write-Host " 게임 기본 폰트에는 한글이 없어서, 적용하지 않으면"
+Write-Host " 번역된 글자가 네모(ㅁ)로 깨져 보일 수 있습니다."
+Write-Host ""
+Write-Host " * 게임 원본 파일 1개를 수정합니다 (원본은 자동 백업)"
+Write-Host " * 되돌리려면: Steam > 속성 > 설치된 파일 > 파일 무결성 확인"
+Write-Host "----------------------------------------------" -ForegroundColor Yellow
+$ans = Read-Host " 적용하시겠습니까? [Y] 예 (권장) / [N] 아니오"
+if ($ans -eq "" -or $ans -match '^[YyㅛJj]') {
+    Write-Host ""
+    Write-Host "[폰트] 을지로체 적용 중..." -ForegroundColor Cyan
+    $fontScript = Join-Path $here "font_patch.ps1"
+    if (Test-Path $fontScript) {
+        & powershell -NoProfile -ExecutionPolicy Bypass -File $fontScript -NoPause
+        if ($LASTEXITCODE -eq 0) { Write-Host "  폰트 적용 완료" -ForegroundColor Green }
+        else { Write-Host "  폰트 적용에 실패했습니다. 나중에 '폰트적용.bat'을 실행해보세요." -ForegroundColor Yellow }
+    } else {
+        Write-Host "  font_patch.ps1 을 찾을 수 없습니다." -ForegroundColor Yellow
+    }
+} else {
+    Write-Host " 폰트는 건너뜁니다. 나중에 '폰트적용.bat'으로 적용할 수 있습니다." -ForegroundColor DarkGray
+}
+
 Write-Host ""
 Write-Host "==============================================" -ForegroundColor Green
 Write-Host "   설치 완료! 게임을 실행하세요." -ForegroundColor Green
-Write-Host "   폰트도 바꾸려면 '폰트적용.bat'을 실행하세요." -ForegroundColor Green
 Write-Host "==============================================" -ForegroundColor Green
 pause
