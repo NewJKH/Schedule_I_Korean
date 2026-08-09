@@ -6,18 +6,32 @@
 - 가격·이름·장소가 실시간으로 끼어드는 문장까지 처리하는 **정규식 조립 번역**
 - 일반 번역기가 놓치는 UI까지 잡아주는 **전용 보조 플러그인** (KoreanTextFixer)
 - **을지로체 폰트** 적용 (선택)
-- 인터넷 번역기 불필요 — **완전 오프라인 작동**
+- 게임 플레이 중에는 인터넷 번역 서비스를 쓰지 않음 — **번역은 완전 오프라인 작동**
 
 ## 설치 방법 (3단계)
 
 1. 게임을 완전히 종료합니다.
-2. **`설치.bat` 을 더블클릭**합니다. (BepInEx와 번역기가 없으면 공식 저장소에서 자동으로 받아 설치합니다)
+2. **`설치.bat` 을 더블클릭**합니다.
 3. 완료 메시지가 나오면 게임을 실행합니다. 끝!
 
 폰트까지 을지로체로 바꾸려면 **`폰트적용.bat`** 을 추가로 실행하세요.
 
+**미리 준비할 것은 없습니다.** BepInEx나 번역기를 직접 설치하지 않아도 되며, `설치.bat`이 알아서 처리합니다.
+
 > Windows SmartScreen 경고가 뜨면 "추가 정보 → 실행"을 누르세요.
-> 배치파일이 인터넷에서 받는 것은 BepInEx(공식 빌드서버)와 XUnity.AutoTranslator(GitHub 공식 릴리스) 뿐입니다.
+
+### 첫 설치에는 인터넷이 필요합니다 (약 21MB)
+
+아래 2개는 원 제작자의 공식 출처에서 직접 받는 것이 신뢰성·라이선스 측면에서 낫기 때문에, 패키지에 넣지 않고 설치 시 자동으로 내려받습니다. **이미 설치되어 있으면 건너뜁니다** (두 번째 실행부터는 다운로드 없음).
+
+| 자동 다운로드 | 출처 | 크기 |
+|---|---|---|
+| BepInEx (IL2CPP) | builds.bepinex.dev 공식 빌드서버 | 약 20MB |
+| XUnity.AutoTranslator 5.6.1 | GitHub 공식 릴리스 | 약 0.7MB |
+
+나머지는 전부 `payload` 폴더에 **동봉되어 있어 다운로드가 필요 없습니다** — 번역 파일 4종, KoreanTextFixer 플러그인, 번역기 설정, 을지로체 폰트, 폰트 교체 도구(AssetsTools.NET·classdata.tpk).
+
+특히 **`폰트적용.bat`은 인터넷 접속을 전혀 하지 않습니다.**
 
 ## 게임이 업데이트되면
 
@@ -44,15 +58,17 @@
 
 ## 구성 요소와 크레딧
 
-| 구성 요소 | 출처 / 라이선스 |
-|---|---|
-| [BepInEx](https://github.com/BepInEx/BepInEx) | LGPL-2.1 — 설치 시 공식 빌드서버에서 다운로드 |
-| [XUnity.AutoTranslator](https://github.com/bbepis/XUnity.AutoTranslator) | MIT — 설치 시 공식 릴리스에서 다운로드 |
-| [AssetsTools.NET](https://github.com/nesrak1/AssetsTools.NET) | MIT — 폰트 적용에 사용 |
-| classdata.tpk ([UABEA](https://github.com/nesrak1/UABEA)) | MIT |
-| [배달의민족 을지로체](https://www.woowahan.com/fonts) | 우아한형제들 무료 폰트 (라이선스 전문 동봉) |
-| KoreanTextFixer 플러그인 | 이 저장소, MIT (`src/` 폴더에 소스 공개) |
-| 번역 텍스트 | 이 저장소 |
+| 구성 요소 | 제공 방식 | 라이선스 / 용도 |
+|---|---|---|
+| [BepInEx](https://github.com/BepInEx/BepInEx) (IL2CPP) | 🌐 설치 시 자동 다운로드 | LGPL-2.1 — 모드 로더 |
+| [XUnity.AutoTranslator](https://github.com/bbepis/XUnity.AutoTranslator) 5.6.1 | 🌐 설치 시 자동 다운로드 | MIT — 번역 엔진 |
+| [AssetsTools.NET](https://github.com/nesrak1/AssetsTools.NET) | 📦 패키지 동봉 | MIT — 폰트 교체에 사용 |
+| classdata.tpk ([UABEA](https://github.com/nesrak1/UABEA)) | 📦 패키지 동봉 | MIT — 폰트 교체에 사용 |
+| [배달의민족 을지로체](https://www.woowahan.com/fonts) | 📦 패키지 동봉 | 우아한형제들 무료 폰트 ([고지](FONT_LICENSE.md)) |
+| KoreanTextFixer 플러그인 | 📦 패키지 동봉 | MIT — 이 저장소 (`src/`에 소스 공개) |
+| 번역 텍스트 4종 | 📦 패키지 동봉 | 이 저장소 |
+
+🌐 = 첫 설치 시 인터넷에서 자동으로 받음 (이미 있으면 건너뜀) · 📦 = 다운로드 불필요
 
 이 패치는 게임 개발사(TVGS)와 무관한 비공식 팬 패치입니다.
 게임 파일을 수정하므로 사용에 따른 책임은 사용자에게 있습니다. 싱글플레이 기준으로 제작되었습니다.
@@ -67,4 +83,5 @@ install.ps1         ← 설치 스크립트 본체
 font_patch.ps1      ← 폰트 패치 스크립트 본체
 payload/            ← 번역 파일, 설정, 폰트, 플러그인
 src/KoreanTextFixer ← 보조 플러그인 C# 소스
+FONT_LICENSE.md     ← 폰트 라이선스 고지
 ```
