@@ -1,18 +1,59 @@
-﻿param([switch]$NoPause)
+﻿param([switch]$NoPause, [string]$GamePath = "")
 # Schedule I 폰트 교체 (fs-sevegment, LegacyRuntime 제외 전체를 을지로체로)
 $ErrorActionPreference = "Stop"
 $here = Split-Path -Parent $MyInvocation.MyCommand.Path
-$game = "C:\Program Files (x86)\Steam\steamapps\common\Schedule I\Schedule I_Data\sharedassets0.assets"
-$candidates = @($game)
-$vdf = "C:\Program Files (x86)\Steam\steamapps\libraryfolders.vdf"
-if (Test-Path $vdf) {
-    foreach ($m in [regex]::Matches((Get-Content $vdf -Raw), '"path"\s+"([^"]+)"')) {
-        $candidates += (Join-Path ($m.Groups[1].Value.Replace('\\','\')) "steamapps\common\Schedule I\Schedule I_Data\sharedassets0.assets")
+
+function Get-SteamLibraries {
+    $roots = New-Object System.Collections.Generic.List[string]
+    foreach ($rk in @("HKCU:\Software\Valve\Steam", "HKLM:\SOFTWARE\WOW6432Node\Valve\Steam", "HKLM:\SOFTWARE\Valve\Steam")) {
+        try {
+            $v = Get-ItemProperty -Path $rk -ErrorAction Stop
+            foreach ($name in @("SteamPath", "InstallPath")) {
+                $sp = $v.$name
+                if ($sp) { $roots.Add(($sp -replace '/', '\')) }
+            }
+        } catch {}
+    }
+    $roots.Add("C:\Program Files (x86)\Steam")
+    $libs = New-Object System.Collections.Generic.List[string]
+    foreach ($r in $roots) {
+        if (-not (Test-Path $r)) { continue }
+        $libs.Add($r)
+        $vdf = Join-Path $r "steamapps\libraryfolders.vdf"
+        if (Test-Path $vdf) {
+            foreach ($m in [regex]::Matches((Get-Content $vdf -Raw), '"path"\s+"([^"]+)"')) {
+                $libs.Add($m.Groups[1].Value.Replace('\\', '\'))
+            }
+        }
+    }
+    return @($libs | Select-Object -Unique)
+}
+
+$game = $null
+if ($GamePath) {
+    $GamePath = $GamePath.Trim('"').Trim()
+    $c = Join-Path $GamePath "Schedule I_Data\sharedassets0.assets"
+    if (Test-Path $c) { $game = $c }
+}
+if (-not $game) {
+    foreach ($lib in (Get-SteamLibraries)) {
+        $c = Join-Path $lib "steamapps\common\Schedule I\Schedule I_Data\sharedassets0.assets"
+        if (Test-Path $c) { $game = $c; break }
     }
 }
-$game = $null
-foreach ($c in $candidates) { if (Test-Path $c) { $game = $c; break } }
-if (-not $game) { Write-Host "게임 파일을 찾지 못했습니다." -ForegroundColor Red; pause; exit 1 }
+if (-not $game) {
+    Write-Host "게임 파일을 자동으로 찾지 못했습니다." -ForegroundColor Yellow
+    Write-Host "Steam 라이브러리에서 Schedule I 우클릭 > 관리 > 로컬 파일 보기 로 열리는 폴더의 경로를 복사해 붙여넣으세요."
+    $inp = Read-Host "Schedule I 게임 폴더 경로"
+    if ($inp) { $inp = $inp.Trim('"').Trim() }
+    if ($inp -and (Test-Path (Join-Path $inp "Schedule I_Data\sharedassets0.assets"))) {
+        $game = Join-Path $inp "Schedule I_Data\sharedassets0.assets"
+    } else {
+        Write-Host "해당 경로에서 게임 파일을 찾을 수 없습니다." -ForegroundColor Red
+        if (-not $NoPause) { pause }
+        exit 1
+    }
+}
 if (Get-Process -Name "Schedule I" -ErrorAction SilentlyContinue) { Write-Host "게임을 먼저 종료하세요." -ForegroundColor Red; pause; exit 1 }
 
 $ttfPath = Join-Path $here "payload\BMEULJIROTTF.ttf"

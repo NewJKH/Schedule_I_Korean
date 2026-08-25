@@ -7,20 +7,44 @@ Write-Host "==============================================" -ForegroundColor Cya
 Write-Host "   Schedule I 한글패치 설치기" -ForegroundColor Cyan
 Write-Host "==============================================" -ForegroundColor Cyan
 
-# ---------- 1) 게임 경로 찾기 ----------
-$gamePath = $null
-$candidates = @("C:\Program Files (x86)\Steam\steamapps\common\Schedule I")
-$vdf = "C:\Program Files (x86)\Steam\steamapps\libraryfolders.vdf"
-if (Test-Path $vdf) {
-    foreach ($m in [regex]::Matches((Get-Content $vdf -Raw), '"path"\s+"([^"]+)"')) {
-        $candidates += (Join-Path ($m.Groups[1].Value.Replace('\\','\')) "steamapps\common\Schedule I")
+# ---------- 1) 게임 경로 찾기 (레지스트리로 Steam 위치 파악) ----------
+function Get-SteamLibraries {
+    $roots = New-Object System.Collections.Generic.List[string]
+    foreach ($rk in @("HKCU:\Software\Valve\Steam", "HKLM:\SOFTWARE\WOW6432Node\Valve\Steam", "HKLM:\SOFTWARE\Valve\Steam")) {
+        try {
+            $v = Get-ItemProperty -Path $rk -ErrorAction Stop
+            foreach ($name in @("SteamPath", "InstallPath")) {
+                $sp = $v.$name
+                if ($sp) { $roots.Add(($sp -replace '/', '\')) }
+            }
+        } catch {}
     }
+    $roots.Add("C:\Program Files (x86)\Steam")
+    $libs = New-Object System.Collections.Generic.List[string]
+    foreach ($r in $roots) {
+        if (-not (Test-Path $r)) { continue }
+        $libs.Add($r)
+        $vdf = Join-Path $r "steamapps\libraryfolders.vdf"
+        if (Test-Path $vdf) {
+            foreach ($m in [regex]::Matches((Get-Content $vdf -Raw), '"path"\s+"([^"]+)"')) {
+                $libs.Add($m.Groups[1].Value.Replace('\\', '\'))
+            }
+        }
+    }
+    return @($libs | Select-Object -Unique)
 }
-foreach ($c in $candidates) { if (Test-Path (Join-Path $c "Schedule I.exe")) { $gamePath = $c; break } }
+
+$gamePath = $null
+foreach ($lib in (Get-SteamLibraries)) {
+    $c = Join-Path $lib "steamapps\common\Schedule I"
+    if (Test-Path (Join-Path $c "Schedule I.exe")) { $gamePath = $c; break }
+}
 if (-not $gamePath) {
     Write-Host "게임 폴더를 자동으로 찾지 못했습니다." -ForegroundColor Yellow
-    $gamePath = Read-Host "Schedule I 게임 폴더 경로를 직접 입력하세요"
-    if (-not (Test-Path (Join-Path $gamePath "Schedule I.exe"))) { Write-Host "잘못된 경로입니다." -ForegroundColor Red; pause; exit 1 }
+    Write-Host "Steam 라이브러리에서 Schedule I 우클릭 > 관리 > 로컬 파일 보기 로 열리는 폴더의 경로를 복사해 붙여넣으세요."
+    $gamePath = Read-Host "Schedule I 게임 폴더 경로"
+    if ($gamePath) { $gamePath = $gamePath.Trim('"').Trim() }
+    if (-not $gamePath -or -not (Test-Path (Join-Path $gamePath "Schedule I.exe"))) { Write-Host "잘못된 경로입니다." -ForegroundColor Red; pause; exit 1 }
 }
 Write-Host ("게임 경로: " + $gamePath) -ForegroundColor Green
 
@@ -104,7 +128,7 @@ if ($ans -eq "" -or $ans -match '^[YyㅛJj]') {
     Write-Host "[폰트] 을지로체 적용 중..." -ForegroundColor Cyan
     $fontScript = Join-Path $here "font_patch.ps1"
     if (Test-Path $fontScript) {
-        & powershell -NoProfile -ExecutionPolicy Bypass -File $fontScript -NoPause
+        & powershell -NoProfile -ExecutionPolicy Bypass -File $fontScript -NoPause -GamePath "$gamePath"
         if ($LASTEXITCODE -eq 0) { Write-Host "  폰트 적용 완료" -ForegroundColor Green }
         else { Write-Host "  폰트 적용에 실패했습니다. 나중에 '폰트적용.bat'을 실행해보세요." -ForegroundColor Yellow }
     } else {
