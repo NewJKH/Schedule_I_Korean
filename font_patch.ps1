@@ -68,7 +68,13 @@ Write-Host ("대상: " + $game)
 Write-Host ("폰트: 을지로체 (" + [math]::Round($ttf.Length/1KB,0) + " KB)")
 
 # 백업
-$bakDir = Join-Path (Split-Path (Split-Path $game)) "BepInEx\Translation\_backup"
+$gameRoot = Split-Path (Split-Path $game)
+# 예전 버전이 BepInEx 아래에 만들어 둔 백업이 있으면 그대로 쓰고,
+# 없으면 로더(BepInEx/MelonLoader)와 무관한 위치에 만든다
+$bakDir = Join-Path $gameRoot "BepInEx\Translation\_backup"
+if (-not (Test-Path (Join-Path $bakDir "sharedassets0.assets.original"))) {
+    $bakDir = Join-Path $gameRoot "KoreanPatch_backup"
+}
 New-Item -ItemType Directory -Force $bakDir | Out-Null
 $bak = Join-Path $bakDir "sharedassets0.assets.original"
 if (-not (Test-Path $bak)) { Copy-Item $game $bak; Write-Host "원본 백업 생성" }
