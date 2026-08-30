@@ -73,7 +73,10 @@ New-Item -ItemType Directory -Force $bakDir | Out-Null
 $bak = Join-Path $bakDir "sharedassets0.assets.original"
 if (-not (Test-Path $bak)) { Copy-Item $game $bak; Write-Host "원본 백업 생성" }
 
-Add-Type -Path (Join-Path $here "payload\tools\AssetsTools.NET.dll")
+# 인터넷에서 받은 ZIP의 파일 차단 해제 (Mark of the Web으로 DLL 로드가 거부되는 것 방지)
+try { Get-ChildItem $here -Recurse -File | Unblock-File -ErrorAction SilentlyContinue } catch {}
+$atDll = Join-Path $here "payload\tools\AssetsTools.NET.dll"
+try { Add-Type -Path $atDll } catch { [void][System.Reflection.Assembly]::UnsafeLoadFrom($atDll) }
 $am = New-Object AssetsTools.NET.Extra.AssetsManager
 $am.LoadClassPackage((Join-Path $here "payload\tools\classdata.tpk")) | Out-Null
 $inst = $am.LoadAssetsFile($game, $false)

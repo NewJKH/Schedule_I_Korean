@@ -1,6 +1,8 @@
 ﻿# Schedule I 한글패치 통합 설치기
 # BepInEx / XUnity.AutoTranslator가 없으면 공식 저장소에서 자동 설치합니다.
 $ErrorActionPreference = "Stop"
+$here = Split-Path -Parent $MyInvocation.MyCommand.Path
+try { Get-ChildItem $here -Recurse -File | Unblock-File -ErrorAction SilentlyContinue } catch {}
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $here = Split-Path -Parent $MyInvocation.MyCommand.Path
 Write-Host "==============================================" -ForegroundColor Cyan
