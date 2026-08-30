@@ -158,6 +158,34 @@ namespace KoreanTextFixer
             catch { }
         }
 
+        // 후킹된 setter가 값을 쓰기 직전에 호출한다.
+        // 같은 문자열이 매 프레임 들어오므로 결과(번역 없음 = null 포함)를 기억해 둔다.
+        private static readonly Dictionary<string, string> HookCache = new Dictionary<string, string>(StringComparer.Ordinal);
+        private const int HookCacheLimit = 4096;
+
+        internal static string TranslateForHook(string src)
+        {
+            string cached;
+            if (HookCache.TryGetValue(src, out cached)) return cached;
+
+            string result = null;
+#if MELON
+            // 정규식·조립 번역은 번역기 쪽 캐시에만 있으므로 먼저 물어본다
+            result = XUnityBridge.Translate(src);
+            if (result == src) result = null;
+#endif
+            if (result == null) result = Translate(src);
+
+            if (HookCache.Count >= HookCacheLimit) HookCache.Clear();
+            HookCache[src] = result;
+            return result;
+        }
+
+        internal static void ClearHookCache()
+        {
+            HookCache.Clear();
+        }
+
         private string Check(string cur, int id)
         {
             if (string.IsNullOrEmpty(cur)) return null;
