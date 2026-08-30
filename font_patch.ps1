@@ -15,6 +15,11 @@ function Get-SteamLibraries {
         } catch {}
     }
     $roots.Add("C:\Program Files (x86)\Steam")
+    foreach ($d in (Get-PSDrive -PSProvider FileSystem | Where-Object { $_.Root -match '^[A-Z]:\\$' })) {
+        foreach ($sub in @("Steam", "SteamLibrary", "Program Files (x86)\Steam", "Program Files\Steam", "Games\Steam")) {
+            $roots.Add((Join-Path $d.Root $sub))
+        }
+    }
     $libs = New-Object System.Collections.Generic.List[string]
     foreach ($r in $roots) {
         if (-not (Test-Path $r)) { continue }
