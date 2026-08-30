@@ -3,20 +3,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
-using BepInEx;
-using BepInEx.Unity.IL2CPP;
-using BepInEx.Logging;
 using Il2CppInterop.Runtime;
-using Il2CppInterop.Runtime.Injection;
 using UnityEngine;
+#if MELON
+using Il2CppTMPro;
+#else
 using TMPro;
+#endif
 
 namespace KoreanTextFixer
 {
-    [BepInPlugin("kr.schedule1.textfixer", "Korean Text Fixer", "1.3.0")]
-    public class Plugin : BasePlugin
+    // 로더(BepInEx / MelonLoader)에 의존하지 않는 공통 코드.
+    // 진입점은 Plugin.BepInEx.cs / Plugin.Melon.cs 가 각각 담당한다.
+
+    internal static class KLog
     {
-        internal static ManualLogSource Logger;
+        internal static Action<string> Info = delegate { };
+        internal static Action<string> Warn = delegate { };
+        internal static Action<string> Error = delegate { };
+    }
+
+    internal static class Translations
+    {
         internal static Dictionary<string, string> Dict = new Dictionary<string, string>(StringComparer.Ordinal);
         internal static Dictionary<string, string> StrippedDict = new Dictionary<string, string>(StringComparer.Ordinal);
         internal static readonly Regex TagRx = new Regex("<[^<>]{1,60}>", RegexOptions.Compiled);
@@ -26,25 +34,9 @@ namespace KoreanTextFixer
             { "Docks", "부두" }, { "Suburbia", "교외" }, { "Uptown", "업타운" }
         };
 
-        public override void Load()
+        // baseDir: 번역 txt가 들어있는 폴더 (로더마다 위치가 다르다)
+        internal static void Load(string baseDir)
         {
-            Logger = base.Log;
-            try
-            {
-                LoadDictionaries();
-                ClassInjector.RegisterTypeInIl2Cpp<FixerBehaviour>();
-                AddComponent<FixerBehaviour>();
-                Logger.LogInfo("KoreanTextFixer 1.3.0 loaded. entries=" + Dict.Count);
-            }
-            catch (Exception e)
-            {
-                Logger.LogError("KoreanTextFixer init failed: " + e);
-            }
-        }
-
-        private void LoadDictionaries()
-        {
-            string baseDir = Path.Combine(Paths.GameRootPath, "BepInEx", "Translation", "ko", "Text");
             string[] files = { "Korean_Base.txt", "Korean_Extracted.txt", "Korean_Composites.txt" };
             foreach (string f in files)
             {
@@ -80,10 +72,9 @@ namespace KoreanTextFixer
         }
     }
 
-    public class FixerBehaviour : MonoBehaviour
+    // 화면에 떠 있는 TMP_Text / UI.Text 를 훑으면서 남은 영어를 사전으로 교체한다.
+    internal class Fixer
     {
-        public FixerBehaviour(IntPtr ptr) : base(ptr) { }
-
         private float _nextRefresh;
         private float _nextStat;
         private int _errors;
@@ -100,7 +91,7 @@ namespace KoreanTextFixer
         private static readonly Regex Paren = new Regex("^(\\s*)\\((.+)\\)(\\s*)$", RegexOptions.Compiled);
         private static readonly Regex Core = new Regex("^(\\s*)(.*?)(\\s*)$", RegexOptions.Compiled | RegexOptions.Singleline);
 
-        public void Update()
+        public void Tick()
         {
             if (_dead) return;
             try
@@ -123,13 +114,13 @@ namespace KoreanTextFixer
             catch (Exception e)
             {
                 _errors++;
-                Plugin.Logger.LogWarning("fixer error(" + _errors + "): " + e.Message);
-                if (_errors >= 5) { _dead = true; Plugin.Logger.LogError("too many errors - fixer disabled"); }
+                KLog.Warn("fixer error(" + _errors + "): " + e.Message);
+                if (_errors >= 5) { _dead = true; KLog.Error("too many errors - fixer disabled"); }
             }
             if (Time.unscaledTime >= _nextStat)
             {
                 _nextStat = Time.unscaledTime + 60f;
-                Plugin.Logger.LogInfo("stats: replaced=" + _replaced + " tracked=" + (_tmps.Count + _uis.Count));
+                KLog.Info("stats: replaced=" + _replaced + " tracked=" + (_tmps.Count + _uis.Count));
             }
         }
 
@@ -195,18 +186,18 @@ namespace KoreanTextFixer
 
             // 1) 통짜 매칭
             string v;
-            if (Plugin.Dict.TryGetValue(t, out v)) return src.Replace(t, v);
+            if (Translations.Dict.TryGetValue(t, out v)) return src.Replace(t, v);
 
             // 1-b) 태그 무시 매칭 (게임이 <h1>을 <color>로 바꿔 표시하는 경우)
             if (src.IndexOf('<') >= 0)
             {
-                string stripped = Plugin.TagRx.Replace(src, "").Trim();
+                string stripped = Translations.TagRx.Replace(src, "").Trim();
                 string sv;
-                if (stripped.Length > 10 && Plugin.StrippedDict.TryGetValue(stripped, out sv))
+                if (stripped.Length > 10 && Translations.StrippedDict.TryGetValue(stripped, out sv))
                 {
                     var cm = Regex.Match(src, "<color[^<>]*>");
                     if (cm.Success) sv = sv.Replace("<h1>", cm.Value).Replace("</h>", "</color>");
-                    else sv = Plugin.TagRx.Replace(sv, "");
+                    else sv = Translations.TagRx.Replace(sv, "");
                     return sv;
                 }
             }
@@ -239,14 +230,14 @@ namespace KoreanTextFixer
             if (core.Length == 0) return null;
 
             string v;
-            if (Plugin.Dict.TryGetValue(core, out v)) return lead + v + tail;
+            if (Translations.Dict.TryGetValue(core, out v)) return lead + v + tail;
 
             var pm = Paren.Match(tok);
             if (pm.Success)
             {
                 string inner = pm.Groups[2].Value;
                 string iv;
-                if (Plugin.Regions.TryGetValue(inner, out iv) || Plugin.Dict.TryGetValue(inner, out iv))
+                if (Translations.Regions.TryGetValue(inner, out iv) || Translations.Dict.TryGetValue(inner, out iv))
                     return pm.Groups[1].Value + "(" + iv + ")" + pm.Groups[3].Value;
             }
             return null;
