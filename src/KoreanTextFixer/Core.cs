@@ -37,14 +37,17 @@ namespace KoreanTextFixer
         // baseDir: 번역 txt가 들어있는 폴더 (로더마다 위치가 다르다)
         internal static void Load(string baseDir)
         {
-            string[] files = { "Korean_Base.txt", "Korean_Extracted.txt", "Korean_Composites.txt" };
+            Rules.Lookup = LookupExact;
+            // Templates에는 정규식 규칙만 들어 있고, Base에도 규칙이 섞여 있다
+            string[] files = { "Korean_Base.txt", "Korean_Extracted.txt", "Korean_Composites.txt", "Korean_Templates.txt" };
             foreach (string f in files)
             {
                 string p = Path.Combine(baseDir, f);
                 if (!File.Exists(p)) continue;
                 foreach (string line in File.ReadAllLines(p, Encoding.UTF8))
                 {
-                    if (line.Length == 0 || line.StartsWith("//") || line.StartsWith("sr:") || line.StartsWith("r:")) continue;
+                    if (line.Length == 0 || line.StartsWith("//")) continue;
+                    if (line.StartsWith("sr:") || line.StartsWith("r:")) { Rules.Add(line); continue; }
                     int eq = -1;
                     for (int i = 0; i < line.Length; i++)
                     {
@@ -69,6 +72,16 @@ namespace KoreanTextFixer
         private static string Unescape(string s)
         {
             return s.Replace("\\n", "\n").Replace("\\t", "\t").Replace("\\=", "=").Replace("\\\\", "\\");
+        }
+
+        // 정규식 규칙(sr:)이 잡아낸 조각을 번역할 때 쓰는 단건 조회
+        internal static string LookupExact(string s)
+        {
+            string v;
+            if (Dict.TryGetValue(s, out v)) return v;
+            string t = s.Trim();
+            if (t.Length != s.Length && Dict.TryGetValue(t, out v)) return v;
+            return null;
         }
     }
 
@@ -293,6 +306,10 @@ namespace KoreanTextFixer
                     return sv;
                 }
             }
+
+            // 1-c) 정규식 규칙 — 가격·이름·수량이 끼어드는 문장은 여기서만 잡힌다
+            string byRule = Rules.Apply(src);
+            if (byRule != null) return byRule;
 
             // 2) 태그 보존 조각 번역
             if (src.IndexOf('<') >= 0)

@@ -4,7 +4,7 @@ using System.IO;
 using MelonLoader;
 using MelonLoader.Utils;
 
-[assembly: MelonInfo(typeof(KoreanTextFixer.MelonPlugin), "Korean Text Fixer", "1.7.0", "Schedule I 한글패치")]
+[assembly: MelonInfo(typeof(KoreanTextFixer.MelonPlugin), "Korean Text Fixer", "1.8.0", "Schedule I 한글패치")]
 [assembly: MelonGame("TVGS", "Schedule I")]
 
 namespace KoreanTextFixer
@@ -35,7 +35,7 @@ namespace KoreanTextFixer
                 if (!usePolling.Value) KLog.Info("설정에 따라 폴링을 끕니다");
 
                 _fixer = new Fixer(usePolling.Value);
-                KLog.Info("KoreanTextFixer 1.7.0 (MelonLoader) loaded. entries=" + Translations.Dict.Count);
+                KLog.Info("KoreanTextFixer 1.8.0 (MelonLoader) loaded. entries=" + Translations.Dict.Count + " rules=" + Rules.Count);
             }
             catch (Exception e)
             {
