@@ -96,9 +96,10 @@ namespace KoreanTextFixer
             // (프리팹에 박혀 있어 setter를 안 타는 것들)만 주우면 되므로 느리게 돌아도 된다.
             _refreshEvery = 3f;
 #if MELON
-            // 후킹이 걸려 있고 정적 문구는 미리 구워져 있으니, 폴링이 자주 돌 이유가 없다.
-            // FindObjectsOfType는 씬이 클수록 비싸고 그때마다 프레임이 튄다.
-            if (TmpHook.Installed) _refreshEvery = 30f;
+            // 후킹(set_text + OnEnable)이 텍스트가 바뀌는 순간과 켜지는 순간을 모두 잡으므로
+            // 폴링은 이제 최후의 그물일 뿐이다. 실측상 재수집 한 번에 100ms가 들어
+            // 그때마다 화면이 튀므로 아주 드물게만 돌린다.
+            if (TmpHook.Installed) _refreshEvery = 300f;
 #endif
         }
 
