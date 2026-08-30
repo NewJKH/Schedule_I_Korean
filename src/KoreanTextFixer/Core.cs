@@ -85,7 +85,17 @@ namespace KoreanTextFixer
         private readonly List<UnityEngine.UI.Text> _uis = new List<UnityEngine.UI.Text>(128);
         private readonly Dictionary<int, string> _seen = new Dictionary<int, string>();
         private const int PerFrame = 30;      // 프레임당 처리 개수 (스파이크 방지)
-        private const float RefreshEvery = 3f; // 목록 재수집 주기
+        private readonly float _refreshEvery; // 목록 재수집 주기
+
+        internal Fixer()
+        {
+            // FindObjectsOfType는 비싸다. 후킹이 걸려 있으면 폴링은 후킹이 닿지 않는 텍스트
+            // (프리팹에 박혀 있어 setter를 안 타는 것들)만 주우면 되므로 느리게 돌아도 된다.
+            _refreshEvery = 3f;
+#if MELON
+            if (TmpHook.Installed) _refreshEvery = 8f;
+#endif
+        }
 
         private static readonly Regex Token = new Regex("<[^<>]{1,60}>|[^<]+", RegexOptions.Compiled);
         private static readonly Regex Paren = new Regex("^(\\s*)\\((.+)\\)(\\s*)$", RegexOptions.Compiled);
@@ -100,7 +110,7 @@ namespace KoreanTextFixer
                 if (_cursor >= total && Time.unscaledTime >= _nextRefresh)
                 {
                     RefreshLists();
-                    _nextRefresh = Time.unscaledTime + RefreshEvery;
+                    _nextRefresh = Time.unscaledTime + _refreshEvery;
                     _cursor = 0;
                     total = _tmps.Count + _uis.Count;
                 }
@@ -120,7 +130,7 @@ namespace KoreanTextFixer
             if (Time.unscaledTime >= _nextStat)
             {
                 _nextStat = Time.unscaledTime + 60f;
-                KLog.Info("stats: replaced=" + _replaced + " tracked=" + (_tmps.Count + _uis.Count));
+                KLog.Info("stats: replaced=" + _replaced + " tracked=" + (_tmps.Count + _uis.Count) + " hookCache=" + HookCache.Count);
             }
         }
 
@@ -165,20 +175,46 @@ namespace KoreanTextFixer
 
         internal static string TranslateForHook(string src)
         {
+            // 게임이 텍스트를 쓸 때마다 불린다. 캐시에 닿기 전에 확실한 것부터 싸게 걸러낸다.
+            // 돈·시간·수량처럼 매 프레임 바뀌는 값은 사전에 있을 리 없고, 캐시에 쌓으면 캐시만 망가진다.
+            if (!HasLatinLetter(src)) return null;
+            if (HasHangul(src)) return null; // 이미 번역된 값
+
             string cached;
             if (HookCache.TryGetValue(src, out cached)) return cached;
 
-            string result = null;
+            string result = Translate(src);
 #if MELON
-            // 정규식·조립 번역은 번역기 쪽 캐시에만 있으므로 먼저 물어본다
-            result = XUnityBridge.Translate(src);
-            if (result == src) result = null;
+            // 사전에 없으면 정규식·조립 번역을 아는 번역기에 물어본다
+            if (result == null)
+            {
+                result = XUnityBridge.Translate(src);
+                if (result == src) result = null;
+            }
 #endif
-            if (result == null) result = Translate(src);
-
             if (HookCache.Count >= HookCacheLimit) HookCache.Clear();
             HookCache[src] = result;
             return result;
+        }
+
+        private static bool HasLatinLetter(string s)
+        {
+            for (int i = 0; i < s.Length; i++)
+            {
+                char c = s[i];
+                if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) return true;
+            }
+            return false;
+        }
+
+        private static bool HasHangul(string s)
+        {
+            for (int i = 0; i < s.Length; i++)
+            {
+                char c = s[i];
+                if (c >= 0xAC00 && c <= 0xD7A3) return true;
+            }
+            return false;
         }
 
         internal static void ClearHookCache()

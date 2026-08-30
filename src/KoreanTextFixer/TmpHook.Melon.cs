@@ -54,77 +54,96 @@ namespace KoreanTextFixer
             return list;
         }
 
+        // 게임이 텍스트를 쓸 때마다(=매 프레임 여러 번) 불린다. 여기서 무거운 일을 하면 그대로 프레임을 깎는다.
         private static void TextPrefix(ref string __0)
         {
-            if (string.IsNullOrEmpty(__0)) return;
+            string src = __0;
+            if (string.IsNullOrEmpty(src)) return;
             try
             {
-                string t = Fixer.TranslateForHook(__0);
+                string t = Fixer.TranslateForHook(src);
                 if (t != null) __0 = t;
             }
             catch { }
         }
     }
 
-    // XUnity.AutoTranslator의 번역 엔진을 그대로 빌려 쓴다.
-    // 하드 참조를 두면 번역기가 없거나 로드 순서가 밀렸을 때 통째로 죽으므로 리플렉션으로 붙는다.
+    // XUnity.AutoTranslator의 번역 엔진을 그대로 빌려 쓴다(정규식·조립 번역은 번역기 쪽 캐시에만 있다).
+    // 하드 참조를 두면 번역기가 없을 때 플러그인이 통째로 죽으므로 리플렉션으로 붙는다.
     internal static class XUnityBridge
     {
-        private static object _translator;
-        private static MethodInfo _tryTranslate;
+        private delegate bool TryTranslateDelegate(string untranslatedText, out string translatedText);
+
+        private const string TypeName =
+            "XUnity.AutoTranslator.Plugin.Core.AutoTranslator, XUnity.AutoTranslator.Plugin.Core";
+        private const int MaxAttempts = 40; // 이만큼 시도해도 못 붙으면 사전만 쓴다
+
+        private static TryTranslateDelegate _tryTranslate;
         private static int _attempts;
-        private static bool _warned;
+        private static int _stride;
+        private static bool _gaveUp;
 
-        internal static bool Available
-        {
-            get { Resolve(); return _tryTranslate != null; }
-        }
+        internal static bool Connected { get { return _tryTranslate != null; } }
 
-        // 번역기는 우리보다 늦게 로드될 수 있다(Mods 폴더 알파벳 순).
-        // 연결될 때까지 다시 시도하되, 매 호출마다 어셈블리를 훑으면 비싸므로 띄엄띄엄 본다.
+        // 번역기는 Mods 알파벳 순서상 우리보다 늦게 로드될 수 있어 붙을 때까지 다시 시도한다.
+        // 다만 실패한 채로 계속 시도하면 그 자체가 프레임을 깎으므로 횟수를 제한한다.
         private static void Resolve()
         {
-            if (_tryTranslate != null) return;
-            if (_attempts++ % 120 != 0) return;
+            if (_tryTranslate != null || _gaveUp) return;
+            if (_stride++ % 600 != 0) return;
+            if (++_attempts > MaxAttempts)
+            {
+                _gaveUp = true;
+                KLog.Warn("XUnity 번역 엔진에 연결하지 못했습니다 - 사전만 사용합니다");
+                return;
+            }
             try
             {
-                Type t = null;
-                foreach (var asm in AppDomain.CurrentDomain.GetAssemblies())
+                // MelonLoader는 UserLibs를 별도 로드 컨텍스트에 올린다.
+                // AppDomain.GetAssemblies() 로는 안 보일 수 있어 어셈블리 한정 이름을 먼저 쓴다.
+                Type t = Type.GetType(TypeName, false);
+                if (t == null)
                 {
-                    if (asm.GetName().Name != "XUnity.AutoTranslator.Plugin.Core") continue;
-                    t = asm.GetType("XUnity.AutoTranslator.Plugin.Core.AutoTranslator");
-                    break;
+                    foreach (var asm in AppDomain.CurrentDomain.GetAssemblies())
+                    {
+                        if (asm.GetName().Name != "XUnity.AutoTranslator.Plugin.Core") continue;
+                        t = asm.GetType("XUnity.AutoTranslator.Plugin.Core.AutoTranslator");
+                        break;
+                    }
                 }
                 if (t == null) return;
                 var def = t.GetProperty("Default", BindingFlags.Public | BindingFlags.Static);
                 if (def == null) return;
-                _translator = def.GetValue(null);
-                if (_translator == null) return;
-                _tryTranslate = _translator.GetType().GetMethod("TryTranslate",
+                object translator = def.GetValue(null);
+                if (translator == null) return; // 번역기가 아직 초기화되지 않음
+
+                var m = translator.GetType().GetMethod("TryTranslate",
                     new[] { typeof(string), typeof(string).MakeByRefType() });
-                if (_tryTranslate != null)
-                {
-                    KLog.Info("XUnity 번역 엔진 연결됨");
-                    // 연결 전에 "번역 없음"으로 기억해 둔 것들을 다시 판단하게 한다
-                    Fixer.ClearHookCache();
-                }
+                if (m == null) return;
+
+                // 매 호출마다 Invoke하면 인자 배열이 새로 생기므로 델리게이트로 묶어 둔다
+                _tryTranslate = (TryTranslateDelegate)Delegate.CreateDelegate(
+                    typeof(TryTranslateDelegate), translator, m);
+                KLog.Info("XUnity 번역 엔진 연결됨");
+                // 연결 전에 "번역 없음"으로 기억해 둔 것들을 다시 판단하게 한다
+                Fixer.ClearHookCache();
             }
             catch (Exception e)
             {
-                if (!_warned) { _warned = true; KLog.Warn("XUnity 연결 실패(사전만 사용): " + e.Message); }
+                _gaveUp = true;
+                KLog.Warn("XUnity 연결 실패(사전만 사용): " + e.Message);
             }
         }
 
-        // 정규식·조립 번역까지 처리하려면 번역기 쪽 캐시를 거쳐야 한다
         internal static string Translate(string src)
         {
             Resolve();
-            if (_tryTranslate == null) return null;
+            var f = _tryTranslate;
+            if (f == null) return null;
             try
             {
-                var args = new object[] { src, null };
-                bool ok = (bool)_tryTranslate.Invoke(_translator, args);
-                if (ok) return (string)args[1];
+                string dst;
+                if (f(src, out dst)) return dst;
             }
             catch { }
             return null;
