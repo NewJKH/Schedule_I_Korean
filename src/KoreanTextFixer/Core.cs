@@ -155,10 +155,11 @@ namespace KoreanTextFixer
                 // 후킹이 실제로 얼마나 자주 불리는지 봐야 프레임 부담의 출처를 가릴 수 있다
                 long calls = HookCalls - _lastHookCalls, work = HookWork - _lastHookWork;
                 _lastHookCalls = HookCalls; _lastHookWork = HookWork;
+                MissingLog.Flush();
                 KLog.Info("stats: replaced=" + _replaced + " tracked=" + (_tmps.Count + _uis.Count)
                     + " hookCache=" + HookCache.Count
                     + " hookCalls/s=" + (calls / 60) + " hookWork/s=" + (work / 60)
-                    + " refreshMs=" + _refreshMs);
+                    + " refreshMs=" + _refreshMs + " missing=" + MissingLog.Count);
             }
         }
 
@@ -233,6 +234,8 @@ namespace KoreanTextFixer
                 if (result == src) result = null;
             }
 #endif
+            if (result == null) MissingLog.Record(src);
+
             if (HookCache.Count >= HookCacheLimit) HookCache.Clear();
             HookCache[src] = result;
             return result;
