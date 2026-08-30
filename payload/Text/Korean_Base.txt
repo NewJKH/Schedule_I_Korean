@@ -3340,3 +3340,22 @@ r:"Andy is paying (.*?) for:"=앤디가 $1을 지불하는 품목:
 r:"Doug is paying (.*?) for:"=더그가 $1을 지불하는 품목:
 sr:"^You've unlocked (.+) as a customer. She will now start sending you deal offers.$"=$1을(를) 고객으로 잠금 해제했습니다. 이제 그녀가 거래 제안을 보내기 시작합니다.
 sr:"^You've unlocked (.+) as a customer. He will now start sending you deal offers.$"=$1을(를) 고객으로 잠금 해제했습니다. 이제 그가 거래 제안을 보내기 시작합니다.
+
+// --- 구매 대화·장소 이름 (미번역 수집으로 확인) ---
+The Barn=헛간
+The Bungalow=방갈로
+The Docks Warehouse=부두 창고
+The Laundromat=세탁소
+The Car Wash=세차장
+The Post Office=우체국
+The Shitbox=똥차
+The Veeper=비퍼
+The Bruiser=브루저
+The Cheetah=치타
+The Dinkler=딘클러
+The Hounddog=하운드독
+The storage unit at Stash & Dash=스태시 앤 대시의 보관 창고
+storage unit=보관 창고
+Equipment=장비
+Golden M1911=골든 M1911
+1 of 1=1 / 1

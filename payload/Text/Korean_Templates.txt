@@ -236,3 +236,20 @@ sr:"^(?!(?:It|He|She|That|What|Who|There|Let|Here)'s)([A-Z][a-z]+(?: [A-Z][a-z]+
 sr:"^([\s\S]+?) will draw (?:his|her|their) daily wage of ([^ ]+) from this locker$"=$1이(가) 이 사물함에서 일당 $2을(를) 가져갑니다
 sr:"^(\d{1,2}:\d{2} [AP]M) (Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)$"=$1 $2
 r:"^You owe ([\s\S]+?) (<color\=#[0-9A-Fa-f]{3,8}>)?(\$[0-9,]+)(</color>)?\. Insert cash and exit stash to pay off your debt$"=$1에게 $2$3$4 빚졌습니다. 현금을 넣고 은닉처에서 나가면 정산됩니다
+
+// --- 색상 태그로 감싼 가격이 붙은 이름 (사업체·부동산 구매 목록) ---
+sr:"^([^<>]+?) (<color[^<>]*>\([^<>]+\)</color>)$"=$1 $2
+
+// --- 구매 확인 대화 ---
+sr:"^So you'd like to purchase (.+?)\? Payments are made from your online balance\.$"=$1 구매하시겠습니까? 결제는 온라인 잔고에서 이루어집니다.
+sr:"^So you'd like to purchase the (.+?)\?$"=$1 구매하시겠습니까?
+
+// --- 시간 표기 ---
+r:"^(\d{1,2})AM-(\d{1,2})PM$"=오전 $1시-오후 $2시
+r:"^(\d{1,2})PM-(\d{1,2})AM$"=오후 $1시-오전 $2시
+r:"^(\d{1,2})AM-(\d{1,2})AM$"=오전 $1시-오전 $2시
+r:"^(\d{1,2})PM-(\d{1,2})PM$"=오후 $1시-오후 $2시
+r:"^(\d{1,2}):(\d{2}) AM$"=오전 $1:$2
+r:"^(\d{1,2}):(\d{2}) PM$"=오후 $1:$2
+r:"^(\d+)hr (\d+)m$"=$1시간 $2분
+r:"^(\d+)h$"=$1시간
