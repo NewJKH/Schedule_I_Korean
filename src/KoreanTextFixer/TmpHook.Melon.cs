@@ -37,7 +37,8 @@ namespace KoreanTextFixer
                 }
             }
             Installed = patched > 0;
-            if (!Installed) KLog.Warn("TMP 후킹 실패 - 폴링으로만 동작합니다");
+            if (Installed) InstallOnEnable(harmony);
+            else KLog.Warn("TMP 후킹 실패 - 폴링으로만 동작합니다");
         }
 
         // text 프로퍼티 setter + 문자열 하나만 받는 SetText 오버로드
@@ -53,6 +54,38 @@ namespace KoreanTextFixer
                 if (ps.Length == 1 && ps[0].ParameterType == typeof(string)) list.Add(m);
             }
             return list;
+        }
+
+        // 프리팹에 박혀 있는 텍스트는 setter를 타지 않아 후킹에 안 걸린다.
+        // 지금까지는 폴링(FindObjectsOfType)으로 주웠는데 씬이 크면 한 번에 100ms 가까이 걸려
+        // 30초마다 화면이 튀었다. 텍스트가 켜지는 순간을 잡으면 폴링이 필요 없다.
+        private static void InstallOnEnable(HarmonyLib.Harmony harmony)
+        {
+            var m = AccessTools.Method(typeof(TMP_Text), "OnEnable");
+            if (m == null) { KLog.Warn("TMP_Text.OnEnable 을 찾지 못했습니다"); return; }
+            try
+            {
+                harmony.Patch(m, null, new HarmonyMethod(typeof(TmpHook).GetMethod(
+                    nameof(OnEnablePostfix), BindingFlags.NonPublic | BindingFlags.Static)));
+                KLog.Info("hooked TMP_Text.OnEnable");
+            }
+            catch (Exception e)
+            {
+                KLog.Warn("OnEnable 후킹 실패: " + e.Message);
+            }
+        }
+
+        private static void OnEnablePostfix(TMP_Text __instance)
+        {
+            try
+            {
+                if (__instance == null) return;
+                string cur = __instance.text;
+                if (string.IsNullOrEmpty(cur)) return;
+                string t = Fixer.TranslateForHook(cur);
+                if (t != null) __instance.text = t;
+            }
+            catch { }
         }
 
         // 게임이 텍스트를 쓸 때마다(=매 프레임 여러 번) 불린다. 여기서 무거운 일을 하면 그대로 프레임을 깎는다.
