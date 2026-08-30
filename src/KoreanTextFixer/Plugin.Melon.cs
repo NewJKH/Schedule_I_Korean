@@ -4,7 +4,7 @@ using System.IO;
 using MelonLoader;
 using MelonLoader.Utils;
 
-[assembly: MelonInfo(typeof(KoreanTextFixer.MelonPlugin), "Korean Text Fixer", "1.4.0", "Schedule I 한글패치")]
+[assembly: MelonInfo(typeof(KoreanTextFixer.MelonPlugin), "Korean Text Fixer", "1.5.0", "Schedule I 한글패치")]
 [assembly: MelonGame("TVGS", "Schedule I")]
 
 namespace KoreanTextFixer
@@ -23,7 +23,9 @@ namespace KoreanTextFixer
                 // MelonMod판 XUnity.AutoTranslator는 번역 파일을 게임폴더\AutoTranslator 아래에 둔다
                 Translations.Load(Path.Combine(MelonEnvironment.GameRootDirectory, "AutoTranslator", "Translation", "ko", "Text"));
                 _fixer = new Fixer();
-                KLog.Info("KoreanTextFixer 1.4.0 (MelonLoader) loaded. entries=" + Translations.Dict.Count);
+                // XUnity가 MelonLoader에서 TMP를 후킹하지 못하므로 직접 건다 (자세한 이유는 TmpHook.Melon.cs)
+                TmpHook.Install(HarmonyInstance);
+                KLog.Info("KoreanTextFixer 1.5.0 (MelonLoader) loaded. entries=" + Translations.Dict.Count);
             }
             catch (Exception e)
             {
