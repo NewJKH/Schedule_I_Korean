@@ -273,9 +273,12 @@ Write-Host " 번역이 즉시 나오고 프레임 부담도 줄어듭니다."
 Write-Host ""
 Write-Host " * 게임 파일 몇 개를 수정합니다 (원본은 자동 백업)"
 Write-Host " * 되돌리려면: '되돌리기.bat' 또는 Steam 파일 무결성 확인"
+Write-Host ""
+Write-Host " [실험 기능] 세이브 로딩이 '초기화중'에서 멈추는 사례가 확인되어" -ForegroundColor Red
+Write-Host " 기본값을 '아니오'로 두었습니다. 번역은 이것 없이도 모두 나옵니다." -ForegroundColor Red
 Write-Host "----------------------------------------------" -ForegroundColor Yellow
-$ans = Read-Host " 적용하시겠습니까? [Y] 예 (권장) / [N] 아니오"
-if ($ans -eq "" -or $ans -match '^[YyㅛJj]') {
+$ans = Read-Host " 적용하시겠습니까? [N] 아니오 (권장) / [Y] 예"
+if ($ans -match '^[YyㅛJj]') {
     Write-Host ""
     Write-Host "[번역본] 게임 파일에 굽는 중... (1~2분)" -ForegroundColor Cyan
     $bakeScript = Join-Path $here "bake.ps1"

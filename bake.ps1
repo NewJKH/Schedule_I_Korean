@@ -2,6 +2,7 @@
     [switch]$NoPause,
     [switch]$DryRun,          # 실제로 바꾸지 않고 무엇이 바뀌는지만 보여준다
     [switch]$Restore,         # 백업해 둔 원본으로 되돌린다
+    [switch]$Report,          # 어떤 스크립트(클래스)에 문구가 들어 있는지만 집계한다
     [int]$MinLength = 12,     # 이보다 짧은 문구는 건드리지 않는다 (식별자 오인 방지)
     [string]$GamePath = ""
 )
@@ -56,7 +57,8 @@ if (-not $GamePath) {
     if (-not $NoPause) { pause }
     exit 1
 }
-if (Get-Process -Name "Schedule I" -ErrorAction SilentlyContinue) {
+# 읽기만 하는 모드(-DryRun/-Report)는 게임이 켜져 있어도 괜찮다
+if (-not $DryRun -and -not $Report -and (Get-Process -Name "Schedule I" -ErrorAction SilentlyContinue)) {
     Write-Host "게임을 먼저 종료하세요." -ForegroundColor Red
     if (-not $NoPause) { pause }
     exit 1
@@ -235,9 +237,33 @@ foreach ($f in (Get-ChildItem $dataDir -File)) {
 }
 Write-Host ("검사할 파일: " + $targets.Count + "개") -ForegroundColor Cyan
 
+# IL2CPP 빌드는 MonoScript(115)가 전부 globalgamemanagers.assets 에 모여 있다.
+# pathID -> 클래스 이름 지도를 한 번 만들어 두고, 다른 파일의 MonoBehaviour가 어떤
+# 스크립트의 데이터인지 판별하는 데 쓴다.
+$scriptMap = @{}
+$ggmPath = Join-Path $dataDir "globalgamemanagers.assets"
+if (Test-Path $ggmPath) {
+    $amg = New-Object AssetsTools.NET.Extra.AssetsManager
+    $amg.LoadClassPackage($tpk) | Out-Null
+    $ig = $amg.LoadAssetsFile($ggmPath, $false)
+    $amg.LoadClassDatabaseFromPackage($ig.file.Metadata.UnityVersion) | Out-Null
+    foreach ($si in $ig.file.GetAssetsOfType(115)) {
+        try { $scriptMap[[long]$si.PathId] = $amg.GetBaseField($ig, $si)["m_ClassName"].AsString } catch {}
+    }
+    $amg.UnloadAll()
+}
+Write-Host ("스크립트 이름 " + $scriptMap.Count + "개 확보") -ForegroundColor DarkGray
+
 $bakDir = Join-Path $GamePath "KoreanPatch_backup"
 $totalStrings = 0
 $totalFiles = 0
+$classHits = @{}
+
+# 화면에 글자를 그리는 컴포넌트만 손댄다.
+# 게임 로직이 이름·ID로 대조하는 데이터(사업장·아이템·퀘스트 정의 등)를 바꾸면
+# 세이브 로딩이 '초기화중'에서 멈추는 것을 확인했다. 그래서 흰 목록 방식으로 좁힌다.
+$AllowClass = New-Object System.Collections.Generic.HashSet[string]
+foreach ($c in @("TextMeshPro", "TextMeshProUGUI", "TMP_Text", "Text")) { [void]$AllowClass.Add($c) }
 
 foreach ($path in $targets) {
     $name = Split-Path $path -Leaf
@@ -248,18 +274,38 @@ foreach ($path in $targets) {
     $dataOff = $inst.file.Header.DataOffset
     $bytes = [System.IO.File]::ReadAllBytes($path)
 
+    # 이 파일이 globalgamemanagers.assets 를 몇 번 외부 참조로 두는지 (m_Script의 fileID와 대조용)
+    $ggmFileId = -1
+    for ($e = 0; $e -lt $inst.file.Metadata.Externals.Count; $e++) {
+        if ($inst.file.Metadata.Externals[$e].PathName -eq "globalgamemanagers.assets") { $ggmFileId = $e + 1; break }
+    }
+
     $hits = 0
     $objs = 0
     foreach ($info in $inst.file.AssetInfos) {
         if ($info.TypeId -ne 114) { continue }   # MonoBehaviour만. GameObject 이름(1)은 코드가 찾아 쓰므로 손대지 않는다
         $size = $info.ByteSize
-        if ($size -le 8) { continue }
+        if ($size -le 32) { continue }
         $raw = New-Object byte[] $size
         [Array]::Copy($bytes, $dataOff + $info.ByteOffset, $raw, 0, $size)
+
+        # m_Script는 항상 오프셋 16(fileID) + 20(pathID).
+        # IL2CPP 빌드는 MonoScript가 전부 globalgamemanagers.assets 에 있고 외부 참조로 걸린다.
+        $cls = "?"
+        if ([BitConverter]::ToInt32($raw, 16) -eq $ggmFileId) {
+            $spid = [BitConverter]::ToInt64($raw, 20)
+            if ($scriptMap.ContainsKey($spid)) { $cls = $scriptMap[$spid] }
+        }
+        if (-not $Report -and -not $AllowClass.Contains($cls)) { continue }
+
         $c = 0
         $new = [KrBake]::Patch($raw, [ref]$c)
         if ($new -ne $null) {
-            if (-not $DryRun) { $info.SetNewData($new) }
+            if ($Report) {
+                if (-not $classHits.ContainsKey($cls)) { $classHits[$cls] = 0 }
+                $classHits[$cls] += $c
+            }
+            elseif (-not $DryRun) { $info.SetNewData($new) }
             $hits += $c
             $objs++
         }
@@ -269,7 +315,7 @@ foreach ($path in $targets) {
         Write-Host ("  " + $name + " : " + $hits + "개 문구 / " + $objs + "개 오브젝트") -ForegroundColor Green
         $totalStrings += $hits
         $totalFiles++
-        if (-not $DryRun) {
+        if (-not $DryRun -and -not $Report) {
             New-Item -ItemType Directory -Force $bakDir | Out-Null
             $bak = Join-Path $bakDir ($name + ".original")
             if (-not (Test-Path $bak)) { Copy-Item $path $bak }
@@ -296,6 +342,18 @@ foreach ($path in $targets) {
 }
 
 Write-Host ""
+if ($Report) {
+    Write-Host "스크립트(클래스)별 문구 수 - 어떤 데이터에 텍스트가 들어 있는지 확인용" -ForegroundColor Cyan
+    foreach ($e in ($classHits.GetEnumerator() | Sort-Object Value -Descending | Select-Object -First 40)) {
+        $mark = ""
+        if ($AllowClass.Contains($e.Key)) { $mark = "  <- 베이킹 대상" }
+        Write-Host ("  {0,6}  {1}{2}" -f $e.Value, $e.Key, $mark)
+    }
+    Write-Host ""
+    Write-Host ("합계 " + $totalStrings + "개 문구") -ForegroundColor Yellow
+    if (-not $NoPause) { pause }
+    exit 0
+}
 if ([KrBake]::Samples.Count -gt 0) {
     Write-Host "교체 예시:" -ForegroundColor Cyan
     foreach ($s in [KrBake]::Samples) { Write-Host ("  " + $s) }
