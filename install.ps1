@@ -262,6 +262,33 @@ if ($ans -eq "" -or $ans -match '^[YyㅛJj]') {
     Write-Host " 폰트는 건너뜁니다. 나중에 '폰트적용.bat'으로 적용할 수 있습니다." -ForegroundColor DarkGray
 }
 
+# ---------- 8) 번역본 굽기 (게임 파일의 영어를 한글로 직접 교체) ----------
+Write-Host ""
+Write-Host "----------------------------------------------" -ForegroundColor Yellow
+Write-Host " 번역을 게임 파일에 직접 넣을까요?" -ForegroundColor Yellow
+Write-Host ""
+Write-Host " 게임 파일에 원문이 그대로 들어 있는 문구(대사, 아이템명, 설정 화면 등)를"
+Write-Host " 미리 한글로 바꿔둡니다. 번역기가 그때그때 바꾸지 않아도 되니"
+Write-Host " 번역이 즉시 나오고 프레임 부담도 줄어듭니다."
+Write-Host ""
+Write-Host " * 게임 파일 몇 개를 수정합니다 (원본은 자동 백업)"
+Write-Host " * 되돌리려면: '되돌리기.bat' 또는 Steam 파일 무결성 확인"
+Write-Host "----------------------------------------------" -ForegroundColor Yellow
+$ans = Read-Host " 적용하시겠습니까? [Y] 예 (권장) / [N] 아니오"
+if ($ans -eq "" -or $ans -match '^[YyㅛJj]') {
+    Write-Host ""
+    Write-Host "[번역본] 게임 파일에 굽는 중... (1~2분)" -ForegroundColor Cyan
+    $bakeScript = Join-Path $here "bake.ps1"
+    if (Test-Path $bakeScript) {
+        & powershell -NoProfile -ExecutionPolicy Bypass -File $bakeScript -NoPause -GamePath "$gamePath"
+        if ($LASTEXITCODE -ne 0) { Write-Host "  실패했습니다. 번역기가 대신 처리하므로 게임은 정상 작동합니다." -ForegroundColor Yellow }
+    } else {
+        Write-Host "  bake.ps1 을 찾을 수 없습니다." -ForegroundColor Yellow
+    }
+} else {
+    Write-Host " 건너뜁니다. 번역은 게임 실행 중에 번역기가 처리합니다." -ForegroundColor DarkGray
+}
+
 Write-Host ""
 Write-Host "==============================================" -ForegroundColor Green
 Write-Host ("   설치 완료! (" + $loaderName + ") 게임을 실행하세요.") -ForegroundColor Green
