@@ -96,7 +96,9 @@ namespace KoreanTextFixer
             // (프리팹에 박혀 있어 setter를 안 타는 것들)만 주우면 되므로 느리게 돌아도 된다.
             _refreshEvery = 3f;
 #if MELON
-            if (TmpHook.Installed) _refreshEvery = 8f;
+            // 후킹이 걸려 있고 정적 문구는 미리 구워져 있으니, 폴링이 자주 돌 이유가 없다.
+            // FindObjectsOfType는 씬이 클수록 비싸고 그때마다 프레임이 튄다.
+            if (TmpHook.Installed) _refreshEvery = 30f;
 #endif
         }
 
@@ -141,18 +143,24 @@ namespace KoreanTextFixer
                 _lastHookCalls = HookCalls; _lastHookWork = HookWork;
                 KLog.Info("stats: replaced=" + _replaced + " tracked=" + (_tmps.Count + _uis.Count)
                     + " hookCache=" + HookCache.Count
-                    + " hookCalls/s=" + (calls / 60) + " hookWork/s=" + (work / 60));
+                    + " hookCalls/s=" + (calls / 60) + " hookWork/s=" + (work / 60)
+                    + " refreshMs=" + _refreshMs);
             }
         }
 
+        private long _refreshMs;
+
         private void RefreshLists()
         {
+            var sw = System.Diagnostics.Stopwatch.StartNew();
             _tmps.Clear();
             _uis.Clear();
             var t = UnityEngine.Object.FindObjectsOfType(Il2CppType.Of<TMP_Text>());
             if (t != null) { foreach (var o in t) { var c = o.TryCast<TMP_Text>(); if (c != null) _tmps.Add(c); } }
             var u = UnityEngine.Object.FindObjectsOfType(Il2CppType.Of<UnityEngine.UI.Text>());
             if (u != null) { foreach (var o in u) { var c = o.TryCast<UnityEngine.UI.Text>(); if (c != null) _uis.Add(c); } }
+            sw.Stop();
+            _refreshMs = sw.ElapsedMilliseconds;
         }
 
         private void ProcessTmp(TMP_Text tmp)
