@@ -87,8 +87,11 @@ namespace KoreanTextFixer
         private const int PerFrame = 30;      // 프레임당 처리 개수 (스파이크 방지)
         private readonly float _refreshEvery; // 목록 재수집 주기
 
-        internal Fixer()
+        private readonly bool _polling;
+
+        internal Fixer(bool polling)
         {
+            _polling = polling;
             // FindObjectsOfType는 비싸다. 후킹이 걸려 있으면 폴링은 후킹이 닿지 않는 텍스트
             // (프리팹에 박혀 있어 setter를 안 타는 것들)만 주우면 되므로 느리게 돌아도 된다.
             _refreshEvery = 3f;
@@ -104,6 +107,8 @@ namespace KoreanTextFixer
         public void Tick()
         {
             if (_dead) return;
+            if (_polling)
+            {
             try
             {
                 int total = _tmps.Count + _uis.Count;
@@ -127,10 +132,16 @@ namespace KoreanTextFixer
                 KLog.Warn("fixer error(" + _errors + "): " + e.Message);
                 if (_errors >= 5) { _dead = true; KLog.Error("too many errors - fixer disabled"); }
             }
+            }
             if (Time.unscaledTime >= _nextStat)
             {
                 _nextStat = Time.unscaledTime + 60f;
-                KLog.Info("stats: replaced=" + _replaced + " tracked=" + (_tmps.Count + _uis.Count) + " hookCache=" + HookCache.Count);
+                // 후킹이 실제로 얼마나 자주 불리는지 봐야 프레임 부담의 출처를 가릴 수 있다
+                long calls = HookCalls - _lastHookCalls, work = HookWork - _lastHookWork;
+                _lastHookCalls = HookCalls; _lastHookWork = HookWork;
+                KLog.Info("stats: replaced=" + _replaced + " tracked=" + (_tmps.Count + _uis.Count)
+                    + " hookCache=" + HookCache.Count
+                    + " hookCalls/s=" + (calls / 60) + " hookWork/s=" + (work / 60));
             }
         }
 
@@ -173,13 +184,21 @@ namespace KoreanTextFixer
         private static readonly Dictionary<string, string> HookCache = new Dictionary<string, string>(StringComparer.Ordinal);
         private const int HookCacheLimit = 4096;
 
+        // 진단용: 후킹이 불린 총 횟수와, 걸러지지 않고 실제 조회까지 간 횟수
+        internal static long HookCalls;
+        internal static long HookWork;
+        private long _lastHookCalls;
+        private long _lastHookWork;
+
         internal static string TranslateForHook(string src)
         {
             // 게임이 텍스트를 쓸 때마다 불린다. 캐시에 닿기 전에 확실한 것부터 싸게 걸러낸다.
             // 돈·시간·수량처럼 매 프레임 바뀌는 값은 사전에 있을 리 없고, 캐시에 쌓으면 캐시만 망가진다.
+            HookCalls++;
             if (!HasLatinLetter(src)) return null;
             if (HasHangul(src)) return null; // 이미 번역된 값
 
+            HookWork++;
             string cached;
             if (HookCache.TryGetValue(src, out cached)) return cached;
 

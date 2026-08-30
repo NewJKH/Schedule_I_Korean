@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace KoreanTextFixer
 {
-    [BepInPlugin("kr.schedule1.textfixer", "Korean Text Fixer", "1.4.0")]
+    [BepInPlugin("kr.schedule1.textfixer", "Korean Text Fixer", "1.6.0")]
     public class Plugin : BasePlugin
     {
         public override void Load()
@@ -21,7 +21,7 @@ namespace KoreanTextFixer
                 Translations.Load(Path.Combine(Paths.GameRootPath, "BepInEx", "Translation", "ko", "Text"));
                 ClassInjector.RegisterTypeInIl2Cpp<FixerBehaviour>();
                 AddComponent<FixerBehaviour>();
-                KLog.Info("KoreanTextFixer 1.4.0 (BepInEx) loaded. entries=" + Translations.Dict.Count);
+                KLog.Info("KoreanTextFixer 1.6.0 (BepInEx) loaded. entries=" + Translations.Dict.Count);
             }
             catch (Exception e)
             {
@@ -34,7 +34,7 @@ namespace KoreanTextFixer
     {
         public FixerBehaviour(IntPtr ptr) : base(ptr) { }
 
-        private readonly Fixer _fixer = new Fixer();
+        private readonly Fixer _fixer = new Fixer(true);
 
         public void Update()
         {
