@@ -5,7 +5,6 @@ $ErrorActionPreference = "Stop"
 $here = Split-Path -Parent $MyInvocation.MyCommand.Path
 try { Get-ChildItem $here -Recurse -File | Unblock-File -ErrorAction SilentlyContinue } catch {}
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$here = Split-Path -Parent $MyInvocation.MyCommand.Path
 Write-Host "==============================================" -ForegroundColor Cyan
 Write-Host "   Schedule I 한글패치 설치기" -ForegroundColor Cyan
 Write-Host "==============================================" -ForegroundColor Cyan
