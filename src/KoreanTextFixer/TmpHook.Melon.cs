@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using HarmonyLib;
 using Il2CppTMPro;
+using XUnity.AutoTranslator.Plugin.Core;
 
 namespace KoreanTextFixer
 {
@@ -68,84 +69,75 @@ namespace KoreanTextFixer
         }
     }
 
-    // XUnity.AutoTranslator의 번역 엔진을 그대로 빌려 쓴다(정규식·조립 번역은 번역기 쪽 캐시에만 있다).
-    // 하드 참조를 두면 번역기가 없을 때 플러그인이 통째로 죽으므로 리플렉션으로 붙는다.
+    // XUnity.AutoTranslator의 번역 엔진을 그대로 빌려 쓴다.
+    // 정규식·조립 번역(가격·이름이 끼어드는 문장)은 번역기 쪽 캐시에만 있어서 사전만으로는 못 한다.
     internal static class XUnityBridge
     {
-        private delegate bool TryTranslateDelegate(string untranslatedText, out string translatedText);
+        private const int MaxAttempts = 40; // 이만큼 시도해도 안 되면 사전만 쓴다
 
-        private const string TypeName =
-            "XUnity.AutoTranslator.Plugin.Core.AutoTranslator, XUnity.AutoTranslator.Plugin.Core";
-        private const int MaxAttempts = 40; // 이만큼 시도해도 못 붙으면 사전만 쓴다
-
-        private static TryTranslateDelegate _tryTranslate;
-        private static int _attempts;
-        private static int _stride;
+        private static bool _connected;
         private static bool _gaveUp;
+        private static int _stride;
+        private static int _attempts;
 
-        internal static bool Connected { get { return _tryTranslate != null; } }
+        internal static bool Connected { get { return _connected; } }
 
-        // 번역기는 Mods 알파벳 순서상 우리보다 늦게 로드될 수 있어 붙을 때까지 다시 시도한다.
-        // 다만 실패한 채로 계속 시도하면 그 자체가 프레임을 깎으므로 횟수를 제한한다.
-        private static void Resolve()
+        internal static string Translate(string src)
         {
-            if (_tryTranslate != null || _gaveUp) return;
-            if (_stride++ % 600 != 0) return;
-            if (++_attempts > MaxAttempts)
+            if (!_connected)
             {
-                _gaveUp = true;
-                KLog.Warn("XUnity 번역 엔진에 연결하지 못했습니다 - 사전만 사용합니다");
-                return;
-            }
-            try
-            {
-                // MelonLoader는 UserLibs를 별도 로드 컨텍스트에 올린다.
-                // AppDomain.GetAssemblies() 로는 안 보일 수 있어 어셈블리 한정 이름을 먼저 쓴다.
-                Type t = Type.GetType(TypeName, false);
-                if (t == null)
+                if (_gaveUp) return null;
+                // 번역기는 Mods 알파벳 순서상 우리보다 늦게 로드된다. 붙을 때까지 띄엄띄엄 확인한다.
+                if (_stride++ % 600 != 0) return null;
+                if (++_attempts > MaxAttempts)
                 {
-                    foreach (var asm in AppDomain.CurrentDomain.GetAssemblies())
-                    {
-                        if (asm.GetName().Name != "XUnity.AutoTranslator.Plugin.Core") continue;
-                        t = asm.GetType("XUnity.AutoTranslator.Plugin.Core.AutoTranslator");
-                        break;
-                    }
+                    _gaveUp = true;
+                    KLog.Warn("XUnity 번역 엔진에 연결하지 못했습니다 - 사전만 사용합니다");
+                    return null;
                 }
-                if (t == null) return;
-                var def = t.GetProperty("Default", BindingFlags.Public | BindingFlags.Static);
-                if (def == null) return;
-                object translator = def.GetValue(null);
-                if (translator == null) return; // 번역기가 아직 초기화되지 않음
-
-                var m = translator.GetType().GetMethod("TryTranslate",
-                    new[] { typeof(string), typeof(string).MakeByRefType() });
-                if (m == null) return;
-
-                // 매 호출마다 Invoke하면 인자 배열이 새로 생기므로 델리게이트로 묶어 둔다
-                _tryTranslate = (TryTranslateDelegate)Delegate.CreateDelegate(
-                    typeof(TryTranslateDelegate), translator, m);
+                try
+                {
+                    // 번역기 DLL이 아예 없으면 여기서 예외가 난다(그 경우 사전만 쓴다).
+                    // 리플렉션으로 찾으려 했더니 MelonLoader가 UserLibs를 별도 로드 컨텍스트에
+                    // 올려서 AppDomain에서도 Type.GetType에서도 보이지 않았다. 직접 참조가 확실하다.
+                    if (!XUnityDirect.IsReady()) return null;
+                }
+                catch (Exception e)
+                {
+                    _gaveUp = true;
+                    KLog.Warn("XUnity 번역기를 쓸 수 없습니다(사전만 사용): " + e.Message);
+                    return null;
+                }
+                _connected = true;
                 KLog.Info("XUnity 번역 엔진 연결됨");
                 // 연결 전에 "번역 없음"으로 기억해 둔 것들을 다시 판단하게 한다
                 Fixer.ClearHookCache();
             }
-            catch (Exception e)
+
+            try
             {
-                _gaveUp = true;
-                KLog.Warn("XUnity 연결 실패(사전만 사용): " + e.Message);
+                return XUnityDirect.Translate(src);
             }
+            catch
+            {
+                return null;
+            }
+        }
+    }
+
+    // 번역기 타입을 직접 만지는 곳을 한 군데로 모아 둔다.
+    // 번역기가 없으면 이 클래스를 처음 쓰는 순간 예외가 나므로, 호출부에서 감싸 잡는다.
+    internal static class XUnityDirect
+    {
+        internal static bool IsReady()
+        {
+            return AutoTranslator.Default != null;
         }
 
         internal static string Translate(string src)
         {
-            Resolve();
-            var f = _tryTranslate;
-            if (f == null) return null;
-            try
-            {
-                string dst;
-                if (f(src, out dst)) return dst;
-            }
-            catch { }
+            string dst;
+            if (AutoTranslator.Default.TryTranslate(src, out dst)) return dst;
             return null;
         }
     }
