@@ -45,7 +45,8 @@ namespace KoreanTextFixer
         internal static void Record(string src)
         {
             if (!_enabled || Seen.Count >= Limit) return;
-            if (src.Length < 2 || src.Length > 500) return;
+            if (src.Length < 3 || src.Length > 500) return;
+            if (IsUserInput(src)) return;
             if (!Seen.Add(src)) return;
 
             Pending.Add(src.Replace("\r", "").Replace("\n", "\\n"));
@@ -67,5 +68,22 @@ namespace KoreanTextFixer
         }
 
         internal static int Count { get { return Seen.Count; } }
+
+        // 플레이어가 입력창에 치고 있는 글자는 번역 대상이 아니고, 파일에 남겨서도 안 된다.
+        // 입력 중에는 캐럿 표시용 폭 없는 문자가 섞여 들어오고, 글자 수도 한두 개다.
+        private static bool IsUserInput(string s)
+        {
+            for (int i = 0; i < s.Length; i++)
+            {
+                char c = s[i];
+                if (c == '​' || c == '‌' || c == '﻿') return true;
+            }
+            int letters = 0;
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (char.IsLetter(s[i])) letters++;
+            }
+            return letters < 2;
+        }
     }
 }

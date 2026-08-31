@@ -246,7 +246,7 @@ namespace KoreanTextFixer
 
         // "162ft", "1x", "8h", "$2.1K", "5G" 처럼 값만 들어 있는 표시
         private static readonly Regex NoiseRx = new Regex(
-            "^[$₩€]?[0-9.,:]+ ?(ft|m|km|h|hr|min|s|x|K|M|G|%)?$", RegexOptions.Compiled);
+            "^[$₩€]?[0-9.,:]+ ?(ft|m|km|h|hr|min|s|x|K|M|G|L|kg|lb|%)?$", RegexOptions.Compiled);
         // "v0.4.6f13"
         private static readonly Regex VersionRx = new Regex("^v[0-9][A-Za-z0-9.]*$", RegexOptions.Compiled);
 
@@ -265,7 +265,9 @@ namespace KoreanTextFixer
             for (int i = 0; i < s.Length; i++)
             {
                 char c = s[i];
-                if (c >= 0xAC00 && c <= 0xD7A3) return true;
+                if (c >= 0xAC00 && c <= 0xD7A3) return true;   // 완성형
+                if (c >= 0x3130 && c <= 0x318F) return true;   // 호환 자모 (IME 조합 중)
+                if (c >= 0x1100 && c <= 0x11FF) return true;   // 조합용 자모
             }
             return false;
         }
