@@ -261,3 +261,12 @@ r:"^(\d+) min left$"=$1분 남음
 r:"^Total Cost: (.+)$"=총 비용: $1
 r:"^Total: (.+)$"=합계: $1
 r:"^Working on it\. Should be ready in around (.+)$"=작업 중이야. $1 정도면 준비될 거야
+
+// --- 진행률이 붙은 동작 안내 (Pour into pot (92%) 등) ---
+sr:"^(.+?) \((\d{1,3}%)\)$"=$1 ($2)
+
+// --- 시간·요일·해금 안내 (실행 중 수집) ---
+r:"^Waking up at (.+)$"=$1에 기상
+sr:"^([A-Za-z]+), Day (\d+)$"=$1, $2일차
+r:"^Unlocks at (.+)$"=$1 달성 시 해금
+r:"^When holding an item, press (.+?) or (.+?) to rotate it\.$"=아이템을 든 상태에서 $1 또는 $2 를 누르면 회전합니다.
