@@ -123,6 +123,14 @@ namespace KoreanTextFixer
         public void Tick()
         {
             if (_dead) return;
+#if MELON
+            Diagnostics.Tick();
+            if (Diagnostics.Disabled)
+            {
+                if (Time.unscaledTime >= _nextStat) _nextStat = Time.unscaledTime + 60f;
+                return;
+            }
+#endif
             if (_polling)
             {
             try
@@ -218,6 +226,9 @@ namespace KoreanTextFixer
             // 게임이 텍스트를 쓸 때마다 불린다. 캐시에 닿기 전에 확실한 것부터 싸게 걸러낸다.
             // 돈·시간·수량처럼 매 프레임 바뀌는 값은 사전에 있을 리 없고, 캐시에 쌓으면 캐시만 망가진다.
             HookCalls++;
+#if MELON
+            if (Diagnostics.Disabled) return null;
+#endif
             if (!HasLatinLetter(src)) return null;
             if (HasHangul(src)) return null; // 이미 번역된 값
             // 거리·수량·금액·버전 표시는 번역 대상이 아니다. 매 프레임 값이 바뀌어
@@ -255,6 +266,16 @@ namespace KoreanTextFixer
             "^[$₩€]?[0-9.,:]+ ?(ft|m|km|h|hr|min|s|x|K|M|G|L|kg|lb|mph|XP|xp|%)?$", RegexOptions.Compiled);
         // "v0.4.6f13"
         private static readonly Regex VersionRx = new Regex("^v[0-9][A-Za-z0-9.]*$", RegexOptions.Compiled);
+
+        // 진단 덤프에서 쓴다: 번역이 필요해 보이는 영어인가
+        internal static bool LooksEnglish(string s)
+        {
+            if (string.IsNullOrEmpty(s)) return false;
+            if (!HasLatinLetter(s)) return false;
+            if (HasHangul(s)) return false;
+            if (NoiseRx.IsMatch(s) || VersionRx.IsMatch(s)) return false;
+            return true;
+        }
 
         private static bool HasLatinLetter(string s)
         {
