@@ -112,7 +112,10 @@ namespace KoreanTextFixer
             // 후킹(set_text + OnEnable)이 텍스트가 바뀌는 순간과 켜지는 순간을 모두 잡으므로
             // 폴링은 이제 최후의 그물일 뿐이다. 실측상 재수집 한 번에 100ms가 들어
             // 그때마다 화면이 튀므로 아주 드물게만 돌린다.
-            if (TmpHook.Installed) _refreshEvery = 300f;
+            // 후킹이 텍스트 변경은 다 잡지만, 후킹이 닿지 않는 경로로 그려지는 글자는
+            // 화면을 훑어야만 보인다. 노이즈 필터를 넣은 뒤 재수집 비용이 9ms로 떨어져
+            // 30초 주기면 부담이 없다. 여기서 못 고친 영어는 미번역 목록에 기록한다.
+            if (TmpHook.Installed) _refreshEvery = 30f;
 #endif
         }
 
@@ -194,6 +197,7 @@ namespace KoreanTextFixer
                 string cur = tmp.text;
                 string outp = Check(cur, tmp.GetInstanceID());
                 if (outp != null) { tmp.text = outp; _replaced++; }
+                else if (LooksEnglish(cur)) MissingLog.Record(cur);
             }
             catch { }
         }
@@ -206,6 +210,7 @@ namespace KoreanTextFixer
                 string cur = ut.text;
                 string outp = Check(cur, ut.GetInstanceID());
                 if (outp != null) { ut.text = outp; _replaced++; }
+                else if (LooksEnglish(cur)) MissingLog.Record(cur);
             }
             catch { }
         }
