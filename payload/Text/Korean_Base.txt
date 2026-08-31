@@ -3375,3 +3375,10 @@ Total:=합계:
 // --- 실행 중 수집으로 확인 (2차) ---
 UNLOCK ONE OF PEGGY'S CONNECTIONS FIRST=먼저 페기의 인맥 중 하나를 뚫으세요
 Thanks for voting! Special customers won this vote, receiving over 142,000 submissions. This update will be entering open beta shortly.=투표해 주셔서 감사합니다! 이번 투표는 스페셜 고객이 142,000표 이상을 받아 선정되었습니다. 이 업데이트는 곧 오픈 베타로 들어갑니다.
+
+// --- 실행 중 수집 (3차): 상호작용 안내 ---
+Pour into pot=냄비에 붓기
+Click and hold tap to fill=수도꼭지를 길게 눌러 채우기
+Click and drag to cut bag=끌어당겨 봉지 자르기
+Insert a product here for Chelsey to try=첼시가 시험해볼 제품을 여기에 넣으세요
+Much appreciated. Maybe go talk to Chelsey. I think she'd like your product=고맙다. 첼시한테 한번 가봐. 네 제품 마음에 들어 할 것 같은데

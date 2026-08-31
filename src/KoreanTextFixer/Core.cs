@@ -223,6 +223,12 @@ namespace KoreanTextFixer
             // 거리·수량·금액·버전 표시는 번역 대상이 아니다. 매 프레임 값이 바뀌어
             // 캐시가 듣지 않으므로, 규칙 전수조사까지 가기 전에 잘라낸다.
             if (NoiseRx.IsMatch(src) || VersionRx.IsMatch(src)) return null;
+            // <color=...>$60</color> 처럼 태그로 감싼 값도 마찬가지다
+            if (src.IndexOf('<') >= 0)
+            {
+                string bare = Translations.TagRx.Replace(src, "").Trim();
+                if (bare.Length == 0 || NoiseRx.IsMatch(bare)) return null;
+            }
 
             HookWork++;
             string cached;
@@ -246,7 +252,7 @@ namespace KoreanTextFixer
 
         // "162ft", "1x", "8h", "$2.1K", "5G" 처럼 값만 들어 있는 표시
         private static readonly Regex NoiseRx = new Regex(
-            "^[$₩€]?[0-9.,:]+ ?(ft|m|km|h|hr|min|s|x|K|M|G|L|kg|lb|%)?$", RegexOptions.Compiled);
+            "^[$₩€]?[0-9.,:]+ ?(ft|m|km|h|hr|min|s|x|K|M|G|L|kg|lb|mph|XP|xp|%)?$", RegexOptions.Compiled);
         // "v0.4.6f13"
         private static readonly Regex VersionRx = new Regex("^v[0-9][A-Za-z0-9.]*$", RegexOptions.Compiled);
 
