@@ -3359,3 +3359,15 @@ storage unit=보관 창고
 Equipment=장비
 Golden M1911=골든 M1911
 1 of 1=1 / 1
+
+// --- 파일 전수조사로 확인된 미번역 (아이템 설명·UI) ---
+A ceramic toilet for disposing of waste matter.	=폐기물을 처리하는 도자기 변기.
+A ceramic toilet for disposing of waste matter.=폐기물을 처리하는 도자기 변기.
+Skateboard with big ass wheels for off-road travel. Does not slow down when rolling over terrain.	=험지 주행용 큼직한 바퀴가 달린 스케이트보드. 거친 지형에서도 속도가 줄지 않는다.
+Skateboard with big ass wheels for off-road travel. Does not slow down when rolling over terrain.=험지 주행용 큼직한 바퀴가 달린 스케이트보드. 거친 지형에서도 속도가 줄지 않는다.
+Some kind words from the Benzies family.=벤지스 패밀리가 전하는 따뜻한 한마디.
+[Hand over RDX]=[RDX 건네주기]
+Evenin', how'd you get on in town?=안녕, 시내에서는 어땠어?
+Click and hold an option to cast your vote=투표하려면 항목을 길게 누르세요
+Required file 'Game.json' is missing. Save file cannot be loaded.=필수 파일 'Game.json'이 없습니다. 세이브를 불러올 수 없습니다.
+Total:=합계:
