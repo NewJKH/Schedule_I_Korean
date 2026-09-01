@@ -61,17 +61,24 @@ namespace KoreanTextFixer
         // 30초마다 화면이 튀었다. 텍스트가 켜지는 순간을 잡으면 폴링이 필요 없다.
         private static void InstallOnEnable(HarmonyLib.Harmony harmony)
         {
-            var m = AccessTools.Method(typeof(TMP_Text), "OnEnable");
-            if (m == null) { KLog.Warn("TMP_Text.OnEnable 을 찾지 못했습니다"); return; }
-            try
+            // OnEnable은 가상 메서드라 파생 클래스(TextMeshProUGUI 등)가 오버라이드하면
+            // 기반 클래스 패치로는 잡히지 않는다. 선언된 타입마다 각각 건다.
+            var post = new HarmonyMethod(typeof(TmpHook).GetMethod(
+                nameof(OnEnablePostfix), BindingFlags.NonPublic | BindingFlags.Static));
+            foreach (var t in new[] { typeof(TMP_Text), typeof(TextMeshProUGUI), typeof(TextMeshPro) })
             {
-                harmony.Patch(m, null, new HarmonyMethod(typeof(TmpHook).GetMethod(
-                    nameof(OnEnablePostfix), BindingFlags.NonPublic | BindingFlags.Static)));
-                KLog.Info("hooked TMP_Text.OnEnable");
-            }
-            catch (Exception e)
-            {
-                KLog.Warn("OnEnable 후킹 실패: " + e.Message);
+                var m = t.GetMethod("OnEnable",
+                    BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+                if (m == null) continue;
+                try
+                {
+                    harmony.Patch(m, null, post);
+                    KLog.Info("hooked " + t.Name + ".OnEnable");
+                }
+                catch (Exception e)
+                {
+                    KLog.Warn(t.Name + ".OnEnable 후킹 실패: " + e.Message);
+                }
             }
         }
 
