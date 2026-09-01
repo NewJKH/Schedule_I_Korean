@@ -4,7 +4,7 @@ using System.IO;
 using MelonLoader;
 using MelonLoader.Utils;
 
-[assembly: MelonInfo(typeof(KoreanTextFixer.MelonPlugin), "Korean Text Fixer", "1.13.1", "Schedule I 한글패치")]
+[assembly: MelonInfo(typeof(KoreanTextFixer.MelonPlugin), "Korean Text Fixer", "1.13.2", "Schedule I 한글패치")]
 [assembly: MelonGame("TVGS", "Schedule I")]
 
 namespace KoreanTextFixer
@@ -43,7 +43,7 @@ namespace KoreanTextFixer
 
                 Diagnostics.Init(Path.Combine(MelonEnvironment.UserDataDirectory, "KoreanTextFixer_screen.txt"));
                 _fixer = new Fixer(usePolling.Value);
-                KLog.Info("KoreanTextFixer 1.13.1 (MelonLoader) loaded. entries=" + Translations.Dict.Count + " rules=" + Rules.Count);
+                KLog.Info("KoreanTextFixer 1.13.2 (MelonLoader) loaded. entries=" + Translations.Dict.Count + " rules=" + Rules.Count);
             }
             catch (Exception e)
             {
@@ -54,6 +54,18 @@ namespace KoreanTextFixer
         public override void OnUpdate()
         {
             if (_fixer != null) _fixer.Tick();
+        }
+
+        public override void OnSceneWasUnloaded(int buildIndex, string sceneName)
+        {
+            // 파괴 중인 오브젝트를 건드리지 않도록 폴링 목록을 버린다
+            if (_fixer != null) _fixer.OnSceneChange();
+        }
+
+        public override void OnApplicationQuit()
+        {
+            if (_fixer != null) _fixer.OnSceneChange();
+            MissingLog.Flush();
         }
     }
 }
