@@ -270,3 +270,11 @@ r:"^Waking up at (.+)$"=$1에 기상
 sr:"^([A-Za-z]+), Day (\d+)$"=$1, $2일차
 r:"^Unlocks at (.+)$"=$1 달성 시 해금
 r:"^When holding an item, press (.+?) or (.+?) to rotate it\.$"=아이템을 든 상태에서 $1 또는 $2 를 누르면 회전합니다.
+
+// --- 자동 탐지 (4차) ---
+r:"^Wait (\d+)s$"=$1초 대기
+r:"^Reach the rank of (.+) to access this area\.$"=이 지역에 들어가려면 $1 등급에 도달해야 합니다.
+r:"^Reach the rank of (.+) to unlock this area\.$"=이 지역을 열려면 $1 등급에 도달해야 합니다.
+r:"^(.+?) is paying (.+?) for:$"=$1 지불액 $2:
+r:"^Earn (.+?) \((.+?) / (.+?)\)$"=$1 벌기 ($2 / $3)
+r:"^UNLOCK ONE OF (.+)\x27S CONNECTIONS FIRST$"=먼저 $1의 인맥 중 하나를 뚫으세요
