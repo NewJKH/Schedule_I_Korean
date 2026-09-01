@@ -38,7 +38,7 @@ A bar of solid gold. Extremely heavy and valuable.=순금 막대입니다. 몹�
 A big jug of ethically sourced horse semen.=윤리적으로 채취한 말 정액이 가득 든 큰 통입니다.
 A button-up shirt featuring permanently rolled sleeves.=소매가 영구적으로 걷어 올려진 버튼업 셔츠입니다.
 A cap that somebody drove over.\t=누가 차로 밟고 지나간 모자입니다.\t
-A clear glass jar to keep various substances in. Holds 5x units of any product.=각종 물질을 보관할 수 있는 투명 유리병입니다. 아무 제품이나 5개 단위까지 담을 수 있습니다.
+A clear glass jar to keep various substances in. Holds 5x units of any product.=각종 물질을 보관할 수 있는 투명 유리병입니다.\n아무 제품이나 5개 단위까지 담을 수 있습니다.
 A common ingredient used in a chemistry station.=화학 작업대에서 사용되는 흔한 재료입니다.
 A cozy single bed to slumber in.=포근하게 잠들 수 있는 1인용 침대입니다.
 A jerry can full of gasoline.=휘발유가 가득 든 기름통입니다.
@@ -50,15 +50,15 @@ A pair of plant trimmers. Necessity for harvesting plants.=식물 가위입니�
 A potent classic with intense sedating and euphoric effects.=강한 진정 효과와 도취감을 주는 강력한 클래식 품종입니다.
 A potent, highly energizing strain that leaves you with a focussed buzz.=집중력 있는 취기를 남기는 강력하고 활력 넘치는 품종입니다.
 A refreshing can of Cuke that leaves you feeling energized. It's heaven in a can.=마시면 활력이 샘솟는 상쾌한 쿠크 캔입니다. 캔에 담긴 천국이죠.
-A simple LED grow light. Emits a purple light that stimulates plant growth 15% faster than halogen. Must be placed on a suspension rack.=간단한 LED 재배 조명입니다. 할로겐보다 식물 성장을 15% 더 빠르게 촉진하는 보라색 빛을 냅니다. 서스펜션 랙에 설치해야 합니다.
-A single coca seed. Grows into a coca plant, which provides coca leaves, which can be turned into something else starting with coca.=코카 씨앗 하나입니다. 코카 잎을 제공하는 코카 나무로 자라며, 그 잎은 코카로 시작하는 다른 무언가로 만들 수 있습니다.
+A simple LED grow light. Emits a purple light that stimulates plant growth 15% faster than halogen. Must be placed on a suspension rack.=간단한 LED 재배 조명입니다.\n할로겐보다 식물 성장을 15% 더 빠르게 촉진하는 보라색 빛을 냅니다.\n서스펜션 랙에 설치해야 합니다.
+A single coca seed. Grows into a coca plant, which provides coca leaves, which can be turned into something else starting with coca.=코카 씨앗 하나입니다.\n코카 잎을 제공하는 코카 나무로 자라며, 그 잎은 코카로 시작하는 다른 무언가로 만들 수 있습니다.
 A single leaf from a coca plant. The main ingredient in cocaine.=코카 나무의 잎 한 장입니다. 코카인의 주재료입니다.
-A small grow tent with built-in lighting and pot. Plants will grow faster but smaller.=조명과 화분이 내장된 소형 재배 텐트입니다. 식물이 더 빨리 자라지만 크기는 작아집니다.
+A small grow tent with built-in lighting and pot. Plants will grow faster but smaller.=조명과 화분이 내장된 소형 재배 텐트입니다.\n식물이 더 빨리 자라지만 크기는 작아집니다.
 A small handheld flashlight used for illuminating stuff.=주변을 밝히는 데 쓰는 소형 손전등입니다.
 A small plastic baggie.  Holds 1x unit of any product.=작은 비닐 가방입니다.  아무 제품이나 1개 단위를 담을 수 있습니다.
 A small sized, 4-tier storage rack.=소형 4단 저장 랙입니다.
 A small-time drug dealer from the east, fleeing an unpaid debt to the wrong people.=동부에서 온 좀도둑급 마약 딜러로, 건드리면 안 될 사람들에게 진 빚을 피해 도망치는 중입니다.
-A special metal pot with moisture-preserving functionality. Soil will lose moisture 40% slower.=수분 보존 기능이 있는 특수 금속 화분입니다. 흙(토양)의 수분이 40% 더 천천히 마릅니다.
+A special metal pot with moisture-preserving functionality. Soil will lose moisture 40% slower.=수분 보존 기능이 있는 특수 금속 화분입니다.\n흙(토양)의 수분이 40% 더 천천히 마릅니다.
 A standing floor lamp. Can be switched on and off.\t\t=스탠드형 바닥 조명입니다. 켜고 끌 수 있습니다.\t\t
 Abhorrent abomination.=혐오스러운 괴물 같으니.
 About time...=이제야 오는군...
@@ -107,7 +107,7 @@ Alright then, fuck off.=그래 알았으니까, 꺼져.
 Alright then, I've moved it just outside. Try not to do that again...=알겠습니다. 바로 밖으로 옮겨 놨습니다. 다시는 그러지 마세요...
 Alright then. What time?=좋아 그럼. 몇 시에?
 Alright then. You know where to find me if you change your mind.=알았어. 마음 바뀌면 어디로 오면 되는지 알지?
-Alright, I'll be a dealer for you but there is a <SIGNING_FEE> signing fee, and I'll take a <CUT> cut of each sale. We got a deal?=좋아, 네 밑에서 딜러 해 줄게. 대신 계약금 <SIGNING_FEE>에, 판매할 때마다 <CUT>씩 수수료를 뗄 거야. 거래 성립이지?
+Alright, I'll be a dealer for you but there is a <SIGNING_FEE> signing fee, and I'll take a <CUT> cut of each sale. We got a deal?=좋아, 네 밑에서 딜러 해 줄게.\n대신 계약금 <SIGNING_FEE>에, 판매할 때마다 <CUT>씩 수수료를 뗄 거야.\n거래 성립이지?
 Alright, I'll make you an offer.=좋아, 내가 제안 하나 하지.
 Alright, your vehicle has been moved to the nearest road.=알겠습니다. 차량을 가장 가까운 도로로 옮겼습니다.
 Alright... I'll be here if you change your mind.=알았어... 마음 바뀌면 난 여기 있을게.
@@ -116,7 +116,7 @@ Ammo=탄약
 Amount=수량
 An unusually large bean of mysterious origin.=출처를 알 수 없는 유난히 큰 콩입니다.
 An upgraded model of the mixing station with automatic ingredient insertion, and faster mix times.=재료 자동 투입 기능과 더 빠른 혼합 속도를 갖춘 혼합 스테이션의 상위 모델입니다.
-An upgraded version of the packaging station with a rotary packing tool. Allows for much faster packing of products.=회전식 포장 도구가 달린 포장 스테이션의 상위 버전입니다. 제품을 훨씬 빠르게 포장할 수 있습니다.
+An upgraded version of the packaging station with a rotary packing tool. Allows for much faster packing of products.=회전식 포장 도구가 달린 포장 스테이션의 상위 버전입니다.\n제품을 훨씬 빠르게 포장할 수 있습니다.
 An uplifting yet easy-going strain with mild cerebral effects.=가벼운 정신적 효과가 있는, 기분을 띄우면서도 부담 없는 품종입니다.
 Andy Combined=앤디 통합
 Angry=화남
@@ -189,9 +189,9 @@ BET MULTIPLIER=베팅 배율
 BETA=베타
 Beth Combined=베스 통합
 BETTER LUCK NEXT TIME...=다음엔 행운이 있기를...
-Big metal dumpster you can place items in. Automatically empties whenever you sleep.=안에 아이템을 넣을 수 있는 커다란 금속 쓰레기통입니다. 잠을 잘 때마다 자동으로 비워집니다.
+Big metal dumpster you can place items in. Automatically empties whenever you sleep.=안에 아이템을 넣을 수 있는 커다란 금속 쓰레기통입니다.\n잠을 잘 때마다 자동으로 비워집니다.
 Big ol heavy duty stompers.=크고 튼튼한 강력 부츠입니다.
-Big ol' cast iron skillet. Great for cooking and beating the shit out of people (but not at the same time).=커다란 주철 스킬렛. 요리하기에도, 사람을 두들겨 패기에도 좋습니다 (동시에 하지는 마세요).
+Big ol' cast iron skillet. Great for cooking and beating the shit out of people (but not at the same time).=커다란 주철 스킬렛.\n요리하기에도, 사람을 두들겨 패기에도 좋습니다 (동시에 하지는 마세요).
 Big sharp machete.\t\t=크고 날카로운 마체테.\t\t
 Big Sprinkler=대형 스프링클러
 BIG WIN!=대박 승리!
@@ -294,14 +294,14 @@ Charles Combined=찰스 통합
 Cheap and simple halogen grow light. Must be placed on a suspension rack.=저렴하고 단순한 할로겐 재배 조명입니다. 서스펜션 랙에 설치해야 합니다.
 Cheap Skateboard=싸구려 스케이트보드
 Cheap Skateboard\n$75=싸구려 스케이트보드\n$75
-Cheapass 6-shot revolver probably made by communists in the 70s. Needs to be manually cocked before each shot.=70년대에 공산주의자들이 만들었을 법한 싸구려 6연발 리볼버입니다. 매 발사 전에 수동으로 공이치기를 당겨야 합니다.
+Cheapass 6-shot revolver probably made by communists in the 70s. Needs to be manually cocked before each shot.=70년대에 공산주의자들이 만들었을 법한 싸구려 6연발 리볼버입니다.\n매 발사 전에 수동으로 공이치기를 당겨야 합니다.
 Cheers=고마워
 Cheers buddy. Feel free to take my truck.=고맙다 친구. 내 트럭 편하게 써.
 Cheers dog=고맙다 형씨
 Cheers homedog, here's your board.=고맙다 형씨, 여기 보드.
 Cheers, good doing business with you.=고마워, 좋은 거래였어.
 Cheers. I'll send your new employee over to your property now.=고마워. 새 직원을 지금 네 부지로 보낼게.
-Cheers. I'll send your new employee over to your property now. I'm also giving you a clipboard, which you can use to manage your employees and equipment.=고마워. 새 직원을 지금 네 부동산으로 보낼게. 직원과 장비를 관리할 수 있는 클립보드도 하나 줄게.
+Cheers. I'll send your new employee over to your property now. I'm also giving you a clipboard, which you can use to manage your employees and equipment.=고마워.\n새 직원을 지금 네 부동산으로 보낼게.\n직원과 장비를 관리할 수 있는 클립보드도 하나 줄게.
 Cheery=명랑함
 Cheetah=치타
 Cheetos=치토스
@@ -323,13 +323,13 @@ Choose who to summon=소환할 대상 선택
 Chris Combined=크리스 통합
 Château La Peepee=샤토 라 피피
 Classic and timeless cap.=클래식하고 유행을 타지 않는 모자입니다.
-Classic double-kick popsicle skateboard. Use it to get around faster than on-foot.=클래식 더블킥 팝시클 스케이트보드입니다. 걷는 것보다 빠르게 이동할 수 있습니다.
+Classic double-kick popsicle skateboard. Use it to get around faster than on-foot.=클래식 더블킥 팝시클 스케이트보드입니다.\n걷는 것보다 빠르게 이동할 수 있습니다.
 Classic methamphetamine. A powerful stimulant with intense physical and mentral addictiveness.=클래식 메스암페타민입니다. 강력한 신체적·정신적 중독성을 지닌 각성제입니다.
 Cleaner=청소부
 Cleaner (picking up trash, emptying trash cans)=청소부 (쓰레기 줍기, 쓰레기통 비우기)
 Cleaner Combined=청소부 통합
 Clear=지우기
-Click a product to list/unlist it. Customers will only buy listed products.=제품을 클릭하여 판매 목록에 등록하거나 해제하세요. 고객은 등록된 제품만 구매합니다.
+Click a product to list/unlist it. Customers will only buy listed products.=제품을 클릭하여 판매 목록에 등록하거나 해제하세요.\n고객은 등록된 제품만 구매합니다.
 Click and hold items to conceal=아이템을 클릭한 채 유지하여 숨기기
 Clicked=클릭됨
 Clipboard used to manage equipment and employees.=장비와 직원을 관리하는 데 사용하는 클립보드입니다.
@@ -415,7 +415,7 @@ Credits=크레딧
 Crosby=크로스비
 Crouch=앉기
 Cruiser=크루저
-Cruiser skateboard designed for high-speed, straight line motion. Not particularly agile.=고속 직선 주행에 맞게 설계된 크루저 스케이트보드입니다. 기동성은 그리 좋지 않습니다.
+Cruiser skateboard designed for high-speed, straight line motion. Not particularly agile.=고속 직선 주행에 맞게 설계된 크루저 스케이트보드입니다.\n기동성은 그리 좋지 않습니다.
 Cruiser\n$500=크루저\n$500
 Cuffing...=수갑 채우는 중...
 Cuke=큐크
@@ -475,7 +475,7 @@ Deliveries=배달
 Delivery Bay=배달 구역
 Delivery Fee=배달 수수료
 Dennis Combined=데니스 컴바인드
-Depends on what sort of talent you need. Cleaners and Packagers are pretty cheap, Botanists a bit more, and Chemists are the most expensive.=어떤 인재가 필요하냐에 따라 다르지. 청소부랑 포장자는 꽤 싸고, 식물학자는 좀 더 비싸고, 화학자가 제일 비싸.
+Depends on what sort of talent you need. Cleaners and Packagers are pretty cheap, Botanists a bit more, and Chemists are the most expensive.=어떤 인재가 필요하냐에 따라 다르지.\n청소부랑 포장자는 꽤 싸고, 식물학자는 좀 더 비싸고, 화학자가 제일 비싸.
 DEPOSIT=입금
 Description=설명
 Deselect All=전체 선택 해제
@@ -574,7 +574,7 @@ Evenin', you'd you get on in town?=좋은 저녁, 시내에선 잘 지냈어?
 Evening=저녁
 Ew, no.=웩, 싫어.
 Ew. Get out of here!=웩. 꺼져!
-Excellent, you can make your deliveries here at the end of every week. You'd be wise to uphold this agreement - it would be a shame to have to resort to violence.=좋아, 매주 말에 여기로 배달하면 돼. 이 약속은 지키는 게 좋을 거야 - 폭력에 의지해야 한다면 유감스러운 일이 될 테니까.
+Excellent, you can make your deliveries here at the end of every week. You'd be wise to uphold this agreement - it would be a shame to have to resort to violence.=좋아, 매주 말에 여기로 배달하면 돼.\n이 약속은 지키는 게 좋을 거야 - 폭력에 의지해야 한다면 유감스러운 일이 될 테니까.
 Execute=실행
 Exit=나가기
 Exit Vehicle=차량에서 내리기
@@ -601,8 +601,8 @@ Facial Hair=수염
 Failed=실패
 Fair Price:=적정 가격:
 Fair price: $100=적정 가격: $100
-Fancy hand woven fabric pot that keeps roots ventilated. Boosts plant growth speed by 15%, but also increases moisture drain by 30%=뿌리에 통풍이 잘되도록 손으로 짠 고급 패브릭 화분입니다. 식물 성장 속도를 15% 높이지만, 수분 소모도 30% 증가합니다
-Fancy hand woven fabric pot that keeps roots ventilated. Boosts plant growth speed by 15%, but also increases moisture drain by 30%.=뿌리에 통풍이 잘되도록 손으로 짠 고급 패브릭 화분입니다. 식물 성장 속도를 15% 높이지만, 수분 소모도 30% 증가합니다.
+Fancy hand woven fabric pot that keeps roots ventilated. Boosts plant growth speed by 15%, but also increases moisture drain by 30%=뿌리에 통풍이 잘되도록 손으로 짠 고급 패브릭 화분입니다.\n식물 성장 속도를 15% 높이지만, 수분 소모도 30% 증가합니다
+Fancy hand woven fabric pot that keeps roots ventilated. Boosts plant growth speed by 15%, but also increases moisture drain by 30%.=뿌리에 통풍이 잘되도록 손으로 짠 고급 패브릭 화분입니다.\n식물 성장 속도를 15% 높이지만, 수분 소모도 30% 증가합니다.
 Fancy shiny dress shoes.=반짝반짝 광이 나는 고급 구두입니다.
 Fantastic! Which model are you interested in?=좋습니다! 어떤 모델에 관심 있으신가요?
 Favourite Effects=즐겨찾는 효과
@@ -625,7 +625,7 @@ FillInteracted=FillInteracted
 Filter=필터
 Finally=드디어
 Finally...=드디어...
-Fine, you're clean. Lucky this time, I guess. But I know you and your Uncle are up to something on that ranch.=좋아, 깨끗하군. 이번엔 운이 좋았나 보지. 하지만 너랑 네 삼촌이 그 목장에서 뭔가 꾸미고 있다는 건 다 알고 있어.
+Fine, you're clean. Lucky this time, I guess. But I know you and your Uncle are up to something on that ranch.=좋아, 깨끗하군.\n이번엔 운이 좋았나 보지.\n하지만 너랑 네 삼촌이 그 목장에서 뭔가 꾸미고 있다는 건 다 알고 있어.
 Fingerless Gloves=손가락 없는 장갑
 Fingerless gloves.=손가락 없는 장갑입니다.
 Finish lab oven=실험실 오븐 작업 마치기
@@ -761,15 +761,15 @@ Green Crack=그린 크랙
 Green Crack Seed=그린 크랙 씨앗
 GreenCrackSeed=GreenCrackSeed
 Greene=그린
-Greetings mate, welcome to Hyland Auto. Come talk to me if you're interested in acquiring one of my fine automobiles.=어서 오게 친구, 하이랜드 오토에 온 걸 환영하네. 내 멋진 자동차를 하나 들이고 싶다면 나한테 말을 걸게나.
+Greetings mate, welcome to Hyland Auto. Come talk to me if you're interested in acquiring one of my fine automobiles.=어서 오게 친구, 하이랜드 오토에 온 걸 환영하네.\n내 멋진 자동차를 하나 들이고 싶다면 나한테 말을 걸게나.
 Greg Combined=그레그 통합
 Grey=회색
 Gross!=웩, 더러워!
 Ground material=분쇄된 재료
 Grow Tent=재배 텐트
 Growing=재배 중
-Haha good one partner. Tell you what, take some SpeedGrow on the house - them 'Marijuana' plants will love it.=하하 재밌군 친구. 이렇게 하지, 스피드그로 하나는 서비스로 가져가게 - 그 '마리화나' 화초들이 아주 좋아할 거야.
-Haha very cute. I’m Manny. I’m the local fixer. You looking to hire workers, you talk to me.=하하 귀엽구먼. 난 매니야. 이 동네 해결사지. 일꾼을 고용하고 싶으면 나한테 말해.
+Haha good one partner. Tell you what, take some SpeedGrow on the house - them 'Marijuana' plants will love it.=하하 재밌군 친구.\n이렇게 하지, 스피드그로 하나는 서비스로 가져가게 - 그 '마리화나' 화초들이 아주 좋아할 거야.
+Haha very cute. I’m Manny. I’m the local fixer. You looking to hire workers, you talk to me.=하하 귀엽구먼.\n난 매니야.\n이 동네 해결사지.\n일꾼을 고용하고 싶으면 나한테 말해.
 Hair=머리카락
 Hair Color=머리 색
 Hallucinogenic=환각성
@@ -794,11 +794,11 @@ Headwear=모자류
 Heard=허드
 Heart=심장
 Heavy flinch=강한 움찔거림
-Hehe nothing... just Oscar being friendly. If you need special equipment or supplies, Oscar has what you need.=헤헤 아무것도 아니야... 그냥 오스카가 친근하게 군 것뿐이지. 특수 장비나 물자가 필요하면, 오스카한테 다 있어.
-Hehe Oscar was just joking. If you need special equipment or supplies, Oscar has what you need.=헤헤 오스카는 그냥 농담한 거야. 특수 장비나 물자가 필요하면, 오스카한테 다 있어.
+Hehe nothing... just Oscar being friendly. If you need special equipment or supplies, Oscar has what you need.=헤헤 아무것도 아니야... 그냥 오스카가 친근하게 군 것뿐이지.\n특수 장비나 물자가 필요하면, 오스카한테 다 있어.
+Hehe Oscar was just joking. If you need special equipment or supplies, Oscar has what you need.=헤헤 오스카는 그냥 농담한 거야.\n특수 장비나 물자가 필요하면, 오스카한테 다 있어.
 Hell yeah brotha=좋았어 형씨
 Hello=안녕
-Hello there, my name is Thomas Benzies. I was the one who helped you out with your little ...predicament... earlier.=안녕하시오, 내 이름은 토머스 벤지스요. 아까 당신의 그... 곤란한 상황을... 도와준 사람이 바로 나요.
+Hello there, my name is Thomas Benzies. I was the one who helped you out with your little ...predicament... earlier.=안녕하시오, 내 이름은 토머스 벤지스요.\n아까 당신의 그... 곤란한 상황을... 도와준 사람이 바로 나요.
 Hello there, you smell nice...=안녕, 좋은 냄새가 나네...
 Hello, my name is Jimmy Boogsdale, would you like to sell me some drugs?=안녕, 난 지미 북스데일이라고 해. 나한테 마약 좀 팔지 않을래?
 Hello, Player=안녕, 플레이어
@@ -815,7 +815,7 @@ Hey friend, you're new, right? Nice to see a fresh face in town.=이봐 친구, 
 Hey man! I'm really in need right now. Please tell me you've got something I can buy..?=이봐! 지금 진짜 급하다고. 제발 살 수 있는 거 뭐라도 있다고 말해줘..?
 Hey there=안녕
 Hey there buddy, what can I do for you?=어이 친구, 뭘 도와줄까?
-Hey there, I'm Ray - Hyland Point's best real estate agent. Come talk to me if you're looking to purchase something.=안녕하쇼, 난 레이요 - 하이랜드 포인트 최고의 부동산 중개인이지. 뭔가 구매하고 싶으면 나한테 말을 거시오.
+Hey there, I'm Ray - Hyland Point's best real estate agent. Come talk to me if you're looking to purchase something.=안녕하쇼, 난 레이요 - 하이랜드 포인트 최고의 부동산 중개인이지.\n뭔가 구매하고 싶으면 나한테 말을 거시오.
 Hey there, what can I do for you?=안녕하세요, 뭘 도와드릴까요?
 Hey WHAT?=야 뭐라고?
 Hey!=야!
@@ -868,7 +868,7 @@ How do I select a seed for each pot?=각 화분에 심을 씨앗은 어떻게 �
 How do I specify the destination for each pot?=각 화분의 목적지는 어떻게 지정하나요?
 How much does it cost to hire someone?=고용하는 데 비용이 얼마나 드나요?
 Howdy buddy. If you’re looking for protection, you’ve come to the right place.=어서 오게 친구. 보호 장비를 찾고 있다면 제대로 찾아왔네.
-Howdy, I'm Marco. If you're looking for a fresh paint job, or need your car towed, I'm the fella for the job.=안녕하쇼, 난 마르코요. 새로 도색을 하고 싶거나 차를 견인해야 한다면, 내가 적임자지.
+Howdy, I'm Marco. If you're looking for a fresh paint job, or need your car towed, I'm the fella for the job.=안녕하쇼, 난 마르코요.\n새로 도색을 하고 싶거나 차를 견인해야 한다면, 내가 적임자지.
 HSV=HSV
 Huh?=응?
 Huh?!=뭐?!
@@ -885,14 +885,14 @@ I don't think so...=아닌 것 같은데...
 I guess so=뭐 그런 것 같아
 I guess that's fine bro. When?=뭐 괜찮은 것 같네 형씨. 언제?
 I guess that's fine. When?=뭐 괜찮은 것 같네. 언제?
-I haven't had my fix in too long, I really need something right now bro. You got anything I can buy??=약 못 한 지 너무 오래됐어, 지금 당장 뭔가 필요하다고 형씨. 살 수 있는 거 뭐 있어??
-I haven't had my fix in too long, I really need something right now. You got anything I can buy??=약 못 한 지 너무 오래됐어, 지금 당장 뭔가 필요하다고. 살 수 있는 거 뭐 있어??
+I haven't had my fix in too long, I really need something right now bro. You got anything I can buy??=약 못 한 지 너무 오래됐어, 지금 당장 뭔가 필요하다고 형씨.\n살 수 있는 거 뭐 있어??
+I haven't had my fix in too long, I really need something right now. You got anything I can buy??=약 못 한 지 너무 오래됐어, 지금 당장 뭔가 필요하다고.\n살 수 있는 거 뭐 있어??
 I need to manage your deals=네 거래를 관리해야겠어
 I need to manage your schedule=네 일정을 관리해야겠어
 I need to trade some items with you=너와 아이템을 좀 교환해야겠어
 I want to hire an employee=직원을 고용하고 싶어
 I work in agriculture=난 농업에 종사해
-I''m sorry. I may not have made myself clear... we WILL collect our payment, one way or another. =미안하오. 내 말이 명확하지 않았나 본데... 우리는 어떻게든 반드시 대금을 회수할 것이오.
+I''m sorry. I may not have made myself clear... we WILL collect our payment, one way or another. =미안하오.\n내 말이 명확하지 않았나 본데... 우리는 어떻게든 반드시 대금을 회수할 것이오.
 I'd like to collect your earnings ({{A}})=네 수익을 수금하고 싶어 ({{A}})
 I'd like to purchase a business=사업체를 구매하고 싶어요
 I'd like to purchase a property=부동산을 구매하고 싶어요
@@ -909,9 +909,9 @@ I'm good thanks=난 됐어, 고마워
 I'm good thanks man=난 됐어, 고맙다 친구
 I'm here for Nelson's package=넬슨 물건 때문에 왔어
 I'm looking for some weaponry.=무기 좀 찾고 있는데.
-I'm still currently waiting on a payment of <DEBT>. Please deposit it into my stash box when you've got a chance.=아직 <DEBT> 입금을 기다리는 중이야. 시간 될 때 내 은닉처 상자에 넣어줘.
+I'm still currently waiting on a payment of <DEBT>. Please deposit it into my stash box when you've got a chance.=아직 <DEBT> 입금을 기다리는 중이야.\n시간 될 때 내 은닉처 상자에 넣어줘.
 I'm Stuck=끼었어요
-I've got some business with some fellas staying down at the motel, tell them you're here for Nelson's package. No need to pay for anything.=모텔에 묵고 있는 놈들이랑 거래가 좀 있어. 넬슨 물건 때문에 왔다고 말해. 돈은 낼 필요 없어.
+I've got some business with some fellas staying down at the motel, tell them you're here for Nelson's package. No need to pay for anything.=모텔에 묵고 있는 놈들이랑 거래가 좀 있어.\n넬슨 물건 때문에 왔다고 말해.\n돈은 낼 필요 없어.
 Idk bruh=몰라 임마
 If you want to drive through here, I'll need to search your vehicle.=여기로 지나가시려면 차량을 검문해야 합니다.
 If you're heading in to town for some deals, would you mind grabbing something for me?=거래하러 시내 나가는 김에, 나 대신 뭐 좀 챙겨다 줄래?
@@ -1006,7 +1006,7 @@ Journal=일지
 Joyce Combined=조이스 통합
 Judging from the people that were after you, it would seem that we share a similar line of work.=자넬 쫓던 사람들을 보아하니, 우리 둘이 비슷한 업계에 몸담고 있는 모양이군.
 Jump=점프
-Just reminding you that you owe me <DEBT>. Please deposit the amount into my stash box when you're ready.=나한테 <DEBT> 빚진 거 그냥 상기시켜 주는 거야. 준비되면 그 금액을 내 은닉처 상자에 넣어줘.
+Just reminding you that you owe me <DEBT>. Please deposit the amount into my stash box when you're ready.=나한테 <DEBT> 빚진 거 그냥 상기시켜 주는 거야.\n준비되면 그 금액을 내 은닉처 상자에 넣어줘.
 K=ㅇㅋ
 KAESUL=KAESUL
 Karen Combined=캐런 통합
@@ -1063,7 +1063,7 @@ Lighting=조명
 Lights=전등
 Lightweight Board\n$500=경량 보드\n$500
 Lightweight Skateboard=경량 스케이트보드
-Like meth except legal. Used to stimulate cognition.=합법이라는 점만 빼면 메스암페타민과 비슷합니다. 인지 능력을 자극하는 데 사용됩니다.
+Like meth except legal. Used to stimulate cognition.=합법이라는 점만 빼면 메스암페타민과 비슷합니다.\n인지 능력을 자극하는 데 사용됩니다.
 Lily Combined=Lily Combined
 Liquid Volume Depth PrePass=Liquid Volume Depth PrePass
 Liquor \nStore=주류 \n판매점
@@ -1092,7 +1092,7 @@ Low-weight plastic skateboard with increased jump height.=점프 높이가 증�
 Lower Eyelid Resting Position=아래 눈꺼풀 기본 위치
 Lubbin=러빈
 Lucero=루세로
-Lucky for you, he's been good on his word so far. But you let him know he better close that tab real soon...=다행히 지금까진 그놈이 약속은 잘 지켰어. 그래도 외상값 빨리 갚는 게 좋을 거라고 전해 둬...
+Lucky for you, he's been good on his word so far. But you let him know he better close that tab real soon...=다행히 지금까진 그놈이 약속은 잘 지켰어.\n그래도 외상값 빨리 갚는 게 좋을 거라고 전해 둬...
 Lucy Combined=Lucy Combined
 Ludwig Combined=Ludwig Combined
 M1911=M1911
@@ -1128,7 +1128,7 @@ Mega Beans=메가 빈즈
 Mega Gas=메가 가스
 MegaBean=메가빈
 Melee=근접
-Melee weapons - blunt and sharp, and of course, firearms. Ammo too. I get more stuff in stock every now and then.=근접 무기 - 둔기랑 날붙이, 그리고 당연히 총기도 있지. 탄약도 있고. 가끔씩 새 물건도 들여와.
+Melee weapons - blunt and sharp, and of course, firearms. Ammo too. I get more stuff in stock every now and then.=근접 무기 - 둔기랑 날붙이, 그리고 당연히 총기도 있지.\n탄약도 있고.\n가끔씩 새 물건도 들여와.
 Melissa Combined=Melissa Combined
 Menu Profile=메뉴 프로필
 Menu Volume Profile=메뉴 볼륨 프로필
@@ -1304,7 +1304,7 @@ OfficerSanchez Combined=산체스 경관 통합
 OG Kush=OG 쿠시
 OG Kush Seed=OG 쿠시 씨앗
 Oh aight...=아 그래...
-Oh ain't that nice, I always fancied a bit of gardening myself. Here's some SpeedGrow on the house. Welcome to Hyland Point.=어 그거 좋네, 나도 늘 정원 가꾸기를 해보고 싶었거든. 여기 스피드그로 하나 서비스야. 하이랜드 포인트에 온 걸 환영해.
+Oh ain't that nice, I always fancied a bit of gardening myself. Here's some SpeedGrow on the house. Welcome to Hyland Point.=어 그거 좋네, 나도 늘 정원 가꾸기를 해보고 싶었거든.\n여기 스피드그로 하나 서비스야.\n하이랜드 포인트에 온 걸 환영해.
 Oh alright=아 알았어
 Oh crap!=아 젠장!
 Oh damn, I need me more of that. I'll text you=오 젠장, 그거 더 필요해. 문자할게
@@ -1313,7 +1313,7 @@ Oh hell yeah=오 좋았어
 Oh no!=오 안 돼!
 Oh ok=아 그래
 Oh okay, I'll be here if you change your mind.=아, 알겠습니다. 마음 바뀌시면 여기 있을게요.
-Oh okay... I'll finish my current task and leave after that. Are you sure you want me to stop working for you?=아 알겠어요... 지금 하던 일만 마치고 떠날게요. 정말 제가 일을 그만두길 원하세요?
+Oh okay... I'll finish my current task and leave after that. Are you sure you want me to stop working for you?=아 알겠어요... 지금 하던 일만 마치고 떠날게요.\n정말 제가 일을 그만두길 원하세요?
 Oh shit that's good stuff homie, I'll text you=오 이거 물건 좋은데 친구, 문자할게
 Oh shit!=오 씨발!
 Oh sorry partner, didn't mean to pry. I'll let you be on your way...=아 미안하네 친구, 캐물으려던 건 아니었어. 갈 길 가시게...
@@ -1322,7 +1322,7 @@ Oh very nice! You'll be hearing from me=오 아주 좋은데! 연락할게
 Oh yeah, boss man told me about you. Come in.=아 그래, 보스한테 얘기 들었어. 들어와.
 Oh yeah, boss man told me about you. You can come in, but you'll have to wait until 6PM.=아 그래, 보스한테 얘기 들었어. 들어와도 되는데, 오후 6시까지 기다려야 해.
 Oh yeah? And you gonna pay for it?=그래? 그럼 돈은 낼 거고?
-Oh yeah? Eh don't worry about 'em. I'll settle with them soon enough. Thanks for grabbing that for me.=그래? 어 걔들은 신경 쓰지 마. 곧 내가 알아서 정리할 테니까. 그거 가져다줘서 고마워.
+Oh yeah? Eh don't worry about 'em. I'll settle with them soon enough. Thanks for grabbing that for me.=그래?\n어 걔들은 신경 쓰지 마.\n곧 내가 알아서 정리할 테니까.\n그거 가져다줘서 고마워.
 Ok=알았어
 Ok bro. What time?=알았어 형씨. 몇 시에?
 Ok fine=알았어 그래
@@ -1338,7 +1338,7 @@ Okay, let me know if you change your mind.=알겠습니다, 마음 바뀌시면 
 Okay...=알았어...
 Ol' Man Jimmy's=지미 영감네
 Old person wrinkles=노인 주름
-Old school OG Kush. Offers a balanced, relaxing high with subtle physical effects.=클래식한 OG 쿠시. 은은한 신체 효과와 함께 균형 잡힌 편안한 취기를 선사합니다.
+Old school OG Kush. Offers a balanced, relaxing high with subtle physical effects.=클래식한 OG 쿠시.\n은은한 신체 효과와 함께 균형 잡힌 편안한 취기를 선사합니다.
 Old wood with some wheels nailed to it. Not fancy but it rolls.=낡은 나무판에 바퀴를 박아 놓은 물건입니다. 화려하진 않지만 굴러는 갑니다.
 On your way.=가던 길 가.
 One 'Granddaddy Purple' marijuana seed.='그랜대디 퍼플' 대마초 씨앗 하나입니다.
@@ -1562,7 +1562,7 @@ Saucepan=소스팬
 Sauerkraut\nSupreme=사우어크라우트\n슈프림
 Scared=겁먹음
 Schedule I pre-release=Schedule I 프리릴리즈
-Schedule I was unable to verify file write access; this might result in errors when saving. This is usually due to Windows blocking file writing permissions.\n\n\nIf saving still seems to be working fine, you can ignore this.=Schedule I가 파일 쓰기 권한을 확인하지 못했습니다. 저장 시 오류가 발생할 수 있습니다. 보통 Windows가 파일 쓰기 권한을 차단해서 생기는 문제입니다.\n\n\n저장이 정상적으로 되고 있다면 이 메시지는 무시해도 됩니다.
+Schedule I was unable to verify file write access; this might result in errors when saving. This is usually due to Windows blocking file writing permissions.\n\n\nIf saving still seems to be working fine, you can ignore this.=Schedule I가 파일 쓰기 권한을 확인하지 못했습니다.\n저장 시 오류가 발생할 수 있습니다.\n보통 Windows가 파일 쓰기 권한을 차단해서 생기는 문제입니다.\n\n\n저장이 정상적으로 되고 있다면 이 메시지는 무시해도 됩니다.
 SchizoGoblin=SchizoGoblin
 Schizophrenic=조현병 유발
 SCORE=점수
@@ -1633,7 +1633,7 @@ Slight Smile=살짝 미소
 Slightly energizes the user.=사용자에게 약간의 활력을 줍니다.
 Slippery=미끄러움
 Small battery used to power stuff.\t=물건에 전원을 공급하는 데 쓰이는 작은 배터리입니다.\t
-Small plastic trash can that you can place items in. Automatically empties whenever you sleep.=아이템을 넣을 수 있는 작은 플라스틱 쓰레기통입니다. 잠을 잘 때마다 자동으로 비워집니다.
+Small plastic trash can that you can place items in. Automatically empties whenever you sleep.=아이템을 넣을 수 있는 작은 플라스틱 쓰레기통입니다.\n잠을 잘 때마다 자동으로 비워집니다.
 Small Round Glasses=작은 원형 안경
 Small Safe=작은 금고
 Small Storage Rack=작은 저장 랙
@@ -1649,7 +1649,7 @@ Snake=스네이크
 Sneakers=운동화
 Sneaky=은밀함
 Snort=코로 흡입
-So perhaps we could make a deal that will benefit us both. Well... me mostly.=그러니 우리 둘 다한테 이득이 되는 거래를 해보는 게 어때. 뭐... 주로 나한테 이득이겠지만.
+So perhaps we could make a deal that will benefit us both. Well... me mostly.=그러니 우리 둘 다한테 이득이 되는 거래를 해보는 게 어때.\n뭐... 주로 나한테 이득이겠지만.
 Soil=흙(토양)
 Soil Pourer=흙 붓기 도구
 SoilPourer=SoilPourer
@@ -1658,7 +1658,7 @@ Sophisticated choice for covering up your disgusting body.=역겨운 몸뚱이�
 Sorry boss, I haven't been assigned to any pots.=죄송해요 보스, 아직 배정된 화분이 없어요.
 Sorry boss, I haven't been paid to work today.=죄송해요 보스, 오늘 일할 급여를 못 받았어요.
 Sorry boss, I need to be assigned a bed before I can get to work.=죄송해요 보스, 일을 시작하려면 먼저 침대를 배정받아야 해요.
-Sorry boss, I'm missing the items required to perform any tasks on my assigned pots. If you haven't already, you can assign a supplies source where I'll automatically grab required items from.=죄송해요 보스, 배정된 화분에 작업하는 데 필요한 아이템이 없어요. 아직 안 하셨다면 보급품 공급처를 지정해 주세요. 거기서 필요한 아이템을 자동으로 가져올게요.
+Sorry boss, I'm missing the items required to perform any tasks on my assigned pots. If you haven't already, you can assign a supplies source where I'll automatically grab required items from.=죄송해요 보스, 배정된 화분에 작업하는 데 필요한 아이템이 없어요.\n아직 안 하셨다면 보급품 공급처를 지정해 주세요.\n거기서 필요한 아이템을 자동으로 가져올게요.
 Sorry boss, none of my assigned pots need any work at the moment.=죄송해요 보스, 지금은 배정된 화분 중에 작업이 필요한 게 없어요.
 Sorry homie, not my taste=미안해 친구, 내 취향은 아니야
 Sorry, it doesn't seem like you've driven any vehicles recently...=죄송하지만 최근에 운전한 차량이 없는 것 같네요...
@@ -1690,8 +1690,8 @@ Stand=서기
 Stand still - you're under arrest.=움직이지 마 - 넌 체포됐다.
 Stand still while you are searched=수색하는 동안 가만히 서 있어
 Stand still. You're being searched=가만히 서 있어. 수색 중이다
-Standard-quality pseudoephedrine in tablet form. A common precursor for meth.=정제 형태의 표준 품질 슈도에페드린입니다. 메스암페타민의 일반적인 전구물질입니다.
-Standards=표준
+Standard-quality pseudoephedrine in tablet form. A common precursor for meth.=정제 형태의 표준 품질 슈도에페드린입니다.\n메스암페타민의 일반적인 전구물질입니다.
+Standards=기준
 START=시작
 Start=시작
 Start cauldron=가마솥 가동
@@ -1763,7 +1763,7 @@ Task description and instruction=작업 설명 및 지침
 Task Details=작업 세부 정보
 Tasks=작업
 Tasteful gold-plated skateboard. High top speed but slow acceleration.=고상한 금도금 스케이트보드입니다. 최고 속도는 높지만 가속은 느립니다.
-Tasty energy drink filled with lots of yummy chemicals to make you feel refreshed. Removes the effects of drugs when consumed.=상쾌한 기분을 느끼게 해주는 맛있는 화학물질이 가득한 에너지 드링크입니다. 마시면 약물 효과가 제거됩니다.
+Tasty energy drink filled with lots of yummy chemicals to make you feel refreshed. Removes the effects of drugs when consumed.=상쾌한 기분을 느끼게 해주는 맛있는 화학물질이 가득한 에너지 드링크입니다.\n마시면 약물 효과가 제거됩니다.
 Tattoo Shop=타투샵
 Teardrop=눈물방울
 Television and a TV cabinet. Includes a video game console.=텔레비전과 TV 장식장입니다. 비디오 게임 콘솔이 포함되어 있습니다.
@@ -1784,7 +1784,7 @@ Thank you. Bring me some product and assign some customers to me, and I'll get t
 Thank you. You're in Room 1, closest to the office.=감사합니다. 사무실에서 가장 가까운 1호실입니다.
 Thanks=고마워
 Thanks for playing!=플레이해 주셔서 감사합니다!
-Thanks man. Hey, if you're willing to hand out some samples, I know some people that'd be interested.=고마워 친구. 참, 샘플 좀 돌릴 생각 있으면 관심 가질 만한 사람들을 알고 있어.
+Thanks man. Hey, if you're willing to hand out some samples, I know some people that'd be interested.=고마워 친구.\n참, 샘플 좀 돌릴 생각 있으면 관심 가질 만한 사람들을 알고 있어.
 Thanks my man=고맙다 친구
 Thanks!=고마워!
 Thanks, we're done.=고맙군, 이제 됐다.
@@ -1795,9 +1795,9 @@ That's good stuff. You'll hear from me=물건 좋네. 연락할게
 That's great to hear. Which property are you interested in?=잘됐네요. 어떤 부동산에 관심이 있으신가요?
 That's shit!=이건 완전 쓰레기야!
 That's some good shit!! You'll hear from me=이거 물건 죽이는데!! 연락할게
-The 'Baby Blue' methamphetamine variant in liquid form. Use a drying oven to bake into solid form.=액체 형태의 '베이비 블루' 메스암페타민 변종입니다. 건조 오븐을 사용해 고체 형태로 구워내세요.
-The 'Biker Crank' methamphetamine variant in liquid form. Use a drying oven to bake into solid form.=액체 형태의 '바이커 크랭크' 메스암페타민 변종입니다. 건조 오븐을 사용해 고체 형태로 구워내세요.
-The 'Glass' methamphetamine variant in liquid form. Use a drying oven to bake into solid form.=액체 형태의 '글래스' 메스암페타민 변종입니다. 건조 오븐을 사용해 고체 형태로 구워내세요.
+The 'Baby Blue' methamphetamine variant in liquid form. Use a drying oven to bake into solid form.=액체 형태의 '베이비 블루' 메스암페타민 변종입니다.\n건조 오븐을 사용해 고체 형태로 구워내세요.
+The 'Biker Crank' methamphetamine variant in liquid form. Use a drying oven to bake into solid form.=액체 형태의 '바이커 크랭크' 메스암페타민 변종입니다.\n건조 오븐을 사용해 고체 형태로 구워내세요.
+The 'Glass' methamphetamine variant in liquid form. Use a drying oven to bake into solid form.=액체 형태의 '글래스' 메스암페타민 변종입니다.\n건조 오븐을 사용해 고체 형태로 구워내세요.
 The Barn (<PRICE>)=헛간 (<PRICE>)
 The Bruiser (<PRICE>)=브루저 (<PRICE>)
 The Bungalow (<PRICE>)=방갈로 (<PRICE>)
@@ -1828,7 +1828,7 @@ The Veeper (<PRICE>)=비퍼 (<PRICE>)
 Then don't waste my time.=그럼 내 시간 낭비하지 마.
 Then piss off.=그럼 꺼져.
 There are no active deliveries=진행 중인 배달이 없습니다
-There are plants ready for harvest, but they're missing a destination. Each pot must have a selected destination so I know where to move the harvested product.=수확할 준비가 된 식물이 있는데 목적지가 지정되지 않았어요. 수확한 제품을 어디로 옮겨야 할지 알 수 있게 각 화분에 목적지를 선택해 주세요.
+There are plants ready for harvest, but they're missing a destination. Each pot must have a selected destination so I know where to move the harvested product.=수확할 준비가 된 식물이 있는데 목적지가 지정되지 않았어요.\n수확한 제품을 어디로 옮겨야 할지 알 수 있게 각 화분에 목적지를 선택해 주세요.
 These are the vehicles you last drove - which would you like to recover?=마지막으로 운전했던 차량들입니다 - 어떤 차량을 회수하시겠습니까?
 This is a beta version of the game - save files may get corrupted. \nDon't load any saves that are important to you.=이 게임은 베타 버전입니다 - 저장 파일이 손상될 수 있습니다. \n중요한 저장 파일은 불러오지 마세요.
 This is the vehicle you last drove. \nMust be within 20 meters.=마지막으로 운전했던 차량입니다. \n20미터 이내에 있어야 합니다.
@@ -1883,7 +1883,7 @@ TurnOff=TurnOff
 TurnOn=TurnOn
 TV=TV
 TVGS=TVGS
-TVGS does not condone the manufacturing, trade, or use of illegal drugs.\n\nThe production processes portrayed in this game are purely fictional and do not reflect reality. Do not attempt to follow these processes - you won't make drugs, but you could cause serious harm to yourself.\n\nPlease don't do drugs.\n\n=TVGS는 불법 약물의 제조, 거래, 사용을 용인하지 않습니다.\n\n이 게임에 묘사된 제조 과정은 순전히 허구이며 현실을 반영하지 않습니다. 이 과정을 따라 하지 마세요 - 마약이 만들어지지도 않을뿐더러, 심각한 신체적 해를 입을 수 있습니다.\n\n마약은 하지 마세요.\n\n
+TVGS does not condone the manufacturing, trade, or use of illegal drugs.\n\nThe production processes portrayed in this game are purely fictional and do not reflect reality. Do not attempt to follow these processes - you won't make drugs, but you could cause serious harm to yourself.\n\nPlease don't do drugs.\n\n=TVGS는 불법 약물의 제조, 거래, 사용을 용인하지 않습니다.\n\n이 게임에 묘사된 제조 과정은 순전히 허구이며 현실을 반영하지 않습니다.\n이 과정을 따라 하지 마세요 - 마약이 만들어지지도 않을뿐더러, 심각한 신체적 해를 입을 수 있습니다.\n\n마약은 하지 마세요.\n\n
 Tylah Cannell=타일라 캐넬
 Tyler Combined=타일러 통합
 Tyler VO=타일러 VO
@@ -1891,7 +1891,7 @@ Uh... no=어... 아니
 Unconscious=의식 불명
 UNDER ARREST=체포됨
 Understandable, have a great day.=그럴 수 있지, 좋은 하루 보내.
-Unlock this customer by giving them a free sample. Use your map to see their approximate location.=무료 샘플을 주고 이 고객을 해금하세요. 지도를 사용해 대략적인 위치를 확인하세요.
+Unlock this customer by giving them a free sample. Use your map to see their approximate location.=무료 샘플을 주고 이 고객을 해금하세요.\n지도를 사용해 대략적인 위치를 확인하세요.
 Unlocks at Street Rat II=스트리트 랫 II에서 해금
 UNPACKAGE=포장 해제
 Unspecified=지정되지 않음
@@ -1912,7 +1912,7 @@ Veeper=비퍼
 Vehicle=차량
 Vehicle patrol=차량 순찰
 Vehicle Pursuit=차량 추격
-Very fancy full-spectrum grow light. Stimulates plant growth 30% faster than halogen. Must be placed on a suspension rack.=매우 고급스러운 풀 스펙트럼 재배 조명입니다. 할로겐보다 식물 성장을 30% 더 빠르게 촉진합니다. 서스펜션 랙에 설치해야 합니다.
+Very fancy full-spectrum grow light. Stimulates plant growth 30% faster than halogen. Must be placed on a suspension rack.=매우 고급스러운 풀 스펙트럼 재배 조명입니다.\n할로겐보다 식물 성장을 30% 더 빠르게 촉진합니다.\n서스펜션 랙에 설치해야 합니다.
 Very nice=아주 좋아
 Very nice!=아주 좋아!
 Very stylish and versatile footwear.\t\t=매우 스타일리시하고 활용도 높은 신발입니다.\t\t
@@ -1982,7 +1982,7 @@ Whats the password?=암호가 뭐야?
 Whats up bro=뭐해 형씨
 When activated, will fill the adjacent pot or grow tent with soil.=작동시키면 인접한 화분이나 재배 텐트에 흙을 채웁니다.
 When activated, will water the adjacent pot or grow tent.=작동시키면 인접한 화분이나 재배 텐트에 물을 줍니다.
-When activated, will water up to 8 surrounding plants. Plants must be directly next to or diagonal from the sprinkler.=작동시키면 주변 최대 8개의 식물에 물을 줍니다. 식물은 스프링클러 바로 옆이나 대각선에 있어야 합니다.
+When activated, will water up to 8 surrounding plants. Plants must be directly next to or diagonal from the sprinkler.=작동시키면 주변 최대 8개의 식물에 물을 줍니다.\n식물은 스프링클러 바로 옆이나 대각선에 있어야 합니다.
 When you're ready please deposit <DEBT> into my stash box - your debt is still unpaid.=준비되면 <DEBT>를 내 은닉처 상자에 넣어둬 - 네 빚은 아직 안 갚았으니까.
 Where you do want them? Keep in mind you'll have to provide a bed for this employee.=어디에 배치할래? 이 직원한테 침대를 마련해줘야 한다는 거 명심하고.
 White=흰색
@@ -2011,7 +2011,7 @@ Wooden Square Table=나무 사각 테이블
 WoodSquareTable=WoodSquareTable
 Work brick press=벽돌 압축기 작업
 Work packaging station=포장 스테이션 작업
-Workstation that contains the interface for laundering money. Must be placed at a business to work.=돈세탁 인터페이스가 들어 있는 작업대입니다. 작동하려면 사업장에 설치해야 합니다.
+Workstation that contains the interface for laundering money. Must be placed at a business to work.=돈세탁 인터페이스가 들어 있는 작업대입니다.\n작동하려면 사업장에 설치해야 합니다.
 Wow that's pretty good, I'll message you=와 꽤 괜찮은데, 내가 연락할게
 WW Combined=WW 통합
 XP Earned=획득 XP
@@ -2022,7 +2022,7 @@ Yeah okay thanks...=그래 알았어 고마워...
 Yeah, not what I'm after homie=그래, 내가 찾던 건 아냐 형씨
 Yeah?=그래?
 Yeah??=그래??
-Yeahhhh, more or less. Most of them are probably not completely non-illegal… what’re you askin' for anywho?=그래애, 대충 그런 셈이지. 대부분은 완전히 합법적이진 않을걸… 근데 뭘 찾는 건데?
+Yeahhhh, more or less. Most of them are probably not completely non-illegal… what’re you askin' for anywho?=그래애, 대충 그런 셈이지.\n대부분은 완전히 합법적이진 않을걸… 근데 뭘 찾는 건데?
 Yep=응
 Yep!=응!
 Yes=예
@@ -2060,7 +2060,7 @@ You Receive=받는 항목
 You the new guy in town?\t=네가 이 동네 새로 온 놈이야?\t
 You think I'm stupid? Deal is off.=내가 바보인 줄 알아? 거래 취소야.
 You wanna try minding your own business?=네 일이나 신경 쓰는 게 어때?
-You will provide us with 15x Marijuana weekly. We will pay you of course, but considering our generosity earlier, it seems only fair that we pay a reduced price.=매주 대마초 15개를 우리에게 공급해라. 물론 값은 치르겠지만, 앞서 베푼 아량을 생각하면 값을 좀 깎는 게 공평하겠지.
+You will provide us with 15x Marijuana weekly. We will pay you of course, but considering our generosity earlier, it seems only fair that we pay a reduced price.=매주 대마초 15개를 우리에게 공급해라.\n물론 값은 치르겠지만, 앞서 베푼 아량을 생각하면 값을 좀 깎는 게 공평하겠지.
 YOU WIN!=당신의 승리!
 You'll play the prologue in singleplayer\nand join your friends once complete.=프롤로그는 싱글플레이로 진행하고\n완료 후 친구들과 합류하게 됩니다.
 You're a small-time drug dealer from the south.=당신은 남부 출신의 삼류 마약 딜러입니다.
@@ -2113,7 +2113,7 @@ Players ({{A}})=플레이어 ({{A}})
 Forfeit and collect ${{A}}=포기하고 ${{A}} 수령
 Answer {{A}}=답 {{A}}
 {{A}} seconds since last save=마지막 저장 후 {{A}}초 경과
-Fancy hand woven fabric pot that keeps roots ventilated. Boosts plant growth speed by {{A}}%, but also increases moisture drain by {{B}}%=뿌리 통풍이 잘되는 고급 수제 직조 천 화분입니다. 식물 성장 속도를 {{A}}% 높이지만, 수분 소모도 {{B}}% 증가시킵니다
+Fancy hand woven fabric pot that keeps roots ventilated. Boosts plant growth speed by {{A}}%, but also increases moisture drain by {{B}}%=뿌리 통풍이 잘되는 고급 수제 직조 천 화분입니다.\n식물 성장 속도를 {{A}}% 높이지만, 수분 소모도 {{B}}% 증가시킵니다
 {{A}} Customers\n{{B}} Suppliers\n{{C}} Dealer=고객 {{A}}명\n공급자 {{B}}명\n딜러 {{C}}명
 + {{A}} Others=+ 외 {{A}}명
 Market Value: ${{A}}=시장 가치: ${{A}}
@@ -2186,12 +2186,12 @@ Talk to Austin=오스틴과 대화하기
 Place product here=여기에 제품 놓기
 Offer Deal=거래 제안
 Police are nearby!=근처에 경찰이 있습니다!
-I’ve heard you’re in some trouble. Best not to talk over your mobile phone. Go find a payphone.\n- U.N.=문제가 좀 생겼다고 들었어. 휴대폰으로 얘기하지 않는 게 좋아. 공중전화를 찾아가.\n- U.N.
+I’ve heard you’re in some trouble. Best not to talk over your mobile phone. Go find a payphone.\n- U.N.=문제가 좀 생겼다고 들었어.\n휴대폰으로 얘기하지 않는 게 좋아.\n공중전화를 찾아가.\n- U.N.
 [Counter-offer]=[역제안]
 Got it. I'll let you know when it's ready. Should be about {{A}} hour=알았어. 준비되면 알려줄게. {{A}}시간 정도 걸릴 거야
 Hey, that drop is ready behind the western Gas-Mart=야, 그 물건 서쪽 가스마트 뒤에 준비해 놨어
 Copy. I'll message you when it's ready in about {{A}} mins.=알았어. {{A}}분 정도 뒤에 준비되면 문자 줄게.
-Send me a message if you'd like to order some. Nelson has put in a good word for you, so I'll provide you a tab which you can pay off later.=주문을 원하시면 문자 주세요. 넬슨이 좋게 말해준 덕에, 나중에 갚으실 수 있는 외상 장부를 열어 드리겠습니다.
+Send me a message if you'd like to order some. Nelson has put in a good word for you, so I'll provide you a tab which you can pay off later.=주문을 원하시면 문자 주세요.\n넬슨이 좋게 말해준 덕에, 나중에 갚으실 수 있는 외상 장부를 열어 드리겠습니다.
 Hello, our mutual friend has asked me to help you acquire some Marijuana seeds.=안녕하십니까. 우리 공통 친구가 대마초 씨앗 구하는 걸 도와달라고 부탁하더군요.
 Select a destination=목적지 선택
 Speak to the friendly folk at Dan's Hardware for all your 'home improvement' needs!='집수리'에 필요한 모든 것은 댄의 하드웨어의 친절한 직원에게 문의하세요!
@@ -2280,7 +2280,7 @@ Play Ride the Bus=라이드 더 버스 하기
 Talk to Karen=캐런과 대화
 Use TV=TV 사용
 Last save was {{A}} minutes ago=마지막 저장은 {{A}}분 전입니다
-If you die in singleplayer, you'll go back to your last save. If you die in multiplayer, you'll pay an expensive visit to the medical clinic.=싱글플레이어에서 죽으면 마지막 저장 지점으로 돌아갑니다. 멀티플레이어에서 죽으면 비싼 값을 치르고 병원 신세를 지게 됩니다.
+If you die in singleplayer, you'll go back to your last save. If you die in multiplayer, you'll pay an expensive visit to the medical clinic.=싱글플레이어에서 죽으면 마지막 저장 지점으로 돌아갑니다.\n멀티플레이어에서 죽으면 비싼 값을 치르고 병원 신세를 지게 됩니다.
 Use ATM=ATM 사용
 Initializing...=초기화 중...
 Spawning player...=플레이어 생성 중...
@@ -2297,7 +2297,7 @@ No soil=흙 없음
 Pour water=물 붓기
 Pour water over target=대상 위에 물 붓기
 Press Tab to open your phone=Tab 키를 눌러 휴대폰 열기
-You can complete deals any time within the window you choose. For now, choose the morning window.=거래는 선택한 시간대 안이라면 언제든 완료할 수 있습니다. 지금은 아침 시간대를 선택하세요.
+You can complete deals any time within the window you choose. For now, choose the morning window.=거래는 선택한 시간대 안이라면 언제든 완료할 수 있습니다.\n지금은 아침 시간대를 선택하세요.
 Talk to Uncle Nelson=넬슨 삼촌과 대화
 Enter vehicle=차량 탑승
 [Complete Deal]=[거래 완료]
@@ -2316,9 +2316,9 @@ Click soil chunks to bury seed ({{A}})=흙덩이를 클릭해 씨앗 묻기 ({{A
 Already contains seed=이미 씨앗이 들어 있음
 Open your phone (press Tab) and read your messages=휴대폰을 열고(Tab 키) 메시지를 읽으세요
 Answer phone=전화 받기
-Goddamn, good to hear your voice, buddy! Looks like our luck finally ran out - the feds have got me locked up while I wait for a trial. Glad to hear you managed to slip out, though.=이야, 목소리 들으니 진짜 반갑다, 친구! 우리 운도 드디어 다한 모양이야 - 난 연방 수사관들한테 잡혀서 재판 기다리는 신세거든. 그래도 넌 잘 빠져나갔다니 다행이다.
-Back before I moved to Serena Flats, I used to live out there in Hyland Point. Not the nicest town around, but plenty of opportunity for a dru-... someone in your line of work.=세레나 플랫츠로 이사 오기 전엔 하이랜드 포인트에 살았었지. 그리 좋은 동네는 아니지만, 마약상... 아니, 네 업계 사람한테는 기회가 널린 곳이야.
-If memory serves, I've got some cash stashed out there. It ain't much, but it'll be enough to get you back on your feet.=내 기억이 맞다면 거기에 현금을 좀 숨겨놨을 거야. 많진 않지만 다시 일어서기엔 충분할 거다.
+Goddamn, good to hear your voice, buddy! Looks like our luck finally ran out - the feds have got me locked up while I wait for a trial. Glad to hear you managed to slip out, though.=이야, 목소리 들으니 진짜 반갑다, 친구!\n우리 운도 드디어 다한 모양이야 - 난 연방 수사관들한테 잡혀서 재판 기다리는 신세거든.\n그래도 넌 잘 빠져나갔다니 다행이다.
+Back before I moved to Serena Flats, I used to live out there in Hyland Point. Not the nicest town around, but plenty of opportunity for a dru-... someone in your line of work.=세레나 플랫츠로 이사 오기 전엔 하이랜드 포인트에 살았었지.\n그리 좋은 동네는 아니지만, 마약상... 아니, 네 업계 사람한테는 기회가 널린 곳이야.
+If memory serves, I've got some cash stashed out there. It ain't much, but it'll be enough to get you back on your feet.=내 기억이 맞다면 거기에 현금을 좀 숨겨놨을 거야.\n많진 않지만 다시 일어서기엔 충분할 거다.
 View note=쪽지 보기
 Well shit... that's not ideal.=이런 젠장... 좋지 않은데.
 I'd like to rent a room=방을 빌리고 싶은데
@@ -2348,17 +2348,17 @@ Money Management =자금 관리
 Keeping it Fresh =신선함 유지하기
 Packin' =포장 작업
 Dodgy Dealing =수상한 거래
-Time to expand your customer base, grab some supplies and talk to Uncle Nelson's contact at the motel.=고객층을 넓힐 때입니다. 물품을 챙기고 모텔에서 넬슨 삼촌의 연락책과 대화하세요.
+Time to expand your customer base, grab some supplies and talk to Uncle Nelson's contact at the motel.=고객층을 넓힐 때입니다.\n물품을 챙기고 모텔에서 넬슨 삼촌의 연락책과 대화하세요.
 Quest Description=퀘스트 설명
 Get some deals done, and start expanding your network.=거래를 몇 건 성사시키고 네트워크를 넓히기 시작하세요.
-You're not going to get too far if you're only pushing weed. Time to move onto something a bit harder.=대마초만 팔아서는 크게 성장하기 어렵습니다. 좀 더 강한 것으로 넘어갈 때입니다.
+You're not going to get too far if you're only pushing weed. Time to move onto something a bit harder.=대마초만 팔아서는 크게 성장하기 어렵습니다.\n좀 더 강한 것으로 넘어갈 때입니다.
 Learn how to manage chemists.=화학자를 관리하는 법 배우기.
-You're in a new town with no cash and no product. Get in contact with a distant relative and ask for some help.=현금도 제품도 없이 새 도시에 도착했습니다. 먼 친척에게 연락해 도움을 요청하세요.
+You're in a new town with no cash and no product. Get in contact with a distant relative and ask for some help.=현금도 제품도 없이 새 도시에 도착했습니다.\n먼 친척에게 연락해 도움을 요청하세요.
 Learn how to manage cleaners.=청소부를 관리하는 법 배우기.
-You're in a new town with no cash and no product. Get in contact with a distant relative and get some advice.=현금도 제품도 없이 새 도시에 도착했습니다. 먼 친척에게 연락해 조언을 구하세요.
-You've reached your ATM daily deposit limit. If you want to convert more cash to online balance, you'll need to start laundering cash through a business.=ATM 일일 입금 한도에 도달했습니다. 더 많은 현금을 온라인 잔액으로 전환하려면 사업체를 통해 현금 세탁을 시작해야 합니다.
+You're in a new town with no cash and no product. Get in contact with a distant relative and get some advice.=현금도 제품도 없이 새 도시에 도착했습니다.\n먼 친척에게 연락해 조언을 구하세요.
+You've reached your ATM daily deposit limit. If you want to convert more cash to online balance, you'll need to start laundering cash through a business.=ATM 일일 입금 한도에 도달했습니다.\n더 많은 현금을 온라인 잔액으로 전환하려면 사업체를 통해 현금 세탁을 시작해야 합니다.
 Time to make some MONEY!!!!!=이제 돈 좀 벌어봅시다!!!!!
-You'll need more space if you're looking to get serious. Time to save for and purchase a new property.=본격적으로 하려면 더 넓은 공간이 필요합니다. 돈을 모아 새 부동산을 구입할 때입니다.
+You'll need more space if you're looking to get serious. Time to save for and purchase a new property.=본격적으로 하려면 더 넓은 공간이 필요합니다.\n돈을 모아 새 부동산을 구입할 때입니다.
 Learn how to manage packagers.=포장자를 관리하는 법 배우기.
 Acquaint yourself with the inhabitants of the warehouse, the local place of business for people in your line of work.=당신 업계 사람들의 지역 사업장인 창고의 주민들과 안면을 트세요.
 Learn how to manage botanists.=식물학자를 관리하는 법 배우기.
@@ -2813,68 +2813,68 @@ Begins in {{A}} hrs={{A}}시간 후 시작
 Begins in {{A}} min={{A}}분 후 시작
 Expires in {{A}} min={{A}}분 후 만료
 Expires in {{A}} hrs={{A}}시간 후 만료
-You've got a decent base of operations and a growing customer base. You'll be pulling in some proper cash now, but you'll need help to manage all your customers.=괜찮은 거점도 생겼고 고객층도 늘고 있네. 이제 제법 돈이 들어오겠지만, 고객들을 전부 관리하려면 도움이 필요할 거야.
-Time to think about recruiting a <color\=#4CB0FF>dealer</color>. There's a guy... hmm... <color\=#4CB0FF>Benji Coleman</color> his name is, I think. He'll be the first dealer you can work with.=<color\=#4CB0FF>딜러</color>를 영입할 때가 됐어. 어떤 녀석이 있는데... 음... 이름이 <color\=#4CB0FF>벤지 콜먼</color>이었나. 네가 처음으로 같이 일할 수 있는 딜러야.
-You won't be able to hire a dealer until one of their friends has recommended you. Benji is friends with <color\=#4CB0FF>Peggy, Beth,</color> and <color\=#4CB0FF>Ludwig</color>. Focus on selling to them until one of them recommends you.=딜러 친구 중 한 명이 널 추천하기 전까진 그 딜러를 고용할 수 없어. 벤지는 <color\=#4CB0FF>페기, 베스,</color> 그리고 <color\=#4CB0FF>루트비히</color>와 친구야. 그중 하나가 널 추천할 때까지 걔들한테 파는 데 집중해.
+You've got a decent base of operations and a growing customer base. You'll be pulling in some proper cash now, but you'll need help to manage all your customers.=괜찮은 거점도 생겼고 고객층도 늘고 있네.\n이제 제법 돈이 들어오겠지만, 고객들을 전부 관리하려면 도움이 필요할 거야.
+Time to think about recruiting a <color\=#4CB0FF>dealer</color>. There's a guy... hmm... <color\=#4CB0FF>Benji Coleman</color> his name is, I think. He'll be the first dealer you can work with.=<color\=#4CB0FF>딜러</color>를 영입할 때가 됐어.\n어떤 녀석이 있는데... 음... 이름이 <color\=#4CB0FF>벤지 콜먼</color>이었나.\n네가 처음으로 같이 일할 수 있는 딜러야.
+You won't be able to hire a dealer until one of their friends has recommended you. Benji is friends with <color\=#4CB0FF>Peggy, Beth,</color> and <color\=#4CB0FF>Ludwig</color>. Focus on selling to them until one of them recommends you.=딜러 친구 중 한 명이 널 추천하기 전까진 그 딜러를 고용할 수 없어.\n벤지는 <color\=#4CB0FF>페기, 베스,</color> 그리고 <color\=#4CB0FF>루트비히</color>와 친구야.\n그중 하나가 널 추천할 때까지 걔들한테 파는 데 집중해.
 You've finished a few deals and made some decent cash, but if you're looking to make real money, you'll need to expand your operations - more <color\=#4CB0FF>product</color> and more <color\=#4CB0FF>customers</color>.=거래도 몇 건 끝냈고 돈도 좀 만졌겠지만, 진짜 큰돈을 벌고 싶으면 사업을 확장해야 해 - 더 많은 <color\=#4CB0FF>제품</color>과 더 많은 <color\=#4CB0FF>고객</color> 말이야.
 The best way to gain new customers is to give a <color\=#4CB0FF>free sample</color> to a friend of an existing customer.=새 고객을 얻는 가장 좋은 방법은 기존 고객의 친구에게 <color\=#4CB0FF>무료 샘플</color>을 주는 거야.
-You can view all potential customers on your <color\=#4CB0FF>map</color>. Grab some weed and give them a <color\=#4CB0FF>free sample</color>. With a bit of luck, they'll agree to become a customer.=<color\=#4CB0FF>지도</color>에서 잠재 고객을 전부 볼 수 있어. 대마초를 좀 챙겨서 <color\=#4CB0FF>무료 샘플</color>을 줘 봐. 운이 좀 따르면 고객이 되겠다고 할 거야.
-To keep up with more customers, you'll need more product. The motel room isn't gonna cut it for much longer - time for an upgrade.=고객이 늘어나면 제품도 더 필요하지. 모텔 방으로는 오래 못 버틸 테니, 업그레이드할 때가 됐어.
-There's a cheap room for sale above the Chinese restaurant just north of your motel room. Save <color\=#4CB0FF>$800</color>, then go ask about buying the room.=네 모텔 방 바로 북쪽에 있는 중국집 위에 싸게 나온 방이 하나 있어. <color\=#4CB0FF>$800</color>를 모은 다음, 가서 방을 사겠다고 물어봐.
+You can view all potential customers on your <color\=#4CB0FF>map</color>. Grab some weed and give them a <color\=#4CB0FF>free sample</color>. With a bit of luck, they'll agree to become a customer.=<color\=#4CB0FF>지도</color>에서 잠재 고객을 전부 볼 수 있어.\n대마초를 좀 챙겨서 <color\=#4CB0FF>무료 샘플</color>을 줘 봐.\n운이 좀 따르면 고객이 되겠다고 할 거야.
+To keep up with more customers, you'll need more product. The motel room isn't gonna cut it for much longer - time for an upgrade.=고객이 늘어나면 제품도 더 필요하지.\n모텔 방으로는 오래 못 버틸 테니, 업그레이드할 때가 됐어.
+There's a cheap room for sale above the Chinese restaurant just north of your motel room. Save <color\=#4CB0FF>$800</color>, then go ask about buying the room.=네 모텔 방 바로 북쪽에 있는 중국집 위에 싸게 나온 방이 하나 있어.\n<color\=#4CB0FF>$800</color>를 모은 다음, 가서 방을 사겠다고 물어봐.
 The keys should be in a vent around the left side of the house.=열쇠는 집 왼편에 있는 환풍구 안에 있을 거야.
-It'll take a little while for a plant to grow. While you're waiting, you should go grab the equipment needed for <color\=#4CB0FF>packaging</color>. It's sold at the <color\=#4CB0FF>hardware store</color>.=식물이 자라려면 시간이 좀 걸려. 기다리는 동안 <color\=#4CB0FF>포장</color>에 필요한 장비를 챙겨 와. <color\=#4CB0FF>하드웨어 상점</color>에서 팔아.
-Nice, your customer web is growing, and you'll be making some decent money soon. Though you'll need some <color\=#4CB0FF>more space</color> before you can properly expand your operations.=좋아, 고객망이 커지고 있으니 곧 제법 돈이 들어올 거야. 다만 제대로 사업을 확장하려면 <color\=#4CB0FF>더 넓은 공간</color>이 필요하겠지.
-That's the first deal of the day done! You'll want to get a couple more plants growing, so go grab some soil from the hardware store.=오늘의 첫 거래 완료! 식물을 몇 개 더 키우고 싶을 테니, 하드웨어 상점에서 흙을 좀 사 와.
-By the way, customers pay in <color\=#4CB0FF>cash</color>, but most legal stores only accept <color\=#4CB0FF>card</color>, so you'll need to use an <color\=#4CB0FF>ATM</color> to deposit the cash.=참고로 고객은 <color\=#4CB0FF>현금</color>으로 지불하는데, 합법적인 가게 대부분은 <color\=#4CB0FF>카드</color>만 받아. 그러니 <color\=#4CB0FF>ATM</color>에서 현금을 입금해야 해.
-You got the room? Good. Now head down to the <color\=#4CB0FF>hardware store</color> and grab a <color\=#4CB0FF>grow tent, soil</color>, and <color\=#4CB0FF>watering can.</color>=방 구했어? 좋아. 이제 <color\=#4CB0FF>하드웨어 상점</color>에 가서 <color\=#4CB0FF>재배 텐트, 흙</color>, 그리고 <color\=#4CB0FF>물뿌리개</color>를 사 와.
+It'll take a little while for a plant to grow. While you're waiting, you should go grab the equipment needed for <color\=#4CB0FF>packaging</color>. It's sold at the <color\=#4CB0FF>hardware store</color>.=식물이 자라려면 시간이 좀 걸려.\n기다리는 동안 <color\=#4CB0FF>포장</color>에 필요한 장비를 챙겨 와.\n<color\=#4CB0FF>하드웨어 상점</color>에서 팔아.
+Nice, your customer web is growing, and you'll be making some decent money soon. Though you'll need some <color\=#4CB0FF>more space</color> before you can properly expand your operations.=좋아, 고객망이 커지고 있으니 곧 제법 돈이 들어올 거야.\n다만 제대로 사업을 확장하려면 <color\=#4CB0FF>더 넓은 공간</color>이 필요하겠지.
+That's the first deal of the day done! You'll want to get a couple more plants growing, so go grab some soil from the hardware store.=오늘의 첫 거래 완료!\n식물을 몇 개 더 키우고 싶을 테니, 하드웨어 상점에서 흙을 좀 사 와.
+By the way, customers pay in <color\=#4CB0FF>cash</color>, but most legal stores only accept <color\=#4CB0FF>card</color>, so you'll need to use an <color\=#4CB0FF>ATM</color> to deposit the cash.=참고로 고객은 <color\=#4CB0FF>현금</color>으로 지불하는데, 합법적인 가게 대부분은 <color\=#4CB0FF>카드</color>만 받아.\n그러니 <color\=#4CB0FF>ATM</color>에서 현금을 입금해야 해.
+You got the room? Good. Now head down to the <color\=#4CB0FF>hardware store</color> and grab a <color\=#4CB0FF>grow tent, soil</color>, and <color\=#4CB0FF>watering can.</color>=방 구했어?\n좋아.\n이제 <color\=#4CB0FF>하드웨어 상점</color>에 가서 <color\=#4CB0FF>재배 텐트, 흙</color>, 그리고 <color\=#4CB0FF>물뿌리개</color>를 사 와.
 Heads up, Hyland Point has a <color\=#4CB0FF>curfew</color> between <color\=#4CB0FF>8PM</color> and <color\=#4CB0FF>5AM</color>.=미리 말해 두는데, 하이랜드 포인트에는 <color\=#4CB0FF>오후 8시</color>부터 <color\=#4CB0FF>오전 5시</color>까지 <color\=#4CB0FF>통행금지</color>가 있어.
-Police will <color\=#4CB0FF>arrest</color> anyone outside during curfew. So if you're wanting to play it safe, it's best to <color\=#4CB0FF>stay inside</color> during this time.=통행금지 시간에 밖에 있으면 경찰이 <color\=#4CB0FF>체포</color>해 버려. 안전하게 가고 싶으면 이 시간엔 <color\=#4CB0FF>실내에 있는 게</color> 최고야.
+Police will <color\=#4CB0FF>arrest</color> anyone outside during curfew. So if you're wanting to play it safe, it's best to <color\=#4CB0FF>stay inside</color> during this time.=통행금지 시간에 밖에 있으면 경찰이 <color\=#4CB0FF>체포</color>해 버려.\n안전하게 가고 싶으면 이 시간엔 <color\=#4CB0FF>실내에 있는 게</color> 최고야.
 Though customers will pay <color\=#4CB0FF>extra</color> for deals during curfew... do with that what you will.=뭐, 통행금지 중 거래엔 고객들이 <color\=#4CB0FF>웃돈</color>을 주긴 하지만... 알아서 판단해.
-There's two types of currency - <color\=#4CB0FF>cash</color> and <color\=#4CB0FF>online balance</color>. Customers will pay you in <color\=#4CB0FF>cash</color>, but most legal shops only accept <color\=#4CB0FF>online balance</color>=화폐는 두 종류야 - <color\=#4CB0FF>현금</color>과 <color\=#4CB0FF>온라인 잔고</color>. 고객은 <color\=#4CB0FF>현금</color>으로 지불하지만, 합법적인 가게 대부분은 <color\=#4CB0FF>온라인 잔고</color>만 받아
+There's two types of currency - <color\=#4CB0FF>cash</color> and <color\=#4CB0FF>online balance</color>. Customers will pay you in <color\=#4CB0FF>cash</color>, but most legal shops only accept <color\=#4CB0FF>online balance</color>=화폐는 두 종류야 - <color\=#4CB0FF>현금</color>과 <color\=#4CB0FF>온라인 잔고</color>.\n고객은 <color\=#4CB0FF>현금</color>으로 지불하지만, 합법적인 가게 대부분은 <color\=#4CB0FF>온라인 잔고</color>만 받아
 Visit an <color\=#4CB0FF>ATM</color> to deposit or withdraw cash.=<color\=#4CB0FF>ATM</color>에서 현금을 입금하거나 출금할 수 있어.
-That should be enough to rent a motel room and buy some basic equipment. Head to the <color\=#4CB0FF>motel office</color> and get yourself a room.=그 정도면 모텔 방을 빌리고 기본 장비를 사기에 충분할 거야. <color\=#4CB0FF>모텔 사무실</color>로 가서 방을 하나 잡아.
-Looks like they didn't love the sample. No worries though - you'll be able to try again <color\=#4CB0FF>tomorrow</color>.=샘플이 별로 마음에 안 들었나 보네. 걱정 마 - <color\=#4CB0FF>내일</color> 다시 시도할 수 있으니까.
-That's your first mix done! There's a wide range of different <color\=#4CB0FF>ingredients</color> with <color\=#4CB0FF>unique effects</color>. Each one will affect the value of your product differently.=첫 혼합 완성! <color\=#4CB0FF>고유한 효과</color>를 가진 다양한 <color\=#4CB0FF>재료</color>들이 있어. 재료마다 제품의 가치에 다르게 영향을 주지.
+That should be enough to rent a motel room and buy some basic equipment. Head to the <color\=#4CB0FF>motel office</color> and get yourself a room.=그 정도면 모텔 방을 빌리고 기본 장비를 사기에 충분할 거야.\n<color\=#4CB0FF>모텔 사무실</color>로 가서 방을 하나 잡아.
+Looks like they didn't love the sample. No worries though - you'll be able to try again <color\=#4CB0FF>tomorrow</color>.=샘플이 별로 마음에 안 들었나 보네.\n걱정 마 - <color\=#4CB0FF>내일</color> 다시 시도할 수 있으니까.
+That's your first mix done! There's a wide range of different <color\=#4CB0FF>ingredients</color> with <color\=#4CB0FF>unique effects</color>. Each one will affect the value of your product differently.=첫 혼합 완성!\n<color\=#4CB0FF>고유한 효과</color>를 가진 다양한 <color\=#4CB0FF>재료</color>들이 있어.\n재료마다 제품의 가치에 다르게 영향을 주지.
 Keep trying different mix recipes, and you'll be able to make some seriously valuable product.=여러 혼합 레시피를 계속 시도해 보면, 정말 값나가는 제품을 만들 수 있을 거야.
-You've got everything you need to run a proper business now, so I'll leave you to it. Good luck buddy.=이제 제대로 사업을 굴릴 준비가 다 됐으니, 난 이만 빠질게. 행운을 빈다, 친구.
-The next step is to purchase a <color\=#4CB0FF>mixing ingredient</color>. Each mixing ingredient has it's own unique effect that is applied to your product when mixed.=다음 단계는 <color\=#4CB0FF>혼합 재료</color>를 구입하는 거야. 혼합 재료마다 고유한 효과가 있어서, 혼합하면 제품에 그 효과가 적용돼.
-You can buy mixing ingredients at the local <color\=#4CB0FF>Gas-Mart</color>. When you're ready, head over there.=혼합 재료는 동네 <color\=#4CB0FF>가스마트</color>에서 살 수 있어. 준비되면 그리로 가 봐.
-'Go buy something to mix with your weed. Pretty much anything here will work as a mixer, so don''t be fussy. '='대마초에 섞을 만한 걸 사 와. 여기 있는 건 뭐든 혼합 재료로 쓸 수 있으니까 너무 고르지 마. '
+You've got everything you need to run a proper business now, so I'll leave you to it. Good luck buddy.=이제 제대로 사업을 굴릴 준비가 다 됐으니, 난 이만 빠질게.\n행운을 빈다, 친구.
+The next step is to purchase a <color\=#4CB0FF>mixing ingredient</color>. Each mixing ingredient has it's own unique effect that is applied to your product when mixed.=다음 단계는 <color\=#4CB0FF>혼합 재료</color>를 구입하는 거야.\n혼합 재료마다 고유한 효과가 있어서, 혼합하면 제품에 그 효과가 적용돼.
+You can buy mixing ingredients at the local <color\=#4CB0FF>Gas-Mart</color>. When you're ready, head over there.=혼합 재료는 동네 <color\=#4CB0FF>가스마트</color>에서 살 수 있어.\n준비되면 그리로 가 봐.
+'Go buy something to mix with your weed. Pretty much anything here will work as a mixer, so don''t be fussy. '='대마초에 섞을 만한 걸 사 와.\n여기 있는 건 뭐든 혼합 재료로 쓸 수 있으니까 너무 고르지 마.\n'
 You'll need to do some experimenting to find a decent mix, so maybe grab a few different mixers to test out.=괜찮은 혼합을 찾으려면 실험을 좀 해야 할 테니, 시험해 볼 혼합 재료를 몇 가지 사 두는 게 좋을 거야.
-With Benji's help, you'll be able to move a good quantity of product. Now it's time to start manufacturing and selling <color\=#4CB0FF>higher value</color> product.=벤지의 도움이 있으면 제품을 꽤 많이 팔 수 있을 거야. 이제 <color\=#4CB0FF>더 비싼</color> 제품을 만들어서 팔 때가 됐어.
+With Benji's help, you'll be able to move a good quantity of product. Now it's time to start manufacturing and selling <color\=#4CB0FF>higher value</color> product.=벤지의 도움이 있으면 제품을 꽤 많이 팔 수 있을 거야.\n이제 <color\=#4CB0FF>더 비싼</color> 제품을 만들어서 팔 때가 됐어.
 You might've noticed you can buy different weed seed strains from Albert, but you can create even more unique products with a <color\=#4CB0FF>mixing station</color>.=앨버트한테서 다양한 대마초 씨앗 품종을 살 수 있다는 건 눈치챘겠지만, <color\=#4CB0FF>혼합 스테이션</color>이 있으면 훨씬 독특한 제품을 만들 수 있어.
-At a <color\=#4CB0FF>mixing station</color>, you mix products with special <color\=#4CB0FF>ingredients</color> to create new mixes with <color\=#4CB0FF>unique effects</color>. Customers will pay more for these products.=<color\=#4CB0FF>혼합 스테이션</color>에서는 제품을 특별한 <color\=#4CB0FF>재료</color>와 섞어서 <color\=#4CB0FF>고유한 효과</color>를 지닌 새 혼합물을 만들 수 있어. 고객들은 이런 제품에 돈을 더 내지.
-To get started, go purchase a <color\=#4CB0FF>mixing station</color> from Dan's hardware. After that, you'll want to grab something to mix with your weed from the local Gas-Mart.=시작하려면 댄의 하드웨어에서 <color\=#4CB0FF>혼합 스테이션</color>을 사 와. 그다음엔 동네 가스마트에서 대마초에 섞을 만한 걸 챙기면 돼.
-Hey buddy, looks like you're in a bit of trouble. Lucky for you, your favourite incarcerated Uncle can give you a hand.=어이 친구, 곤경에 좀 처한 모양이네. 다행히도 네가 제일 좋아하는 감방살이 중인 삼촌이 도와줄 수 있지.
-Back before I was in the big house, I used to live out there in Hyland Point. Not the nicest town around, but plenty of opportunity for a dru-... someone in your line of work.=내가 큰집에 들어가기 전엔 하이랜드 포인트에서 살았거든. 그리 좋은 동네는 아니지만, 마약... 아니, 네 업계 사람한테는 기회가 널린 곳이야.
-There's probably some of my cash stashed not far from you. It isn't much, but it should be enough to get you going. You can find it <color\=#4CB0FF>near the skatepark</b>.=내 현금이 네 근처 어딘가에 숨겨져 있을 거야. 많진 않아도 시작하기엔 충분할 거다. <color\=#4CB0FF>스케이트 파크 근처</b>에서 찾을 수 있어.
+At a <color\=#4CB0FF>mixing station</color>, you mix products with special <color\=#4CB0FF>ingredients</color> to create new mixes with <color\=#4CB0FF>unique effects</color>. Customers will pay more for these products.=<color\=#4CB0FF>혼합 스테이션</color>에서는 제품을 특별한 <color\=#4CB0FF>재료</color>와 섞어서 <color\=#4CB0FF>고유한 효과</color>를 지닌 새 혼합물을 만들 수 있어.\n고객들은 이런 제품에 돈을 더 내지.
+To get started, go purchase a <color\=#4CB0FF>mixing station</color> from Dan's hardware. After that, you'll want to grab something to mix with your weed from the local Gas-Mart.=시작하려면 댄의 하드웨어에서 <color\=#4CB0FF>혼합 스테이션</color>을 사 와.\n그다음엔 동네 가스마트에서 대마초에 섞을 만한 걸 챙기면 돼.
+Hey buddy, looks like you're in a bit of trouble. Lucky for you, your favourite incarcerated Uncle can give you a hand.=어이 친구, 곤경에 좀 처한 모양이네.\n다행히도 네가 제일 좋아하는 감방살이 중인 삼촌이 도와줄 수 있지.
+Back before I was in the big house, I used to live out there in Hyland Point. Not the nicest town around, but plenty of opportunity for a dru-... someone in your line of work.=내가 큰집에 들어가기 전엔 하이랜드 포인트에서 살았거든.\n그리 좋은 동네는 아니지만, 마약... 아니, 네 업계 사람한테는 기회가 널린 곳이야.
+There's probably some of my cash stashed not far from you. It isn't much, but it should be enough to get you going. You can find it <color\=#4CB0FF>near the skatepark</b>.=내 현금이 네 근처 어딘가에 숨겨져 있을 거야.\n많진 않아도 시작하기엔 충분할 거다.\n<color\=#4CB0FF>스케이트 파크 근처</b>에서 찾을 수 있어.
 'Alright, next step is to get this green to a customer. '='좋아, 다음 단계는 이 물건을 고객한테 넘기는 거야. '
-Customers will message you whenever there're looking to buy. From there you can accept or reject the offer, and schedule a deal.=고객은 뭔가 사고 싶을 때마다 너한테 메시지를 보낼 거야. 거기서 제안을 수락하거나 거절하고, 거래 일정을 잡을 수 있어.
-You've already got an offer from a customer. Open up your messages app and schedule your first deal.=이미 고객한테서 제안이 하나 와 있어. 메시지 앱을 열고 첫 거래 일정을 잡아 봐.
-Looks like you're diversifying your product range - good idea. Just remember to list your new product for sale in the <color\=#4CB0FF>product manager app</color>.=제품군을 다양화하는 중이구만 - 좋은 생각이야. 새 제품은 <color\=#4CB0FF>제품 관리자 앱</color>에서 판매 목록에 올리는 것만 잊지 마.
+Customers will message you whenever there're looking to buy. From there you can accept or reject the offer, and schedule a deal.=고객은 뭔가 사고 싶을 때마다 너한테 메시지를 보낼 거야.\n거기서 제안을 수락하거나 거절하고, 거래 일정을 잡을 수 있어.
+You've already got an offer from a customer. Open up your messages app and schedule your first deal.=이미 고객한테서 제안이 하나 와 있어.\n메시지 앱을 열고 첫 거래 일정을 잡아 봐.
+Looks like you're diversifying your product range - good idea. Just remember to list your new product for sale in the <color\=#4CB0FF>product manager app</color>.=제품군을 다양화하는 중이구만 - 좋은 생각이야.\n새 제품은 <color\=#4CB0FF>제품 관리자 앱</color>에서 판매 목록에 올리는 것만 잊지 마.
 You're almost ready to go, but you're missing one key ingredient - <color\=#4CB0FF>weed seeds</color>.=거의 준비가 다 됐는데, 핵심 재료가 하나 빠졌어 - <color\=#4CB0FF>대마초 씨앗</color> 말이야.
-You'll need to speak to a supplier to get your hands on some seeds. I've passed your number onto <color\=#4CB0FF>Albert Hoover</color> - the local weed seed supplier.=씨앗을 구하려면 공급자한테 말을 해봐야 할 거야. 네 번호를 <color\=#4CB0FF>앨버트 후버</color>한테 넘겨놨어 - 이 동네 대마초 씨앗 공급자야.
-Send him a <color\=#4CB0FF>message</color> and request a <color\=#4CB0FF>dead drop</color>. I've vouched for you so you won't have to pay up front. Your order will go on your tab, which you can pay off in the future.=그에게 <color\=#4CB0FF>메시지</color>를 보내서 <color\=#4CB0FF>데드 드롭</color>을 요청해. 내가 보증을 서놨으니까 선불로 낼 필요는 없어. 주문 금액은 네 외상 장부에 달리고, 나중에 갚으면 돼.
+You'll need to speak to a supplier to get your hands on some seeds. I've passed your number onto <color\=#4CB0FF>Albert Hoover</color> - the local weed seed supplier.=씨앗을 구하려면 공급자한테 말을 해봐야 할 거야.\n네 번호를 <color\=#4CB0FF>앨버트 후버</color>한테 넘겨놨어 - 이 동네 대마초 씨앗 공급자야.
+Send him a <color\=#4CB0FF>message</color> and request a <color\=#4CB0FF>dead drop</color>. I've vouched for you so you won't have to pay up front. Your order will go on your tab, which you can pay off in the future.=그에게 <color\=#4CB0FF>메시지</color>를 보내서 <color\=#4CB0FF>데드 드롭</color>을 요청해.\n내가 보증을 서놨으니까 선불로 낼 필요는 없어.\n주문 금액은 네 외상 장부에 달리고, 나중에 갚으면 돼.
 There's a powerful cartel in town, the <color\=#4CB0FF>Benzies family.</color> I figured they'd eventually be a problem, but didn't think they'd find you this quickly...=이 동네엔 강력한 카르텔이 있어, <color\=#4CB0FF>벤지스 패밀리.</color> 언젠간 문제가 될 거라 생각은 했지만, 이렇게 빨리 널 찾아낼 줄은 몰랐는데...
-Looks like you're gonna need somewhere low key to stay for a while. Head over to the <color\=#4CB0FF>motel</color> and ask about getting a room.=당분간 눈에 안 띄는 곳에서 지내야 할 것 같네. <color\=#4CB0FF>모텔</color>로 가서 방을 잡을 수 있는지 물어봐.
-After that, you'll be needing some new equipment. There's a hardware store just north-east of the motel. Grab a <color\=#4CB0FF>grow tent, soil</color>, and <color\=#4CB0FF>watering can.</color>=그 다음엔 새 장비가 좀 필요할 거야. 모텔 북동쪽에 철물점이 하나 있어. <color\=#4CB0FF>재배 텐트, 흙</color>, 그리고 <color\=#4CB0FF>물뿌리개</color>를 챙겨.
-Looks like you've reached your <color\=#4CB0FF>weekly deposit limit...</color> To avoid arousing suspicion, you can only deposit so much cash each week via ATMs.=<color\=#4CB0FF>주간 입금 한도...</color>에 도달한 것 같군. 의심을 사지 않도록, ATM으로는 매주 일정 금액까지만 현금을 입금할 수 있어.
+Looks like you're gonna need somewhere low key to stay for a while. Head over to the <color\=#4CB0FF>motel</color> and ask about getting a room.=당분간 눈에 안 띄는 곳에서 지내야 할 것 같네.\n<color\=#4CB0FF>모텔</color>로 가서 방을 잡을 수 있는지 물어봐.
+After that, you'll be needing some new equipment. There's a hardware store just north-east of the motel. Grab a <color\=#4CB0FF>grow tent, soil</color>, and <color\=#4CB0FF>watering can.</color>=그 다음엔 새 장비가 좀 필요할 거야.\n모텔 북동쪽에 철물점이 하나 있어.\n<color\=#4CB0FF>재배 텐트, 흙</color>, 그리고 <color\=#4CB0FF>물뿌리개</color>를 챙겨.
+Looks like you've reached your <color\=#4CB0FF>weekly deposit limit...</color> To avoid arousing suspicion, you can only deposit so much cash each week via ATMs.=<color\=#4CB0FF>주간 입금 한도...</color>에 도달한 것 같군.\n의심을 사지 않도록, ATM으로는 매주 일정 금액까지만 현금을 입금할 수 있어.
 If you want to convert more cash to online balance, you're gonna need to start <color\=#4CB0FF>laundering</color>.=더 많은 현금을 온라인 잔고로 바꾸고 싶다면, <color\=#4CB0FF>돈세탁</color>을 시작해야 할 거야.
 Laundering involves using a legal business to conceal the origin of your less-than-legal cash.=돈세탁이란 합법적인 사업체를 이용해서 그다지-합법적이지-않은 현금의 출처를 숨기는 거야.
-First thing's first, you're gonna need a business. Go check out <color\=#4CB0FF>Rays Realty</color>. You're probably not gonna be buying out the casino any time soon, but there should be a cheap business for sale.=우선 첫째로, 사업체가 하나 필요해. <color\=#4CB0FF>레이 부동산</color>에 가봐. 당장 카지노를 인수하진 못하겠지만, 싸게 나온 사업체가 하나쯤은 있을 거야.
-You've now got the connections you need to start manufacturing something a bit harder - methamphetamine. Nasty, messy drug, but hella profitable for you.=이제 좀 더 센 걸 제조하는 데 필요한 인맥이 다 갖춰졌어 - 메스암페타민 말이야. 고약하고 지저분한 마약이지만, 너한텐 엄청나게 수익성이 좋지.
+First thing's first, you're gonna need a business. Go check out <color\=#4CB0FF>Rays Realty</color>. You're probably not gonna be buying out the casino any time soon, but there should be a cheap business for sale.=우선 첫째로, 사업체가 하나 필요해.\n<color\=#4CB0FF>레이 부동산</color>에 가봐.\n당장 카지노를 인수하진 못하겠지만, 싸게 나온 사업체가 하나쯤은 있을 거야.
+You've now got the connections you need to start manufacturing something a bit harder - methamphetamine. Nasty, messy drug, but hella profitable for you.=이제 좀 더 센 걸 제조하는 데 필요한 인맥이 다 갖춰졌어 - 메스암페타민 말이야.\n고약하고 지저분한 마약이지만, 너한텐 엄청나게 수익성이 좋지.
 Unlike weed, meth doesn't grow on trees, so you're gonna get to get yourself some specialized equipment before you can start cooking.=대마초와 달리 메스는 나무에서 자라는 게 아니라서, 요리를 시작하기 전에 전문 장비를 좀 구해야 할 거야.
-Your one-off purchases will be a <color\=#4CB0FF>chemistry station</color> and a <color\=#4CB0FF>lab oven</color>. Both can be purchased from Oscar at the warehouse.=한 번만 사면 되는 건 <color\=#4CB0FF>화학 작업대</color>랑 <color\=#4CB0FF>실험실 오븐</color>이야. 둘 다 창고의 오스카한테서 살 수 있어.
-'For each batch, you''ll need <color\=#4CB0FF>acid, phosphorus</color> and <color\=#4CB0FF>pseudo.</color> The first two are easy enough to come by and can be purchased from Oscar, but you''ll need to talk to <color\=#4CB0FF>Shirley</color> for the pseudo. '='배치마다 <color\=#4CB0FF>산성, 인</color> 그리고 <color\=#4CB0FF>슈도.</color>가 필요할 거야. 앞의 둘은 구하기 쉬운 편이라 오스카한테서 살 수 있지만, 슈도는 <color\=#4CB0FF>셜리</color>한테 말을 해봐야 해. '
+Your one-off purchases will be a <color\=#4CB0FF>chemistry station</color> and a <color\=#4CB0FF>lab oven</color>. Both can be purchased from Oscar at the warehouse.=한 번만 사면 되는 건 <color\=#4CB0FF>화학 작업대</color>랑 <color\=#4CB0FF>실험실 오븐</color>이야.\n둘 다 창고의 오스카한테서 살 수 있어.
+'For each batch, you''ll need <color\=#4CB0FF>acid, phosphorus</color> and <color\=#4CB0FF>pseudo.</color> The first two are easy enough to come by and can be purchased from Oscar, but you''ll need to talk to <color\=#4CB0FF>Shirley</color> for the pseudo. '='배치마다 <color\=#4CB0FF>산성, 인</color> 그리고 <color\=#4CB0FF>슈도.</color>가 필요할 거야.\n앞의 둘은 구하기 쉬운 편이라 오스카한테서 살 수 있지만, 슈도는 <color\=#4CB0FF>셜리</color>한테 말을 해봐야 해.\n'
 Once you've got all those supplies, you'll be ready to start cookin' up a batch.=그 재료들을 전부 구하면, 한 배치 요리할 준비 완료야.
-You know everything you need to get yourself established. I'll call you later when you're ready to start manufacturing some harder stuff...=자리 잡는 데 필요한 건 이제 다 알고 있을 거야. 좀 더 센 걸 제조할 준비가 되면 나중에 전화할게...
-You can find it stashed near the <color\=#4CB0FF>town hall fountain, in the canal,</color> and <color\=#4CB0FF>behind the supermarket</color>. Go grab it, head back to the RV, and we'll go from there.=<color\=#4CB0FF>시청 분수 근처, 운하 안,</color> 그리고 <color\=#4CB0FF>슈퍼마켓 뒤</color>에 숨겨져 있어. 가서 챙긴 다음 캠핑카(RV)로 돌아와, 그 다음은 거기서 얘기하자.
-Oscar will sell everything you need to make meth, with the exception of <color\=#4CB0FF>pseudo</color>. For that, you're gonna need to hook yourself up with a supplier.=오스카는 메스 제조에 필요한 걸 다 팔지만, <color\=#4CB0FF>슈도</color>는 예외야. 그건 공급자를 직접 뚫어야 해.
-I don't know any pseudo suppliers, so you're on your own for this one. There ought to be someone in <color\=#4CB0FF>Westville</color> that can get you what you need.=나는 슈도 공급자를 하나도 몰라서, 이건 네가 알아서 해야 돼. <color\=#4CB0FF>웨스트빌</color>에 필요한 걸 구해줄 만한 사람이 있을 거야.
-Open up your contacts app and look for a supplier in Westville. Keep unlocking customers in that region, and you'll get their attention in no time.=연락처 앱을 열고 웨스트빌에서 공급자를 찾아봐. 그 지역 고객을 계속 뚫다 보면, 금방 그쪽 눈에 띌 거야.
-10K in earnings - not bad at all! Soon you'll have the capital needed to start manufacturing <color\=#4CB0FF>meth</color>. But first, you're gonna need to purchase some equipment.=수익 1만 달러라 - 나쁘지 않은데! 곧 <color\=#4CB0FF>메스</color> 제조를 시작할 자본이 모일 거야. 하지만 먼저 장비를 좀 사야 해.
-'Your best bet for getting the tools you need is the <color\=#4CB0FF>warehouse.</color> It''s the local spot where you can do business with... like-minded individuals. Weapons, specialized equipment, workers for hire - all the good stuff. '='필요한 도구를 구할 가장 좋은 곳은 <color\=#4CB0FF>창고</color>야. 너랑... 비슷한 부류의 사람들이랑 거래할 수 있는 동네 명소지. 무기, 전문 장비, 고용할 일꾼 - 좋은 건 다 있어. '
-It's the big brick building behind the liquor store. Head down there and see if you can mosey your way in. Just keep in mind they'll only let you in once you've built a solid rep for yourself.=주류 판매점 뒤에 있는 큰 벽돌 건물이야. 내려가서 슬쩍 들어갈 수 있는지 봐봐. 단, 평판을 확실히 쌓아놔야만 들여보내 준다는 점만 명심해.
+You know everything you need to get yourself established. I'll call you later when you're ready to start manufacturing some harder stuff...=자리 잡는 데 필요한 건 이제 다 알고 있을 거야.\n좀 더 센 걸 제조할 준비가 되면 나중에 전화할게...
+You can find it stashed near the <color\=#4CB0FF>town hall fountain, in the canal,</color> and <color\=#4CB0FF>behind the supermarket</color>. Go grab it, head back to the RV, and we'll go from there.=<color\=#4CB0FF>시청 분수 근처, 운하 안,</color> 그리고 <color\=#4CB0FF>슈퍼마켓 뒤</color>에 숨겨져 있어.\n가서 챙긴 다음 캠핑카(RV)로 돌아와, 그 다음은 거기서 얘기하자.
+Oscar will sell everything you need to make meth, with the exception of <color\=#4CB0FF>pseudo</color>. For that, you're gonna need to hook yourself up with a supplier.=오스카는 메스 제조에 필요한 걸 다 팔지만, <color\=#4CB0FF>슈도</color>는 예외야.\n그건 공급자를 직접 뚫어야 해.
+I don't know any pseudo suppliers, so you're on your own for this one. There ought to be someone in <color\=#4CB0FF>Westville</color> that can get you what you need.=나는 슈도 공급자를 하나도 몰라서, 이건 네가 알아서 해야 돼.\n<color\=#4CB0FF>웨스트빌</color>에 필요한 걸 구해줄 만한 사람이 있을 거야.
+Open up your contacts app and look for a supplier in Westville. Keep unlocking customers in that region, and you'll get their attention in no time.=연락처 앱을 열고 웨스트빌에서 공급자를 찾아봐.\n그 지역 고객을 계속 뚫다 보면, 금방 그쪽 눈에 띌 거야.
+10K in earnings - not bad at all! Soon you'll have the capital needed to start manufacturing <color\=#4CB0FF>meth</color>. But first, you're gonna need to purchase some equipment.=수익 1만 달러라 - 나쁘지 않은데!\n곧 <color\=#4CB0FF>메스</color> 제조를 시작할 자본이 모일 거야.\n하지만 먼저 장비를 좀 사야 해.
+'Your best bet for getting the tools you need is the <color\=#4CB0FF>warehouse.</color> It''s the local spot where you can do business with... like-minded individuals. Weapons, specialized equipment, workers for hire - all the good stuff. '='필요한 도구를 구할 가장 좋은 곳은 <color\=#4CB0FF>창고</color>야.\n너랑... 비슷한 부류의 사람들이랑 거래할 수 있는 동네 명소지.\n무기, 전문 장비, 고용할 일꾼 - 좋은 건 다 있어.\n'
+It's the big brick building behind the liquor store. Head down there and see if you can mosey your way in. Just keep in mind they'll only let you in once you've built a solid rep for yourself.=주류 판매점 뒤에 있는 큰 벽돌 건물이야.\n내려가서 슬쩍 들어갈 수 있는지 봐봐.\n단, 평판을 확실히 쌓아놔야만 들여보내 준다는 점만 명심해.
 •  Calming=•  차분함
 •  Euphoric=•  황홀
 •  Focused=•  집중
@@ -2945,19 +2945,19 @@ It's the big brick building behind the liquor store. Head down there and see if 
 • Zombifying=• 좀비화
 A coca plant will display distinctive red berries when it is ready for harvest.=코카 식물은 수확할 준비가 되면 특유의 빨간 열매를 맺습니다.
 Be careful when cooking meth - applying too much heat to the mixture may cause an explosion.=메스를 요리할 때는 조심하세요 - 혼합물에 열을 너무 많이 가하면 폭발이 일어날 수 있습니다.
-Be wary of your surroundings when you're dealing! Police will notice when you're handing over product or providing samples to customers.=거래할 때는 주변을 경계하세요! 고객에게 제품을 건네거나 샘플을 제공하는 모습을 경찰이 알아챌 수 있습니다.
+Be wary of your surroundings when you're dealing! Police will notice when you're handing over product or providing samples to customers.=거래할 때는 주변을 경계하세요!\n고객에게 제품을 건네거나 샘플을 제공하는 모습을 경찰이 알아챌 수 있습니다.
 Dealers will automatically split up bricks/jars when necessary.=딜러는 필요할 경우 벽돌/유리병을 자동으로 나눕니다.
 Dealers will sell whatever is in their inventory, regardless of if it's listed for sale or not.=딜러는 판매 목록 등록 여부와 상관없이 자기 인벤토리에 있는 것은 무엇이든 판매합니다.
 Dealers will sell whatever is in their inventory, regardless of it's listed for sale or not.=딜러는 판매 목록 등록 여부와 관계없이 자기 인벤토리에 있는 것은 무엇이든 판매합니다.
 Each property has a limit to the amount of employees that can work there.=각 부동산에는 그곳에서 일할 수 있는 직원 수 제한이 있습니다.
 Employees slacking off? Try punching them!=직원이 게으름을 피우나요? 한 대 때려보세요!
-Feeling stingy? Customers sometimes won't notice if you give them slightly less product than requested.=인색하게 굴고 싶나요? 고객은 가끔 요청한 것보다 제품을 약간 덜 줘도 눈치채지 못합니다.
+Feeling stingy? Customers sometimes won't notice if you give them slightly less product than requested.=인색하게 굴고 싶나요?\n고객은 가끔 요청한 것보다 제품을 약간 덜 줘도 눈치채지 못합니다.
 Hyland Point was first established in 1903 thanks to the efforts of P.P. Hyland.=하이랜드 포인트는 P.P. 하이랜드의 노력 덕분에 1903년에 처음 세워졌습니다.
 If you've recently been searched at a checkpoint, you're free to pass through that checkpoint multiple times without another search.=최근 검문소에서 수색을 받았다면, 추가 수색 없이 해당 검문소를 여러 번 통과할 수 있습니다.
 Need some extra cash? Grab some trash and take it to a 'Trash for Cash' machine.=여윳돈이 필요한가요? 쓰레기를 주워서 '쓰레기를 현금으로' 기계에 가져가세요.
 Need to hide from the authorities? Try a bush, dumpster, or large tree,=당국을 피해 숨어야 하나요? 덤불, 쓰레기통, 큰 나무를 이용해보세요,
-Resisting arrest will result in law enforcement utilizing tasers. Continue to resist, and they'll eventually switch to lethal weapons.=체포에 저항하면 경찰이 테이저건을 사용합니다. 계속 저항하면 결국 살상 무기로 전환합니다.
-Staff don't work for free! They will automatically draw their daily wage from their briefcase on their bed. If it's empty at the start of a new shift, they won't work.=직원은 공짜로 일하지 않습니다! 직원은 자기 침대 위 서류가방에서 일당을 자동으로 가져갑니다. 새 근무 시작 시점에 서류가방이 비어 있으면 일하지 않습니다.
+Resisting arrest will result in law enforcement utilizing tasers. Continue to resist, and they'll eventually switch to lethal weapons.=체포에 저항하면 경찰이 테이저건을 사용합니다.\n계속 저항하면 결국 살상 무기로 전환합니다.
+Staff don't work for free! They will automatically draw their daily wage from their briefcase on their bed. If it's empty at the start of a new shift, they won't work.=직원은 공짜로 일하지 않습니다!\n직원은 자기 침대 위 서류가방에서 일당을 자동으로 가져갑니다.\n새 근무 시작 시점에 서류가방이 비어 있으면 일하지 않습니다.
 There are a number of ATMs scattered throughout Hyland Point for your convenience.=하이랜드 포인트 곳곳에는 여러분의 편의를 위한 ATM이 여러 대 설치되어 있습니다.
 Vehicle stuck? Head to the body shop to get it towed.=차량이 끼었나요? 바디샵에 가서 견인을 받으세요.
 Visit the graveyard and ponder your mortality!=묘지를 방문해서 자신의 죽음에 대해 사색해보세요!
@@ -2966,18 +2966,18 @@ When curfew is active, all citizens are legally required to remain within their 
 You can repaint your vehicles at the body shop.=바디샵에서 차량을 다시 도색할 수 있습니다.
 You can view and track/untrack all of your current quests and contracts in your Journal.=저널에서 현재 진행 중인 모든 퀘스트와 계약을 확인하고 추적/추적 해제할 수 있습니다.
 You won't be able to enter your property while wanted if you're within sight of police.=수배 중일 때 경찰의 시야 안에 있으면 소유한 부동산에 들어갈 수 없습니다.
-Your progress is automatically saved when you sleep. You can also manually save at the save panel in any of your properties.=잠을 자면 진행 상황이 자동으로 저장됩니다. 소유한 부동산 어디서든 저장 패널에서 수동으로 저장할 수도 있습니다.
+Your progress is automatically saved when you sleep. You can also manually save at the save panel in any of your properties.=잠을 자면 진행 상황이 자동으로 저장됩니다.\n소유한 부동산 어디서든 저장 패널에서 수동으로 저장할 수도 있습니다.
 Insert soil=흙 넣기
 Dispense soil=흙 붓기
 Activate sprinkler=스프링클러 작동
 We've been working together for a while now, and you've proven to be quite reliable.=우리도 꽤 오랫동안 함께 일해왔고, 당신은 충분히 믿을 만한 분이란 걸 증명하셨습니다.
-If you're needing to order larger quantities of supplies, you can now organize an in-person meeting with me. Just send me a text.=물자를 더 대량으로 주문하셔야 한다면, 이제 저와 직접 만나는 자리를 잡으실 수 있습니다. 문자만 주시면 됩니다.
+If you're needing to order larger quantities of supplies, you can now organize an in-person meeting with me. Just send me a text.=물자를 더 대량으로 주문하셔야 한다면, 이제 저와 직접 만나는 자리를 잡으실 수 있습니다.\n문자만 주시면 됩니다.
 Agreed. I'll be under the west bridge for the next 6 hours.=좋아. 앞으로 6시간 동안 서쪽 다리 밑에 있을게.
 Agreed. I'll be next to the mayor's house for the next 6 hours.=좋아. 앞으로 6시간 동안 시장 집 옆에 있을게.
 Agreed. I'll be in the west construction for the next 6 hours.=좋아. 앞으로 6시간 동안 서쪽 공사장에 있을게.
 Agreed. I'll be under the north end of the overpass for the next 6 hours.=좋아. 앞으로 6시간 동안 고가도로 북쪽 끝 아래에 있을게.
 Use Mixing Station=혼합 스테이션 사용
-You owe Albert Hoover <color\=#54E717>${{A}}</color>. Insert cash and exit stash to pay off your debt=앨버트 후버에게 <color\=#54E717>${{A}}</color>를 빚졌습니다. 현금을 넣고 은닉처에서 나가면 빚을 갚을 수 있습니다
+You owe Albert Hoover <color\=#54E717>${{A}}</color>. Insert cash and exit stash to pay off your debt=앨버트 후버에게 <color\=#54E717>${{A}}</color>를 빚졌습니다.\n현금을 넣고 은닉처에서 나가면 빚을 갚을 수 있습니다
 Click and hold over leaves to harvest ({{A}})=잎을 클릭한 채 유지하여 수확 ({{A}})
 Click and hold over buds to harvest ({{A}})=봉오리를 클릭한 채 유지하여 수확 ({{A}})
 Use Packaging Station Mk II=포장 스테이션 Mk II 사용
@@ -3024,9 +3024,9 @@ I haven't been assigned any stations=할당된 스테이션이 없어요
 You can use your management clipboards to assign stations to me.=관리 클립보드로 저에게 스테이션을 할당할 수 있어요.
 I haven't been assigned to any stations or routes.=할당된 스테이션이나 경로가 없어요.
 You can use your managment clipboards to assign stations or routes to me.=관리 클립보드로 저에게 스테이션이나 경로를 할당할 수 있어요.
-Thanks. By the way, my friend Shirley can hook you up with pseudo. I've passed your number on to her.=고마워. 그나저나 내 친구 셜리가 슈도를 구해줄 수 있어. 네 번호를 걔한테 넘겨놨어.
-You can now order <color\=#88CBFF>pseudo</color> from Shirley. Pseudo is the main precursor ingredient for <color\=#88CBFF>methamphetamine</color>.=이제 셜리에게 <color\=#88CBFF>슈도</color>를 주문할 수 있습니다. 슈도는 <color\=#88CBFF>메스암페타민</color>의 주요 전구체 재료입니다.
-Heyo, I'm Shirley. I work in the pharmaceutical business, and heard you got a nasty cough...=안녕, 난 셜리야. 제약 업계에서 일하는데, 네가 지독한 기침에 시달린다고 들었어...
+Thanks. By the way, my friend Shirley can hook you up with pseudo. I've passed your number on to her.=고마워.\n그나저나 내 친구 셜리가 슈도를 구해줄 수 있어.\n네 번호를 걔한테 넘겨놨어.
+You can now order <color\=#88CBFF>pseudo</color> from Shirley. Pseudo is the main precursor ingredient for <color\=#88CBFF>methamphetamine</color>.=이제 셜리에게 <color\=#88CBFF>슈도</color>를 주문할 수 있습니다.\n슈도는 <color\=#88CBFF>메스암페타민</color>의 주요 전구체 재료입니다.
+Heyo, I'm Shirley. I work in the pharmaceutical business, and heard you got a nasty cough...=안녕, 난 셜리야.\n제약 업계에서 일하는데, 네가 지독한 기침에 시달린다고 들었어...
 If you're in need of some pseudo, I'm your gal. Send me a message and we'll figure something out=슈도가 필요하다면 내가 적임자야. 문자 보내면 방법을 찾아보자
 Hey, I'm Sal. You need Coca seeds? You speak to me.=야, 난 살이야. 코카 씨앗 필요해? 그럼 나한테 말해.
 Send me a message if you want to order a drop.=드랍 주문하고 싶으면 문자 보내.
@@ -3085,13 +3085,13 @@ This dealer is ready to be hired. Go to them and pay their signing free to recru
 This dealer is ready to be hired. Go to them and pay their signing fee to recruit them.=이 딜러를 고용할 수 있습니다. 찾아가서 계약금을 지불하고 영입하세요.
 Loyal=충성
 You can pay off your debt by placing cash in my stash. It's on the west face of the warehouse.=현금을 내 은닉처에 넣으면 빚을 갚을 수 있어. 창고 서쪽 면에 있어.
-Hey, you've been great to work with so I'm willing to start doing in-person meetings with you. At a meeting, you buy as much pseudo as you can carry - no more order limits.=이봐, 너랑 일하는 게 아주 좋았어. 그래서 이제 직접 만나서 거래할 생각이 있어. 만나면 네가 들 수 있는 만큼 슈도를 살 수 있어 - 더 이상 주문 한도는 없어.
+Hey, you've been great to work with so I'm willing to start doing in-person meetings with you. At a meeting, you buy as much pseudo as you can carry - no more order limits.=이봐, 너랑 일하는 게 아주 좋았어.\n그래서 이제 직접 만나서 거래할 생각이 있어.\n만나면 네가 들 수 있는 만큼 슈도를 살 수 있어 - 더 이상 주문 한도는 없어.
 Just send me a text if you'd like to meet.=만나고 싶으면 문자만 보내.
-Heyo - if you're looking to streamline, I'm now doing deliveries. Use your deliveries app to place an order and I'll get it to you ASAP.=안녕 - 일을 좀 더 효율적으로 하고 싶다면, 나 이제 배달도 해. 배달 앱으로 주문하면 최대한 빨리 갖다 줄게.
+Heyo - if you're looking to streamline, I'm now doing deliveries. Use your deliveries app to place an order and I'll get it to you ASAP.=안녕 - 일을 좀 더 효율적으로 하고 싶다면, 나 이제 배달도 해.\n배달 앱으로 주문하면 최대한 빨리 갖다 줄게.
 I've received ${{A}} cash from you. Your debt is now paid off.=네게서 현금 ${{A}}를 받았어. 이제 빚은 다 갚았어.
 I've received ${{A}} cash from you. Your debt is now ${{B}}=네게서 현금 ${{A}}를 받았어. 남은 빚은 ${{B}}야
 We need to meet up=우리 만나야 해
-Greetings. You can now get your supplies delivered directly to your properties. Use the deliveries app on your phone to place an order.=안녕하십니까. 이제 물품을 부동산으로 직접 배달받을 수 있습니다. 휴대폰의 배달 앱으로 주문하세요.
+Greetings. You can now get your supplies delivered directly to your properties. Use the deliveries app on your phone to place an order.=안녕하십니까.\n이제 물품을 부동산으로 직접 배달받을 수 있습니다.\n휴대폰의 배달 앱으로 주문하세요.
 Working on it. Should be ready in around {{A}} hour {{B}} min=작업 중이야. 대략 {{A}}시간 {{B}}분 후에 준비될 거야
 Working on it. Should be ready in around {{A}} hour=작업 중이야. 대략 {{A}}시간 후에 준비될 거야
 Working on it. Should be ready in around {{A}} hours {{B}} min=작업 중이야. 대략 {{A}}시간 {{B}}분 후에 준비될 거야
@@ -3109,7 +3109,7 @@ Request Dead Drop=데드 드롭 요청
 You can pay off your debt by placing cash in my stash. It's behind the Church.=현금을 내 은닉처에 넣으면 빚을 갚을 수 있어. 교회 뒤에 있어.
 You've been a good customer - I'll start doing in-person meetings with you now if you want to buy larger quantities.=넌 좋은 고객이었어 - 더 많은 양을 사고 싶다면 이제 직접 만나서 거래해 줄게.
 Send me a message when you want to meet.=만나고 싶을 때 문자 보내.
-If you're looking to get real serious, I can deliver seeds straight to any of your properties. Just use your deliveries app to place an order, and I'll get it to you in no time.=진짜 제대로 해볼 생각이라면, 씨앗을 네 부동산으로 직접 배달해 줄 수 있어. 배달 앱으로 주문만 하면 금방 갖다 줄게.
+If you're looking to get real serious, I can deliver seeds straight to any of your properties. Just use your deliveries app to place an order, and I'll get it to you in no time.=진짜 제대로 해볼 생각이라면, 씨앗을 네 부동산으로 직접 배달해 줄 수 있어.\n배달 앱으로 주문만 하면 금방 갖다 줄게.
 Nothing selected=선택된 항목 없음
 Higher=높음
 Lower=낮음
@@ -3139,12 +3139,12 @@ Deal for Joe=조와의 거래
 Deal for Andy=앤디와의 거래
 Deal for Doug=더그와의 거래
 Every customer has their own preferences for drug type and effects.=고객마다 선호하는 마약 종류와 효과가 다릅니다.
-The officer will search your inventory from <color\=#62BDFF>left to right</color>.\n\n<color\=#62BDFF>Click and hold</color> an item to <color\=#62BDFF>conceal</color> it. You can only conceal one item at a time.=경찰은 당신의 소지품을 <color\=#62BDFF>왼쪽에서 오른쪽으로</color> 검사합니다.\n\n아이템을 <color\=#62BDFF>클릭한 채 유지</color>하면 <color\=#62BDFF>숨길</color> 수 있습니다. 한 번에 하나의 아이템만 숨길 수 있습니다.
-The law will be your foremost obstacle. You'll have to deal with patrols, body searches, vehicle checkpoints, curfews, and more.=법은 당신의 가장 큰 장애물이 될 것입니다. 순찰, 몸수색, 차량 검문소, 통행금지 등에 대처해야 합니다.
-This is your <color\=#88CBFF>contacts web</color>. This is where you can view all your customers and potential customers.=이것은 당신의 <color\=#88CBFF>연락처 웹</color>입니다. 여기서 모든 고객과 잠재 고객을 확인할 수 있습니다.
+The officer will search your inventory from <color\=#62BDFF>left to right</color>.\n\n<color\=#62BDFF>Click and hold</color> an item to <color\=#62BDFF>conceal</color> it. You can only conceal one item at a time.=경찰은 당신의 소지품을 <color\=#62BDFF>왼쪽에서 오른쪽으로</color> 검사합니다.\n\n아이템을 <color\=#62BDFF>클릭한 채 유지</color>하면 <color\=#62BDFF>숨길</color> 수 있습니다.\n한 번에 하나의 아이템만 숨길 수 있습니다.
+The law will be your foremost obstacle. You'll have to deal with patrols, body searches, vehicle checkpoints, curfews, and more.=법은 당신의 가장 큰 장애물이 될 것입니다.\n순찰, 몸수색, 차량 검문소, 통행금지 등에 대처해야 합니다.
+This is your <color\=#88CBFF>contacts web</color>. This is where you can view all your customers and potential customers.=이것은 당신의 <color\=#88CBFF>연락처 웹</color>입니다.\n여기서 모든 고객과 잠재 고객을 확인할 수 있습니다.
 The fastest way to unlock new customers is to give a <color\=#88CBFF>free sample</color> to a friend of an existing customer.=새 고객을 가장 빨리 잠금 해제하는 방법은 기존 고객의 친구에게 <color\=#88CBFF>무료 샘플</color>을 주는 것입니다.
 Only 1 sample product is required.=샘플 제품은 1개만 있으면 됩니다.
-There is a <color\=#88CBFF>map</color> on your phone. Press <color\=#88CBFF>M</color> to quickly open it.=휴대폰에 <color\=#88CBFF>지도</color>가 있습니다. <color\=#88CBFF>M</color> 키를 눌러 빠르게 열 수 있습니다.
+There is a <color\=#88CBFF>map</color> on your phone. Press <color\=#88CBFF>M</color> to quickly open it.=휴대폰에 <color\=#88CBFF>지도</color>가 있습니다.\n<color\=#88CBFF>M</color> 키를 눌러 빠르게 열 수 있습니다.
 sr:"Potential Customer\\n(.*?)"=잠재 고객\n$1
 sr:"Talk to ([a-zA-Z]+)$"=$1에게 말 걸기
 sr:"Great, I'll meet you <b>(.*?)<\/b> between (\d{1,2}:\d{2} ?[AP]M) and (\d{1,2}:\d{2} ?[AP]M)."=좋아, <b>$1</b>에서 $2~$3 사이에 만나자.
@@ -3363,8 +3363,8 @@ Golden M1911=골든 M1911
 // --- 파일 전수조사로 확인된 미번역 (아이템 설명·UI) ---
 A ceramic toilet for disposing of waste matter.	=폐기물을 처리하는 도자기 변기.
 A ceramic toilet for disposing of waste matter.=폐기물을 처리하는 도자기 변기.
-Skateboard with big ass wheels for off-road travel. Does not slow down when rolling over terrain.	=험지 주행용 큼직한 바퀴가 달린 스케이트보드. 거친 지형에서도 속도가 줄지 않는다.
-Skateboard with big ass wheels for off-road travel. Does not slow down when rolling over terrain.=험지 주행용 큼직한 바퀴가 달린 스케이트보드. 거친 지형에서도 속도가 줄지 않는다.
+Skateboard with big ass wheels for off-road travel. Does not slow down when rolling over terrain.	=험지 주행용 큼직한 바퀴가 달린 스케이트보드.\n거친 지형에서도 속도가 줄지 않는다.
+Skateboard with big ass wheels for off-road travel. Does not slow down when rolling over terrain.=험지 주행용 큼직한 바퀴가 달린 스케이트보드.\n거친 지형에서도 속도가 줄지 않는다.
 Some kind words from the Benzies family.=벤지스 패밀리가 전하는 따뜻한 한마디.
 [Hand over RDX]=[RDX 건네주기]
 Evenin', how'd you get on in town?=안녕, 시내에서는 어땠어?
@@ -3374,7 +3374,7 @@ Total:=합계:
 
 // --- 실행 중 수집으로 확인 (2차) ---
 UNLOCK ONE OF PEGGY'S CONNECTIONS FIRST=먼저 페기의 인맥 중 하나를 뚫으세요
-Thanks for voting! Special customers won this vote, receiving over 142,000 submissions. This update will be entering open beta shortly.=투표해 주셔서 감사합니다! 이번 투표는 스페셜 고객이 142,000표 이상을 받아 선정되었습니다. 이 업데이트는 곧 오픈 베타로 들어갑니다.
+Thanks for voting! Special customers won this vote, receiving over 142,000 submissions. This update will be entering open beta shortly.=투표해 주셔서 감사합니다!\n이번 투표는 스페셜 고객이 142,000표 이상을 받아 선정되었습니다.\n이 업데이트는 곧 오픈 베타로 들어갑니다.
 
 // --- 실행 중 수집 (3차): 상호작용 안내 ---
 Pour into pot=냄비에 붓기
