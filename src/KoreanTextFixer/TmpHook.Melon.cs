@@ -37,7 +37,7 @@ namespace KoreanTextFixer
                 }
             }
             Installed = patched > 0;
-            if (Installed) InstallOnEnable(harmony);
+            if (Installed) { InstallOnEnable(harmony); InstallCharArray(harmony); }
             else KLog.Warn("TMP 후킹 실패 - 폴링으로만 동작합니다");
         }
 
@@ -49,9 +49,10 @@ namespace KoreanTextFixer
             if (setter != null) list.Add(setter);
             foreach (var m in typeof(TMP_Text).GetMethods(BindingFlags.Public | BindingFlags.Instance))
             {
+                // 첫 인자가 문자열인 SetText 오버로드 전부 (다인자 포함)
                 if (m.Name != "SetText") continue;
                 var ps = m.GetParameters();
-                if (ps.Length == 1 && ps[0].ParameterType == typeof(string)) list.Add(m);
+                if (ps.Length >= 1 && ps[0].ParameterType == typeof(string)) list.Add(m);
             }
             return list;
         }
@@ -80,6 +81,32 @@ namespace KoreanTextFixer
                     KLog.Warn(t.Name + ".OnEnable 후킹 실패: " + e.Message);
                 }
             }
+        }
+
+        internal static void InstallCharArray(HarmonyLib.Harmony harmony)
+        {
+            var post = new HarmonyMethod(typeof(TmpHook).GetMethod(
+                nameof(CharArrayPostfix), BindingFlags.NonPublic | BindingFlags.Static));
+            int n = 0;
+            foreach (var m in typeof(TMP_Text).GetMethods(BindingFlags.Public | BindingFlags.Instance))
+            {
+                if (m.Name != "SetCharArray") continue;
+                try { harmony.Patch(m, null, post); n++; } catch { }
+            }
+            if (n > 0) KLog.Info("hooked TMP_Text.SetCharArray x" + n);
+        }
+
+        private static void CharArrayPostfix(TMP_Text __instance)
+        {
+            try
+            {
+                if (__instance == null) return;
+                string cur = __instance.text;
+                if (string.IsNullOrEmpty(cur)) return;
+                string t = Fixer.TranslateForHook(cur);
+                if (t != null) __instance.text = t;
+            }
+            catch { }
         }
 
         private static void OnEnablePostfix(TMP_Text __instance)
