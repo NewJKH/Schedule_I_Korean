@@ -188,9 +188,11 @@ namespace KoreanTextFixer
             var sw = System.Diagnostics.Stopwatch.StartNew();
             _tmps.Clear();
             _uis.Clear();
-            var t = UnityEngine.Object.FindObjectsOfType(Il2CppType.Of<TMP_Text>());
+            // includeInactive=true: 스테이션 창처럼 기구를 열 때만 잠깐 활성화되는 UI는
+            // 활성 순간을 폴링이 놓치면 영영 영어로 남는다. 닫혀 있을 때 미리 번역해 둔다.
+            var t = UnityEngine.Object.FindObjectsOfType(Il2CppType.Of<TMP_Text>(), true);
             if (t != null) { foreach (var o in t) { var c = o.TryCast<TMP_Text>(); if (c != null) _tmps.Add(c); } }
-            var u = UnityEngine.Object.FindObjectsOfType(Il2CppType.Of<UnityEngine.UI.Text>());
+            var u = UnityEngine.Object.FindObjectsOfType(Il2CppType.Of<UnityEngine.UI.Text>(), true);
             if (u != null) { foreach (var o in u) { var c = o.TryCast<UnityEngine.UI.Text>(); if (c != null) _uis.Add(c); } }
             sw.Stop();
             _refreshMs = sw.ElapsedMilliseconds;
@@ -200,11 +202,11 @@ namespace KoreanTextFixer
         {
             try
             {
-                if (tmp == null || !tmp.isActiveAndEnabled) return;
+                if (tmp == null) return;
                 string cur = tmp.text;
                 string outp = Check(cur, tmp.GetInstanceID());
                 if (outp != null) { tmp.text = outp; _replaced++; }
-                else if (LooksEnglish(cur)) MissingLog.Record(cur);
+                else if (tmp.isActiveAndEnabled && LooksEnglish(cur)) MissingLog.Record(cur);
             }
             catch { }
         }
@@ -213,11 +215,11 @@ namespace KoreanTextFixer
         {
             try
             {
-                if (ut == null || !ut.isActiveAndEnabled) return;
+                if (ut == null) return;
                 string cur = ut.text;
                 string outp = Check(cur, ut.GetInstanceID());
                 if (outp != null) { ut.text = outp; _replaced++; }
-                else if (LooksEnglish(cur)) MissingLog.Record(cur);
+                else if (ut.isActiveAndEnabled && LooksEnglish(cur)) MissingLog.Record(cur);
             }
             catch { }
         }

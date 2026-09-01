@@ -5986,7 +5986,7 @@ You've finished a few deals and made some decent cash, but if you're looking to 
 - Mixing stations=- 혼합 스테이션
 - Packaging stations=- 포장 스테이션
 - Pots=- 화분
-- Property=- 부동산
+- Property=- 속성
 - Penalty=- 페널티
 (Optional) Message Thomas to call off the truce=(선택) 토마스에게 휴전을 끝내자고 문자 보내기
 Complete 3 deals (0/3)=거래 3건 완료하기 (0/3)
