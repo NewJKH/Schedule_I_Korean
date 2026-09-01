@@ -3028,8 +3028,8 @@ Thanks. By the way, my friend Shirley can hook you up with pseudo. I've passed y
 You can now order <color\=#88CBFF>pseudo</color> from Shirley. Pseudo is the main precursor ingredient for <color\=#88CBFF>methamphetamine</color>.=이제 셜리에게 <color\=#88CBFF>슈도</color>를 주문할 수 있습니다.\n슈도는 <color\=#88CBFF>메스암페타민</color>의 주요 전구체 재료입니다.
 Heyo, I'm Shirley. I work in the pharmaceutical business, and heard you got a nasty cough...=안녕, 난 셜리야.\n제약 업계에서 일하는데, 네가 지독한 기침에 시달린다고 들었어...
 If you're in need of some pseudo, I'm your gal. Send me a message and we'll figure something out=슈도가 필요하다면 내가 적임자야. 문자 보내면 방법을 찾아보자
-Hey, I'm Sal. You need Coca seeds? You speak to me.=어이, 내는 살이다. 코카 씨앗 필요하나? 그라믄 내한테 말해라.
-Send me a message if you want to order a drop.=드랍 주문하고 싶으믄 문자 보내라.
+Hey, I'm Sal. You need Coca seeds? You speak to me.=마! 내는 살이다. 코카 씨앗 필요하나? 딴 데 가지 말고 고마 내한테 온나.
+Send me a message if you want to order a drop.=드랍 주문할라카믄 문자 때리라.
 Ready to begin cooking=조리 시작 준비 완료
 Open oven door=오븐 문 열기
 Pour liquid into tray=트레이에 액체 붓기
@@ -3107,8 +3107,8 @@ Got it. I'll let you know when it's ready. Should be about {{A}} hours=접수했
 You can pay off your debt by placing cash in my stash. It's behind Dan's Hardware.=현금을 내 은닉처에 넣으면 빚을 갚을 수 있어. 댄의 하드웨어 뒤에 있어.
 Request Dead Drop=데드 드롭 요청
 You can pay off your debt by placing cash in my stash. It's behind the Church.=현금을 내 은닉처에 넣으면 빚을 갚을 수 있어. 교회 뒤에 있어.
-You've been a good customer - I'll start doing in-person meetings with you now if you want to buy larger quantities.=니는 참말로 좋은 고객이었데이 - 더 마이 사고 싶다카믄 인자 직접 만나서 거래해주꾸마.
-Send me a message when you want to meet.=만나고 싶으믄 문자 보내라.
+You've been a good customer - I'll start doing in-person meetings with you now if you want to buy larger quantities.=니는 참말로 좋은 고객이었데이 - 더 마이 사고 싶다카믄 인자 직접 만나서 거래해주꾸마. 마, 화끈하게 사라!
+Send me a message when you want to meet.=만나고 싶으믄 고마 문자 때리라.
 If you're looking to get real serious, I can deliver seeds straight to any of your properties. Just use your deliveries app to place an order, and I'll get it to you in no time.=진짜 제대로 해볼 생각이믄, 씨앗을 니 부동산으로 바로 배달해줄 수 있데이.\n배달 앱으로 주문만 하믄 금방 갖다준다 아이가.
 Nothing selected=선택된 항목 없음
 Higher=높음
