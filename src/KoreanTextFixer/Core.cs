@@ -26,6 +26,10 @@ namespace KoreanTextFixer
     internal static class Translations
     {
         internal static Dictionary<string, string> Dict = new Dictionary<string, string>(StringComparer.Ordinal);
+        // 게임이 코드에서 .ToUpper()로 대문자화해 표시하는 문구가 있다
+        // (예: UNLOCK ONE OF PEGGY'S CONNECTIONS FIRST, CURFEW 안내).
+        // 케이스가 달라도 잡히도록 소문자 키 인덱스를 함께 둔다. 값은 한국어라 케이스 무관.
+        internal static Dictionary<string, string> LowerDict = new Dictionary<string, string>(StringComparer.Ordinal);
         internal static Dictionary<string, string> StrippedDict = new Dictionary<string, string>(StringComparer.Ordinal);
         internal static readonly Regex TagRx = new Regex("<[^<>]{1,60}>", RegexOptions.Compiled);
         internal static Dictionary<string, string> Regions = new Dictionary<string, string>
@@ -60,6 +64,8 @@ namespace KoreanTextFixer
                     if (!Dict.ContainsKey(k)) Dict[k] = v;
                     string kt = k.Trim();
                     if (kt.Length > 0 && !Dict.ContainsKey(kt)) Dict[kt] = v.Trim();
+                    string kl = kt.ToLowerInvariant();
+                    if (kl.Length > 0 && !LowerDict.ContainsKey(kl)) LowerDict[kl] = v.Trim();
                     if (k.IndexOf('<') >= 0)
                     {
                         string ks = TagRx.Replace(k, "").Trim();
@@ -81,6 +87,7 @@ namespace KoreanTextFixer
             if (Dict.TryGetValue(s, out v)) return v;
             string t = s.Trim();
             if (t.Length != s.Length && Dict.TryGetValue(t, out v)) return v;
+            if (LowerDict.TryGetValue(t.ToLowerInvariant(), out v)) return v;
             return null;
         }
     }
@@ -335,9 +342,10 @@ namespace KoreanTextFixer
             string t = src.Trim();
             if (t.Length == 0) return null;
 
-            // 1) 통짜 매칭
+            // 1) 통짜 매칭 (실패 시 대소문자 무시)
             string v;
             if (Translations.Dict.TryGetValue(t, out v)) return src.Replace(t, v);
+            if (Translations.LowerDict.TryGetValue(t.ToLowerInvariant(), out v)) return src.Replace(t, v);
 
             // 1-b) 태그 무시 매칭 (게임이 <h1>을 <color>로 바꿔 표시하는 경우)
             if (src.IndexOf('<') >= 0)
@@ -386,6 +394,7 @@ namespace KoreanTextFixer
 
             string v;
             if (Translations.Dict.TryGetValue(core, out v)) return lead + v + tail;
+            if (Translations.LowerDict.TryGetValue(core.ToLowerInvariant(), out v)) return lead + v + tail;
 
             var pm = Paren.Match(tok);
             if (pm.Success)
