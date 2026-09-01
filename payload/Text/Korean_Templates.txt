@@ -9,7 +9,7 @@ sr:"^([0-9]+x [^\n]+)\n([\s\S]+)$"=$1\n$2
 sr:"^<color\=#([0-9A-Fa-f]{3,8})>([A-Za-z][^<>]*)</color>$"=<color\=#$1>$2</color>
 sr:"^• ([\s\S]+)$"=• $1
 sr:"^- ([\s\S]+)$"=- $1
-sr:"^I need a dead drop:\n([\s\S]+)$"=나 데드 드랍이 필요해:\n$1
+sr:"^I need a dead drop:\n([\s\S]+)$"=나 데드 드롭이 필요해:\n$1
 
 // --- 값이 숫자뿐이라 항상 적용되어야 하는 문장 (r:) ---
 r:"^(.*?)This packaging type requires ([\s\S]*?) product(.*?)$"=$1이 포장 방식에는 제품 $2 개가 필요합니다$3
@@ -29,7 +29,7 @@ sr:"^Assigned to (.*?)$"=$1에게 할당됨
 sr:"^Available at (.*?)$"=$1에서 구매 가능
 sr:"^Awaiting deal: (.*?)$"=거래 대기 중: $1
 sr:"^Awaiting sample: (.*?)$"=샘플 대기 중: $1
-sr:"^Collect the dead drop (.*?)$"=데드 드랍 회수하기 $1
+sr:"^Collect the dead drop (.*?)$"=데드 드롭 회수하기 $1
 sr:"^Current contract: (.*?)$"=현재 계약: $1
 sr:"^Insert a product here for (.*?)$"=$1에게 줄 제품을 여기에 넣으세요
 sr:"^Insert product to offer to (.*?)$"=$1에게 제안할 제품을 넣으세요
@@ -53,7 +53,7 @@ r:"^The\ Cheetah\ \((.*?)\)$"=치타 ($1)
 r:"^The\ Dinkler\ \((.*?)\)$"=딘클러 ($1)
 r:"^The\ Docks\ Warehouse\ \((.*?)\)$"=부두 창고 ($1)
 r:"^The\ Hounddog\ \((.*?)\)$"=하운드독 ($1)
-r:"^The\ Laundromat\ \((.*?)\)$"=세탁소 ($1)
+r:"^The\ Laundromat\ \((.*?)\)$"=빨래방 ($1)
 r:"^The\ Post\ Office\ \((.*?)\)$"=우체국 ($1)
 r:"^The\ Shitbox\ \((.*?)\)$"=똥차 ($1)
 r:"^The\ Veeper\ \((.*?)\)$"=비퍼 ($1)
