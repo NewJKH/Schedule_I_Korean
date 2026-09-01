@@ -188,11 +188,12 @@ namespace KoreanTextFixer
             var sw = System.Diagnostics.Stopwatch.StartNew();
             _tmps.Clear();
             _uis.Clear();
-            // includeInactive=true: 스테이션 창처럼 기구를 열 때만 잠깐 활성화되는 UI는
-            // 활성 순간을 폴링이 놓치면 영영 영어로 남는다. 닫혀 있을 때 미리 번역해 둔다.
-            var t = UnityEngine.Object.FindObjectsOfType(Il2CppType.Of<TMP_Text>(), true);
+            // 비활성 오브젝트까지 훑는 방식(includeInactive)은 월드 로딩 직후 크래시를
+            // 일으켰다(씬 오브젝트 67만 개 + 초기화 전 TMP 접근). 활성만 수집하고,
+            // 잠깐 열리는 창은 OnEnable 후킹(활성화 순간 = 초기화 완료)이 담당한다.
+            var t = UnityEngine.Object.FindObjectsOfType(Il2CppType.Of<TMP_Text>());
             if (t != null) { foreach (var o in t) { var c = o.TryCast<TMP_Text>(); if (c != null) _tmps.Add(c); } }
-            var u = UnityEngine.Object.FindObjectsOfType(Il2CppType.Of<UnityEngine.UI.Text>(), true);
+            var u = UnityEngine.Object.FindObjectsOfType(Il2CppType.Of<UnityEngine.UI.Text>());
             if (u != null) { foreach (var o in u) { var c = o.TryCast<UnityEngine.UI.Text>(); if (c != null) _uis.Add(c); } }
             sw.Stop();
             _refreshMs = sw.ElapsedMilliseconds;
@@ -202,11 +203,11 @@ namespace KoreanTextFixer
         {
             try
             {
-                if (tmp == null) return;
+                if (tmp == null || !tmp.isActiveAndEnabled) return;
                 string cur = tmp.text;
                 string outp = Check(cur, tmp.GetInstanceID());
                 if (outp != null) { tmp.text = outp; _replaced++; }
-                else if (tmp.isActiveAndEnabled && LooksEnglish(cur)) MissingLog.Record(cur);
+                else if (LooksEnglish(cur)) MissingLog.Record(cur);
             }
             catch { }
         }
@@ -215,11 +216,11 @@ namespace KoreanTextFixer
         {
             try
             {
-                if (ut == null) return;
+                if (ut == null || !ut.isActiveAndEnabled) return;
                 string cur = ut.text;
                 string outp = Check(cur, ut.GetInstanceID());
                 if (outp != null) { ut.text = outp; _replaced++; }
-                else if (ut.isActiveAndEnabled && LooksEnglish(cur)) MissingLog.Record(cur);
+                else if (LooksEnglish(cur)) MissingLog.Record(cur);
             }
             catch { }
         }

@@ -4,7 +4,7 @@ using System.IO;
 using MelonLoader;
 using MelonLoader.Utils;
 
-[assembly: MelonInfo(typeof(KoreanTextFixer.MelonPlugin), "Korean Text Fixer", "1.13.0", "Schedule I 한글패치")]
+[assembly: MelonInfo(typeof(KoreanTextFixer.MelonPlugin), "Korean Text Fixer", "1.13.1", "Schedule I 한글패치")]
 [assembly: MelonGame("TVGS", "Schedule I")]
 
 namespace KoreanTextFixer
@@ -43,7 +43,7 @@ namespace KoreanTextFixer
 
                 Diagnostics.Init(Path.Combine(MelonEnvironment.UserDataDirectory, "KoreanTextFixer_screen.txt"));
                 _fixer = new Fixer(usePolling.Value);
-                KLog.Info("KoreanTextFixer 1.13.0 (MelonLoader) loaded. entries=" + Translations.Dict.Count + " rules=" + Rules.Count);
+                KLog.Info("KoreanTextFixer 1.13.1 (MelonLoader) loaded. entries=" + Translations.Dict.Count + " rules=" + Rules.Count);
             }
             catch (Exception e)
             {
