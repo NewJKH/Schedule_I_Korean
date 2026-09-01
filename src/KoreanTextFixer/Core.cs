@@ -183,6 +183,17 @@ namespace KoreanTextFixer
 
         private long _refreshMs;
 
+        // 씬이 내려갈 때 목록을 즉시 버린다. 파괴 진행 중인 오브젝트의 text에 쓰면
+        // IL2CPP에서 네이티브 크래시가 날 수 있고, fake-null 검사로는 그 창을 다 못 막는다.
+        internal void OnSceneChange()
+        {
+            _tmps.Clear();
+            _uis.Clear();
+            _seen.Clear();
+            _cursor = 0;
+            _nextRefresh = Time.unscaledTime + 2f;   // 새 씬이 자리 잡을 시간을 준다
+        }
+
         private void RefreshLists()
         {
             var sw = System.Diagnostics.Stopwatch.StartNew();
