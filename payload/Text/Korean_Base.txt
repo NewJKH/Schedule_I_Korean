@@ -7461,3 +7461,8 @@ open express=익스프레스 열기
 use use drying rack=건조대 사용 사용
 manage use drying rack=건조대 사용 관리
 open use drying rack=건조대 사용 열기
+
+// --- 수집 5차 ---
+Sewer Key required=하수도 열쇠 필요
+HYDROBRO=하이드로브로
+ATM=ATM

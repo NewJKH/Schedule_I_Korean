@@ -278,3 +278,6 @@ r:"^Reach the rank of (.+) to unlock this area\.$"=이 지역을 열려면 $1 �
 r:"^(.+?) is paying (.+?) for:$"=$1 지불액 $2:
 r:"^Earn (.+?) \((.+?) / (.+?)\)$"=$1 벌기 ($2 / $3)
 r:"^UNLOCK ONE OF (.+)\x27S CONNECTIONS FIRST$"=먼저 $1의 인맥 중 하나를 뚫으세요
+
+// ATM 인사 (이름 조립)
+sr:"^Hello, (.+)$"=안녕하세요, $1
