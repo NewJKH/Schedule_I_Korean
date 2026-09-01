@@ -99,7 +99,8 @@ namespace KoreanTextFixer
         private float _nextStat;
         private int _errors;
         private bool _dead;
-        private int _replaced;
+        private int _replaced;      // 폴링이 고친 건수 (0이어야 후킹만으로 충분하다는 뜻)
+        internal static long HookReplaced;   // 후킹이 고친 건수
         private int _cursor;
         private readonly List<TMP_Text> _tmps = new List<TMP_Text>(512);
         private readonly List<UnityEngine.UI.Text> _uis = new List<UnityEngine.UI.Text>(128);
@@ -174,7 +175,8 @@ namespace KoreanTextFixer
                 long calls = HookCalls - _lastHookCalls, work = HookWork - _lastHookWork;
                 _lastHookCalls = HookCalls; _lastHookWork = HookWork;
                 MissingLog.Flush();
-                KLog.Info("stats: replaced=" + _replaced + " tracked=" + (_tmps.Count + _uis.Count)
+                KLog.Info("stats: pollFix=" + _replaced + " hookFix=" + HookReplaced
+                    + " tracked=" + (_tmps.Count + _uis.Count)
                     + " hookCache=" + HookCache.Count
                     + " hookCalls/s=" + (calls / 60) + " hookWork/s=" + (work / 60)
                     + " refreshMs=" + _refreshMs + " missing=" + MissingLog.Count);
@@ -281,6 +283,7 @@ namespace KoreanTextFixer
             }
 #endif
             if (result == null) MissingLog.Record(src);
+            else HookReplaced++;
 
             if (HookCache.Count >= HookCacheLimit) HookCache.Clear();
             HookCache[src] = result;
