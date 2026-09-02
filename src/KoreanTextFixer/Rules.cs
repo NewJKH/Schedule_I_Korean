@@ -87,11 +87,12 @@ namespace KoreanTextFixer
         }
 
         // $1..$9 를 채워 넣는다. $$ 는 달러 기호 하나.
-        // translateGroups(sr:)이면 각 조각을 사전으로 번역하고, 하나도 번역되지 않으면 포기한다.
+        // translateGroups(sr:)이면 각 조각을 사전으로 번역한다.
         private static string Build(Match m, string replacement, bool translateGroups)
         {
             var sb = new StringBuilder(replacement.Length + 32);
             bool anyTranslated = false;
+            bool anyLettered = false;
 
             for (int i = 0; i < replacement.Length; i++)
             {
@@ -109,16 +110,32 @@ namespace KoreanTextFixer
                 string part = m.Groups[g].Value;
                 if (translateGroups && part.Length > 0)
                 {
+                    if (HasLetter(part)) anyLettered = true;
                     string t = Lookup(part);
                     if (t != null && t != part) { part = t; anyTranslated = true; }
                 }
                 sb.Append(part);
             }
 
-            // 값까지 번역해야 의미가 있는 규칙인데 아무것도 못 바꿨다면 적용하지 않는다.
-            // (예: "^([^\n]+)\n([\s\S]+)$" 같은 범용 분해 규칙이 원문을 그대로 되돌려놓는 것 방지)
-            if (translateGroups && !anyTranslated) return null;
+            // 영문이 든 그룹이 하나라도 있는데 아무것도 번역하지 못했다면 적용하지 않는다.
+            // 두 가지를 동시에 막는다:
+            //  - 범용 분해 규칙이 원문을 그대로 되돌려놓는 것 ("^([^\n]+)\n([\s\S]+)$" 류)
+            //  - 미앵커 규칙이 영어 문장 일부를 잡아 앞뒤가 뒤섞인 결과를 내는 것
+            // 반면 그룹이 글머리표("• ")나 숫자(6/10)뿐인 퀘스트 카운터류는 번역할 게
+            // 없는 것이므로 그대로 적용한다. (실측: 이 조건 때문에 퀘스트 규칙 115개가
+            // 전부 발동하지 못하고 있었다)
+            if (translateGroups && anyLettered && !anyTranslated) return null;
             return sb.ToString();
+        }
+
+        private static bool HasLetter(string s)
+        {
+            for (int i = 0; i < s.Length; i++)
+            {
+                char c = s[i];
+                if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')) return true;
+            }
+            return false;
         }
     }
 }

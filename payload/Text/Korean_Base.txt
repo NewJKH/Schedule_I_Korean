@@ -1720,8 +1720,8 @@ Stop!=멈춰!
 StopAudio=StopAudio
 Storage=저장고
 Storage Entity=저장 개체
-STREET RAT I=길거리 쥐새끼 I
-Street Rat II=길거리 쥐새끼 II
+STREET RAT I=스트리트 랫 I
+Street Rat II=스트리트 랫 II
 Stubble=까칠 수염
 Submit=제출
 Submit Feedback=피드백 제출
@@ -3201,7 +3201,7 @@ sr:"Much appreciated. Maybe go talk to (.*?). I think (?:they|she|he)'d like you
 sr:"Oooh very nice! My friend (.*?) might like your stuff. Go check (?:them|her|him) out"=오오 아주 좋아! 내 친구 $1도 네 물건 좋아할 거야. 한번 찾아가 봐
 sr:"Working on it. Should be ready in around (.*?)"=하는 중이야. $1 정도면 준비될 거야
 sr:"Your drop is ready. Grab it (.*?)"=드랍 준비됐어. $1 가져가
-sr:"Place a product here for ([a-zA-Z]+) to try"=$1이(가) 시험해 볼 제품을 여기에 놓으세요
+sr:"^(?:Place|Insert) a product here for (.+?) to try$"=$1이(가) 시험해볼 제품을 여기에 넣으세요
 sr:"([a-zA-Z]+)'s favourite effects:"=$1이(가) 좋아하는 효과:
 sr:"You can find it stashed near the (.*?) and (.*?). Go grab it, head back to the RV, and we'll go from there."=$1하고 $2 근처에 숨겨뒀어. 가서 챙긴 다음 RV로 돌아와, 거기서부터 시작하자.
 sr:"There's a powerful cartel in town, the (.*?). I figured (?:they|she|he)'d eventually be a problem, but didn't think (?:they|she|he)'d find you this quickly..."=이 동네에 강력한 카르텔이 있어, $1이라고. 언젠가 문제가 될 줄은 알았지만, 이렇게 빨리 널 찾아낼 줄은 몰랐네...
@@ -7470,3 +7470,6 @@ ATM=ATM
 That'll be a fine addition to your collection=소장품에 잘 어울릴 만한 물건입니다
 That'll be a fine addition to your collection.=소장품에 잘 어울릴 만한 물건입니다.
 Complete 3 deals=거래 3건 완료하기
+// 관계 상태 / 튜토리얼 힌트 (수집 7차)
+Unfriendly=비우호적
+Press and hold <color\=#88CBFF>RMB</color> while hovering an object to pick it up.=물건 위에 커서를 두고 <color\=#88CBFF>우클릭</color>을 길게 누르면 집어 들 수 있습니다.
