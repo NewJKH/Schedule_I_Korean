@@ -266,7 +266,7 @@ namespace KoreanTextFixer
             if (src.IndexOf('<') >= 0)
             {
                 string bare = Translations.TagRx.Replace(src, "").Trim();
-                if (bare.Length == 0 || NoiseRx.IsMatch(bare)) return null;
+                if (bare.Length == 0 || NoiseRx.IsMatch(bare) || !HasLatinLetter(bare)) return null;
             }
 
             HookWork++;
@@ -303,6 +303,12 @@ namespace KoreanTextFixer
             if (!HasLatinLetter(s)) return false;
             if (HasHangul(s)) return false;
             if (NoiseRx.IsMatch(s) || VersionRx.IsMatch(s)) return false;
+            if (s.IndexOf('<') >= 0)
+            {
+                // 영문자가 태그 안에만 있는 문자열(<color=...>• ?</color>)은 번역할 게 없다
+                string bare = Translations.TagRx.Replace(s, "").Trim();
+                if (bare.Length == 0 || !HasLatinLetter(bare)) return false;
+            }
             return true;
         }
 
