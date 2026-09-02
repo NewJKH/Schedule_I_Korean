@@ -135,7 +135,7 @@ sr:"^Cheers\ dog\.\ My\ friend\ (.*?)\ might\ like\ your\ stuff\.\ Go\ check\ (?
 sr:"^Cheers\.\ My\ friend\ (.*?)\ is\ a\ dealer\ and\ might\ be\ able\ to\ help\ you\ move\ your\ stuff\.\ You\ should\ go\ speak\ to\ (?:them|her|him)\.$"=고마워. 내 친구 $1은(는) 딜러인데 네 물건 파는 걸 도와줄 수 있을 거야. 가서 얘기해 봐.
 sr:"^Cheers\.\ My\ friend\ (.*?)\ might\ like\ your\ stuff\.\ Go\ check\ (?:them|her|him)\ out$"=고마워. 내 친구 $1이(가) 네 물건을 마음에 들어 할지도 몰라. 한번 찾아가 봐
 sr:"^Copy\.\ I'll\ message\ you\ when\ it's\ ready\ in\ about\ (.*?)\.$"=오케이. $1 정도 뒤에 준비되면 문자할게.
-r:"^Deal\ (.*?)$"=$1 거래
+r:"^Deal\ (?![Cc]ompleted\ )(.*?)$"=$1 거래
 sr:"^Finally\ some\ good\ stuff!\ Maybe\ go\ talk\ to\ (.*?)\.\ I\ think\ (?:they|she|he)'d\ like\ your\ product$"=드디어 괜찮은 물건이네! $1한테 가서 말 걸어봐. 네 제품 마음에 들어할 거야
 sr:"^Got\ it\.\ I'll\ be\ (.*?)\ for\ the\ next\ 6\ hours\.$"=알았어. 앞으로 6시간 동안 $1에 있을게.
 sr:"^Got\ it\.\ I'll\ let\ you\ know\ when\ it's\ ready\.\ Should\ be\ about\ (.*?)$"=알았어. 준비되면 알려줄게. 대략 $1 정도 걸릴 거야
@@ -287,3 +287,6 @@ r:"^Wait ([0-9]+)s$"=$1초 대기
 r:"^Thank you, (?:Sir|Ma'am)$"=감사합니다, 손님
 r:"^Excellent choice, (?:Sir|Ma'am)$"=탁월한 선택입니다, 손님
 r:"^Excellent taste, (?:Sir|Ma'am)$"=안목이 좋으시네요, 손님
+
+// 범용 퀘스트 카운터 — 제목이 사전에 있으면 "제목 (n/m)" 형태를 통째로 잡는다
+sr:"^(.+?) \(([0-9]+)/([0-9]+)\)$"=$1 ($2/$3)
