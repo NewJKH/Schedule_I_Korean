@@ -63,7 +63,7 @@ A standing floor lamp. Can be switched on and off.\t\t=스탠드형 바닥 조�
 Abhorrent abomination.=혐오스러운 괴물 같으니.
 About time...=이제야 오는군...
 Absolutely fantastic, cheers mate.=진짜 끝내준다, 고맙다 친구.
-Acid=산성
+Acid=애시드
 Action can only be performed by host=호스트만 수행할 수 있는 동작입니다
 Active Deliveries=진행 중인 배달
 Active Display=활성 디스플레이
@@ -2865,7 +2865,7 @@ First thing's first, you're gonna need a business. Go check out <color\=#4CB0FF>
 You've now got the connections you need to start manufacturing something a bit harder - methamphetamine. Nasty, messy drug, but hella profitable for you.=이제 좀 더 센 걸 제조하는 데 필요한 인맥이 다 갖춰졌어 - 메스암페타민 말이야.\n고약하고 지저분한 마약이지만, 너한텐 엄청나게 수익성이 좋지.
 Unlike weed, meth doesn't grow on trees, so you're gonna get to get yourself some specialized equipment before you can start cooking.=대마초와 달리 메스는 나무에서 자라는 게 아니라서, 요리를 시작하기 전에 전문 장비를 좀 구해야 할 거야.
 Your one-off purchases will be a <color\=#4CB0FF>chemistry station</color> and a <color\=#4CB0FF>lab oven</color>. Both can be purchased from Oscar at the warehouse.=한 번만 사면 되는 건 <color\=#4CB0FF>화학 작업대</color>랑 <color\=#4CB0FF>실험실 오븐</color>이야.\n둘 다 창고의 오스카한테서 살 수 있어.
-'For each batch, you''ll need <color\=#4CB0FF>acid, phosphorus</color> and <color\=#4CB0FF>pseudo.</color> The first two are easy enough to come by and can be purchased from Oscar, but you''ll need to talk to <color\=#4CB0FF>Shirley</color> for the pseudo. '='배치마다 <color\=#4CB0FF>산성, 인</color> 그리고 <color\=#4CB0FF>슈도.</color>가 필요할 거야.\n앞의 둘은 구하기 쉬운 편이라 오스카한테서 살 수 있지만, 슈도는 <color\=#4CB0FF>셜리</color>한테 말을 해봐야 해.\n'
+'For each batch, you''ll need <color\=#4CB0FF>acid, phosphorus</color> and <color\=#4CB0FF>pseudo.</color> The first two are easy enough to come by and can be purchased from Oscar, but you''ll need to talk to <color\=#4CB0FF>Shirley</color> for the pseudo. '='배치마다 <color\=#4CB0FF>애시드, 인</color> 그리고 <color\=#4CB0FF>슈도.</color>가 필요할 거야.\n앞의 둘은 구하기 쉬운 편이라 오스카한테서 살 수 있지만, 슈도는 <color\=#4CB0FF>셜리</color>한테 말을 해봐야 해.\n'
 Once you've got all those supplies, you'll be ready to start cookin' up a batch.=그 재료들을 전부 구하면, 한 배치 요리할 준비 완료야.
 You know everything you need to get yourself established. I'll call you later when you're ready to start manufacturing some harder stuff...=자리 잡는 데 필요한 건 이제 다 알고 있을 거야.\n좀 더 센 걸 제조할 준비가 되면 나중에 전화할게...
 You can find it stashed near the <color\=#4CB0FF>town hall fountain, in the canal,</color> and <color\=#4CB0FF>behind the supermarket</color>. Go grab it, head back to the RV, and we'll go from there.=<color\=#4CB0FF>시청 분수 근처, 운하 안,</color> 그리고 <color\=#4CB0FF>슈퍼마켓 뒤</color>에 숨겨져 있어.\n가서 챙긴 다음 캠핑카(RV)로 돌아와, 그 다음은 거기서 얘기하자.
@@ -3180,32 +3180,32 @@ sr:"I NEED ([0-9]+x )?(.*?). I GOT <color\=#46CB4F>\$(.*?)</color>. DEAL\?"=$1$2
 sr:"I'm after ([0-9]+x )?(.*?). I can pay <color\=#46CB4F>\$(.*?)</color> for it Deal\?\?"=$1$2 구하는 중이야. <color\=#46CB4F>$$3</color> 낼 수 있어 어때??
 sr:"Need me ([0-9]+x )?(.*?)! I'll pay <color\=#46CB4F>\$(.*?)</color> yeah\?\?"=$1$2 좀 필요해! <color\=#46CB4F>$$3</color> 낼게 어때??
 sr:"Oh yes very good! (.*?) for room, yes\?"=오 좋아요! 방은 $1이에요, 괜찮죠?
-sr:"That'll be (.*?) for the (.*?). Sound good\?"=$2는 $1입니다. 어떠세요?
-sr:"That'll be (.*?) for the (.*?). We got a deal, partner\?"=$2는 $1입니다. 거래하시겠습니까, 파트너?
+sr:"That'll be (.*?) for the (.*?). Sound good\?"=$2 가격은 $1입니다. 어떠세요?
+sr:"That'll be (.*?) for the (.*?). We got a deal, partner\?"=$2 가격은 $1입니다. 거래하시겠습니까, 파트너?
 sr:"That'll be a (.*?) signing free, and the employee's daily wage will be (.*?)."=계약금은 $1이고, 직원의 일당은 $2입니다.
 sr:"Whats up bro, I'm after ([0-9]+x )?(.*?). I can pay <color\=#46CB4F>\$(.*?)</color> for it."=잘 지내 브로, $1$2 구하고 있어. <color\=#46CB4F>$$3</color> 낼 수 있어.
 sr:"Yo homie, can I get ([0-9]+x )?(.*?)\? I'll pay <color\=#46CB4F>\$(.*?)</color>"=요 친구, $1$2 좀 줄래? <color\=#46CB4F>$$3</color> 낼게
-sr:"Thanks. Hey my friend (.*?) might be interested in your stuff. You should go talk to them."=고마워. 야, 내 친구 $1도 네 물건에 관심 있을 거야. 한번 가서 얘기해 봐.
-sr:"Thanks. Hey, my friend (.*?) is a dealer and can help you move your product. You should go speak to them."=고마워. 야, 내 친구 $1은 딜러라서 네 물건 파는 거 도와줄 수 있어. 가서 얘기해 봐.
-sr:"This is good shit. (.*?) might be interested. You should go talk to them."=이거 물건 좋네. $1도 관심 있을걸. 가서 얘기해 봐.
-sr:"Very nice bro. (.*?) might be interested. You should go talk to them."=아주 좋아 브로. $1도 관심 있을걸. 가서 얘기해 봐.
-sr:"Very nice. (.*?) might be interested. You should go talk to them."=아주 좋네. $1도 관심 있을걸. 가서 얘기해 봐.
-sr:"Yes thank you!!. Hey my friend (.*?) might be interested in your stuff. You should go talk to them."=오 고마워!! 야, 내 친구 $1도 네 물건에 관심 있을 거야. 가서 얘기해 봐.
-sr:"You got some good stuff! You should go talk to (.*?) - I think they'll like your stuff"=물건 좋은데! $1한테 가 봐 - 걔도 네 물건 좋아할 거야
-sr:"Cheers dog. My friend (.*?) might like your stuff. Go check them out"=고맙다 친구. 내 친구 $1도 네 물건 좋아할 거야. 한번 찾아가 봐
-sr:"Cheers. My friend (.*?) is a dealer and might be able to help you move your stuff. You should go speak to them."=고마워. 내 친구 $1은 딜러라서 네 물건 파는 거 도와줄 수 있을 거야. 가서 얘기해 봐.
-sr:"Cheers. My friend (.*?) might like your stuff. Go check them out"=고마워. 내 친구 $1도 네 물건 좋아할 거야. 한번 찾아가 봐
-sr:"Finally some good stuff! Maybe go talk to (.*?). I think they'd like your product"=드디어 제대로 된 물건이네! $1한테 가 봐. 걔도 네 제품 좋아할 거야
-sr:"Much appreciated mulatto. Maybe go talk to (.*?). I think they'd like your product"=정말 고마워 친구. $1한테 가 봐. 걔도 네 제품 좋아할 거야
-sr:"Much appreciated. Maybe go talk to (.*?). I think they'd like your product"=정말 고마워. $1한테 가 봐. 걔도 네 제품 좋아할 거야
-sr:"Oooh very nice! My friend (.*?) might like your stuff. Go check them out"=오오 아주 좋아! 내 친구 $1도 네 물건 좋아할 거야. 한번 찾아가 봐
+sr:"Thanks. Hey my friend (.*?) might be interested in your stuff. You should go talk to (?:them|her|him)."=고마워. 야, 내 친구 $1도 네 물건에 관심 있을 거야. 한번 가서 얘기해 봐.
+sr:"Thanks. Hey, my friend (.*?) is a dealer and can help you move your product. You should go speak to (?:them|her|him)."=고마워. 야, 내 친구 $1 말인데, 딜러라서 네 물건 파는 거 도와줄 수 있어. 가서 얘기해 봐.
+sr:"This is good shit. (.*?) might be interested. You should go talk to (?:them|her|him)."=이거 물건 좋네. $1도 관심 있을걸. 가서 얘기해 봐.
+sr:"Very nice bro. (.*?) might be interested. You should go talk to (?:them|her|him)."=아주 좋아 브로. $1도 관심 있을걸. 가서 얘기해 봐.
+sr:"Very nice. (.*?) might be interested. You should go talk to (?:them|her|him)."=아주 좋네. $1도 관심 있을걸. 가서 얘기해 봐.
+sr:"Yes thank you!!. Hey my friend (.*?) might be interested in your stuff. You should go talk to (?:them|her|him)."=오 고마워!! 야, 내 친구 $1도 네 물건에 관심 있을 거야. 가서 얘기해 봐.
+sr:"You got some good stuff! You should go talk to (.*?) - I think (?:they|she|he)'ll like your stuff"=물건 좋은데! $1한테 가 봐 - 걔도 네 물건 좋아할 거야
+sr:"Cheers dog. My friend (.*?) might like your stuff. Go check (?:them|her|him) out"=고맙다 친구. 내 친구 $1도 네 물건 좋아할 거야. 한번 찾아가 봐
+sr:"Cheers. My friend (.*?) is a dealer and might be able to help you move your stuff. You should go speak to (?:them|her|him)."=고마워. 내 친구 $1 말인데, 딜러라서 네 물건 파는 거 도와줄 수 있을 거야. 가서 얘기해 봐.
+sr:"Cheers. My friend (.*?) might like your stuff. Go check (?:them|her|him) out"=고마워. 내 친구 $1도 네 물건 좋아할 거야. 한번 찾아가 봐
+sr:"Finally some good stuff! Maybe go talk to (.*?). I think (?:they|she|he)'d like your product"=드디어 제대로 된 물건이네! $1한테 가 봐. 걔도 네 제품 좋아할 거야
+sr:"Much appreciated mulatto. Maybe go talk to (.*?). I think (?:they|she|he)'d like your product"=정말 고마워 친구. $1한테 가 봐. 걔도 네 제품 좋아할 거야
+sr:"Much appreciated. Maybe go talk to (.*?). I think (?:they|she|he)'d like your product"=정말 고마워. $1한테 가 봐. 걔도 네 제품 좋아할 거야
+sr:"Oooh very nice! My friend (.*?) might like your stuff. Go check (?:them|her|him) out"=오오 아주 좋아! 내 친구 $1도 네 물건 좋아할 거야. 한번 찾아가 봐
 sr:"Working on it. Should be ready in around (.*?)"=하는 중이야. $1 정도면 준비될 거야
 sr:"Your drop is ready. Grab it (.*?)"=드랍 준비됐어. $1 가져가
 sr:"Place a product here for ([a-zA-Z]+) to try"=$1이(가) 시험해 볼 제품을 여기에 놓으세요
 sr:"([a-zA-Z]+)'s favourite effects:"=$1이(가) 좋아하는 효과:
 sr:"You can find it stashed near the (.*?) and (.*?). Go grab it, head back to the RV, and we'll go from there."=$1하고 $2 근처에 숨겨뒀어. 가서 챙긴 다음 RV로 돌아와, 거기서부터 시작하자.
-sr:"There's a powerful cartel in town, the (.*?). I figured they'd eventually be a problem, but didn't think they'd find you this quickly..."=이 동네에 강력한 카르텔이 있어, $1이라고. 언젠가 문제가 될 줄은 알았지만, 이렇게 빨리 널 찾아낼 줄은 몰랐네...
-sr:"Looks like you're gonna need somewhere low key to stay for a while. Head over to the (.*?) and ask about getting a room."=당분간 눈에 안 띄는 곳에 있어야겠어. $1로 가서 방 하나 얻을 수 있는지 물어봐.
+sr:"There's a powerful cartel in town, the (.*?). I figured (?:they|she|he)'d eventually be a problem, but didn't think (?:they|she|he)'d find you this quickly..."=이 동네에 강력한 카르텔이 있어, $1이라고. 언젠가 문제가 될 줄은 알았지만, 이렇게 빨리 널 찾아낼 줄은 몰랐네...
+sr:"Looks like you're gonna need somewhere low key to stay for a while. Head over to the (.*?) and ask about getting a room."=당분간 눈에 안 띄는 곳에 있어야겠어. $1(으)로 가서 방 하나 얻을 수 있는지 물어봐.
 sr:"After that, you'll be needing some new equipment. There's a hardware store just north-east of the motel. Grab a (.*?), and (.*?)"=그 다음엔 새 장비가 좀 필요할 거야. 모텔 북동쪽에 철물점이 하나 있어. $1, 그리고 $2 챙겨
 sr:"You're almost ready to go, but you're missing one key ingredient - (.*?)."=이제 거의 다 됐는데, 핵심 재료 하나가 빠졌어 - $1.
 sr:"You'll need to speak to a supplier to get your hands on some seeds. I've passed your number onto (.*?) - the local weed seed supplier."=씨앗을 구하려면 공급자랑 얘기해야 해. 네 번호를 $1한테 넘겨놨어 - 이 동네 대마 씨앗 공급자야.
@@ -5787,7 +5787,7 @@ punch heavy=강한 펀치
 punch light=약한 펀치
 punch load=펀치 로드
 punch sound=펀치 소리
-purchase acid from oscar=오스카에게서 산성 구매하기
+purchase acid from oscar=오스카에게서 애시드 구매하기
 purchase phosphorus from oscar=오스카에게서 인 구매하기
 put out cigarette=담배 끄기
 quality settings=품질 설정
@@ -7466,3 +7466,6 @@ open use drying rack=건조대 사용 열기
 Sewer Key required=하수도 열쇠 필요
 HYDROBRO=하이드로브로
 ATM=ATM
+// 상점 점원 대사 (formal_address 계열과 같은 풀)
+That'll be a fine addition to your collection=소장품에 잘 어울릴 만한 물건입니다
+That'll be a fine addition to your collection.=소장품에 잘 어울릴 만한 물건입니다.

@@ -1,4 +1,4 @@
-#if !MELON
+﻿#if !MELON
 using System;
 using System.IO;
 using BepInEx;
@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace KoreanTextFixer
 {
-    [BepInPlugin("kr.schedule1.textfixer", "Korean Text Fixer", "1.14.0")]
+    [BepInPlugin("kr.schedule1.textfixer", "Korean Text Fixer", "1.14.1")]
     public class Plugin : BasePlugin
     {
         public override void Load()
@@ -21,7 +21,7 @@ namespace KoreanTextFixer
                 Translations.Load(Path.Combine(Paths.GameRootPath, "BepInEx", "Translation", "ko", "Text"));
                 ClassInjector.RegisterTypeInIl2Cpp<FixerBehaviour>();
                 AddComponent<FixerBehaviour>();
-                KLog.Info("KoreanTextFixer 1.14.0 (BepInEx) loaded. entries=" + Translations.Dict.Count + " rules=" + Rules.Count);
+                KLog.Info("KoreanTextFixer 1.14.1 (BepInEx) loaded. entries=" + Translations.Dict.Count + " rules=" + Rules.Count);
             }
             catch (Exception e)
             {

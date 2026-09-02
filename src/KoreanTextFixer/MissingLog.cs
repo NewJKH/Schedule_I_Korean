@@ -46,7 +46,7 @@ namespace KoreanTextFixer
         {
             if (!_enabled || Seen.Count >= Limit) return;
             if (src.Length < 3 || src.Length > 500) return;
-            if (IsUserInput(src)) return;
+            if (IsUserInput(src) || IsNoise(src)) return;
             if (!Seen.Add(src)) return;
 
             Pending.Add(src.Replace("\r", "").Replace("\n", "\\n"));
@@ -68,6 +68,17 @@ namespace KoreanTextFixer
         }
 
         internal static int Count { get { return Seen.Count; } }
+
+        // 번역 대상이 아닌 것이 매 세션 반복 수집되면 파일만 어지럽힌다.
+        // 키캡 표기(Esc), 공급자 이니셜(S.W), 개발용 자리 문구가 실측상 반복 수집됐다.
+        private static bool IsNoise(string s)
+        {
+            if (s == "Esc" || s == "Tab" || s == "Del" || s == "End" || s == "Ins") return true;
+            if (s.Length == 3 && s[1] == '.' && char.IsUpper(s[0]) && char.IsUpper(s[2])) return true;
+            if (s.StartsWith("Lorem ipsum", StringComparison.Ordinal)) return true;
+            if (s.StartsWith("2x Item Name", StringComparison.Ordinal)) return true;
+            return false;
+        }
 
         // 플레이어가 입력창에 치고 있는 글자는 번역 대상이 아니고, 파일에 남겨서도 안 된다.
         // 입력 중에는 캐럿 표시용 폭 없는 문자가 섞여 들어오고, 글자 수도 한두 개다.
