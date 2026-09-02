@@ -37,8 +37,92 @@ namespace KoreanTextFixer
                 }
             }
             Installed = patched > 0;
-            if (Installed) { InstallOnEnable(harmony); InstallCharArray(harmony); }
+            if (Installed) { InstallOnEnable(harmony); InstallCharArray(harmony); InstallDialogue(harmony); }
             else KLog.Warn("TMP 후킹 실패 - 폴링으로만 동작합니다");
+        }
+
+        // 대사창은 RolloutDialogue가 TimePerChar 간격으로 한 글자씩 늘려 그린다(타자기).
+        // TMP 후킹은 부분 문자열("Hmm... Osc")을 번역할 수 없어, 타이핑되는 동안 내내
+        // 영어가 보이다가 문장이 완성되는 순간에야 한국어로 바뀌었다.
+        // 전체 문장이 들어오는 지점을 잡으면 처음부터 한국어로 타이핑된다.
+        // 게임 어셈블리를 컴파일 타임에 참조하면 게임 업데이트에 깨지기 쉬우므로
+        // 런타임 리플렉션으로 찾고, 못 찾으면 조용히 기존 방식(완성 시점 번역)으로 남는다.
+        private static void InstallDialogue(HarmonyLib.Harmony harmony)
+        {
+            try
+            {
+                Assembly game = null;
+                foreach (var a in AppDomain.CurrentDomain.GetAssemblies())
+                {
+                    if (a.GetName().Name == "Assembly-CSharp") { game = a; break; }
+                }
+                if (game == null)
+                {
+                    KLog.Warn("Assembly-CSharp를 찾지 못해 대사창 후킹을 건너뜁니다");
+                    return;
+                }
+                int n = 0;
+                n += PatchByName(harmony, game, "Il2CppScheduleOne.UI.DialogueCanvas", "DisplayDialogueNode", nameof(DialogueNodePrefix));
+                n += PatchByName(harmony, game, "Il2CppScheduleOne.UI.DialogueCanvas", "RolloutDialogue", nameof(RolloutPrefix));
+                n += PatchByName(harmony, game, "Il2CppScheduleOne.Dialogue.DialogueHandler", "OverrideShownDialogue", nameof(OverridePrefix));
+                if (n > 0) KLog.Info("hooked DialogueCanvas/Handler x" + n);
+            }
+            catch (Exception e)
+            {
+                KLog.Warn("대사창 후킹 실패(완성 시점 번역으로 동작): " + e.Message);
+            }
+        }
+
+        private static int PatchByName(HarmonyLib.Harmony harmony, Assembly game, string typeName, string methodName, string prefixName)
+        {
+            try
+            {
+                var t = game.GetType(typeName);
+                if (t == null) return 0;
+                var m = t.GetMethod(methodName,
+                    BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+                if (m == null) return 0;
+                harmony.Patch(m, new HarmonyMethod(typeof(TmpHook).GetMethod(
+                    prefixName, BindingFlags.NonPublic | BindingFlags.Static)));
+                KLog.Info("hooked " + typeName.Substring(typeName.LastIndexOf('.') + 1) + "." + methodName);
+                return 1;
+            }
+            catch (Exception e)
+            {
+                KLog.Warn(methodName + " 후킹 실패: " + e.Message);
+                return 0;
+            }
+        }
+
+        // Harmony는 프리픽스 인자를 원본 매개변수 이름으로 연결한다
+        private static void DialogueNodePrefix(ref string dialogueText)
+        {
+            try
+            {
+                string t = Fixer.TranslateForHook(dialogueText);
+                if (t != null) dialogueText = t;
+            }
+            catch { }
+        }
+
+        private static void RolloutPrefix(ref string text)
+        {
+            try
+            {
+                string t = Fixer.TranslateForHook(text);
+                if (t != null) text = t;
+            }
+            catch { }
+        }
+
+        private static void OverridePrefix(ref string _overrideText)
+        {
+            try
+            {
+                string t = Fixer.TranslateForHook(_overrideText);
+                if (t != null) _overrideText = t;
+            }
+            catch { }
         }
 
         // text 프로퍼티 setter + 문자열 하나만 받는 SetText 오버로드
