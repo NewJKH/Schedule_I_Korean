@@ -260,7 +260,12 @@ namespace KoreanTextFixer
             if (Diagnostics.Disabled) return null;
 #endif
             if (!HasLatinLetter(src)) return null;
-            if (HasHangul(src)) return null; // 이미 번역된 값
+            // 한글이 섞여 있어도 곧바로 포기하면 안 된다. 게임이 자리표시자를 먼저
+            // 치환하기 때문이다(예: "<REGION>" -> "다운타운"). 실측:
+            //   "Hmm... Oscar seen one lying around somewhere in <color=blue>다운타운</color> I think..."
+            // 이 경우 지역명만 한국어이고 문장 틀은 영어라 번역이 필요하다.
+            // 영어 단어(2글자 이상 연속)가 남아 있으면 아직 할 일이 있는 것으로 본다.
+            if (HasHangul(src) && !HasEnglishWord(src)) return null;
             // 거리·수량·금액·버전 표시는 번역 대상이 아니다. 매 프레임 값이 바뀌어
             // 캐시가 듣지 않으므로, 규칙 전수조사까지 가기 전에 잘라낸다.
             if (NoiseRx.IsMatch(src) || VersionRx.IsMatch(src)) return null;
@@ -289,6 +294,10 @@ namespace KoreanTextFixer
 
             if (HookCache.Count >= HookCacheLimit) HookCache.Clear();
             HookCache[src] = result;
+            // 우리가 만든 결과물이 곧바로 setter를 타고 되돌아온다. 이제 한글이 섞여
+            // 있어도 통과시키므로(자리표시자 치환 대응), 결과에 영어 조각이 남아 있으면
+            // 그 결과가 다시 미번역으로 수집될 수 있다. 미리 "할 일 없음"으로 기억해 둔다.
+            if (result != null) HookCache[result] = null;
             return result;
         }
 
@@ -312,6 +321,27 @@ namespace KoreanTextFixer
                 if (bare.Length == 0 || !HasLatinLetter(bare)) return false;
             }
             return true;
+        }
+
+        // 영어 "단어"가 있는가. 한 글자짜리(a, I)나 태그 속 속성은 세지 않는다.
+        // 태그(<color=blue>)와 자리표시자(<REGION>) 안의 라틴 문자는 번역 대상이 아니다.
+        private static bool HasEnglishWord(string s)
+        {
+            int run = 0;
+            bool inTag = false;
+            for (int i = 0; i < s.Length; i++)
+            {
+                char c = s[i];
+                if (c == '<') { inTag = true; run = 0; continue; }
+                if (c == '>') { inTag = false; run = 0; continue; }
+                if (inTag) continue;
+                if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+                {
+                    if (++run >= 2) return true;
+                }
+                else run = 0;
+            }
+            return false;
         }
 
         private static bool HasLatinLetter(string s)
@@ -359,11 +389,9 @@ namespace KoreanTextFixer
 
         private static string Translate(string src)
         {
-            for (int i = 0; i < src.Length; i++)
-            {
-                char c = src[i];
-                if (c >= 0xAC00 && c <= 0xD7A3) return null;
-            }
+            // 한글이 있어도 영어 단어가 남아 있으면 번역을 계속한다.
+            // (게임이 <REGION> 같은 자리표시자를 먼저 한국어로 치환해 보내는 경우)
+            if (HasHangul(src) && !HasEnglishWord(src)) return null;
             string t = src.Trim();
             if (t.Length == 0) return null;
 
