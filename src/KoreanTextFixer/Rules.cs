@@ -20,6 +20,7 @@ namespace KoreanTextFixer
             internal Regex Pattern;
             internal string Replacement;
             internal bool TranslateGroups;   // sr: 이면 참
+            internal bool KoreanValue;       // 값에 한글이 있으면 참 (관대 모드 대상)
         }
 
         internal static readonly List<Rule> Direct = new List<Rule>();   // r:
@@ -51,7 +52,8 @@ namespace KoreanTextFixer
                 {
                     Pattern = new Regex(pattern, RegexOptions.Singleline),
                     Replacement = replacement,
-                    TranslateGroups = split
+                    TranslateGroups = split,
+                    KoreanValue = HasHangul(replacement)
                 };
                 if (split) Split.Add(rule); else Direct.Add(rule);
             }
@@ -73,14 +75,26 @@ namespace KoreanTextFixer
             {
                 Match m = Direct[i].Pattern.Match(src);
                 if (!m.Success) continue;
-                string result = Build(m, Direct[i].Replacement, false);
+                string result = Build(m, Direct[i].Replacement, false, false);
                 if (result != null && result != src) return result;
             }
             for (int i = 0; i < Split.Count; i++)
             {
                 Match m = Split[i].Pattern.Match(src);
                 if (!m.Success) continue;
-                string result = Build(m, Split[i].Replacement, true);
+                string result = Build(m, Split[i].Replacement, true, false);
+                if (result != null && result != src) return result;
+            }
+            // 2차(관대 모드): 유저가 지은 제품명("Pink Urkle")처럼 사전에 있을 수 없는
+            // 조각 때문에 문장 전체가 영어로 남는 것을 막는다. 값 자체가 한국어 문장인
+            // 규칙만 대상으로, 미등록 조각을 원문 그대로 끼워 넣는다.
+            // 값이 자리표시자뿐인 분해·항등 규칙은 대상이 아니므로 기존 보호가 유지된다.
+            for (int i = 0; i < Split.Count; i++)
+            {
+                if (!Split[i].KoreanValue) continue;
+                Match m = Split[i].Pattern.Match(src);
+                if (!m.Success) continue;
+                string result = Build(m, Split[i].Replacement, true, true);
                 if (result != null && result != src) return result;
             }
             return null;
@@ -88,7 +102,8 @@ namespace KoreanTextFixer
 
         // $1..$9 를 채워 넣는다. $$ 는 달러 기호 하나.
         // translateGroups(sr:)이면 각 조각을 사전으로 번역한다.
-        private static string Build(Match m, string replacement, bool translateGroups)
+        // lenient(관대 모드)면 번역 실패를 이유로 포기하지 않는다.
+        private static string Build(Match m, string replacement, bool translateGroups, bool lenient)
         {
             var sb = new StringBuilder(replacement.Length + 32);
             bool anyTranslated = false;
@@ -124,8 +139,18 @@ namespace KoreanTextFixer
             // 반면 그룹이 글머리표("• ")나 숫자(6/10)뿐인 퀘스트 카운터류는 번역할 게
             // 없는 것이므로 그대로 적용한다. (실측: 이 조건 때문에 퀘스트 규칙 115개가
             // 전부 발동하지 못하고 있었다)
-            if (translateGroups && anyLettered && !anyTranslated) return null;
+            if (translateGroups && !lenient && anyLettered && !anyTranslated) return null;
             return sb.ToString();
+        }
+
+        private static bool HasHangul(string s)
+        {
+            for (int i = 0; i < s.Length; i++)
+            {
+                char c = s[i];
+                if (c >= 0xAC00 && c <= 0xD7A3) return true;
+            }
+            return false;
         }
 
         private static bool HasLetter(string s)

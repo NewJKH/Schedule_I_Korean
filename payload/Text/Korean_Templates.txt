@@ -300,3 +300,4 @@ r:"^Market Value: (.+)$"=시장 가치: $1
 r:"^([0-9]+) low-severity drugs? confiscated$"=저위험 마약 $1개 압수됨
 r:"^([0-9]+) medium-severity drugs? confiscated$"=중위험 마약 $1개 압수됨
 r:"^([0-9]+) high-severity drugs? confiscated$"=고위험 마약 $1개 압수됨
+sr:"^WAITING FOR (.+)$"=$1 대기 중
