@@ -290,9 +290,9 @@ namespace KoreanTextFixer
             return result;
         }
 
-        // "162ft", "1x", "8h", "$2.1K", "5G" 처럼 값만 들어 있는 표시
+        // "162ft", "1x", "8h", "$2.1K", "5G", "37 / 200 XP" 처럼 값만 들어 있는 표시
         private static readonly Regex NoiseRx = new Regex(
-            "^[$₩€]?[0-9.,:]+ ?(ft|m|km|h|hr|min|s|x|K|M|G|L|kg|lb|mph|km/h|XP|xp|%)?$", RegexOptions.Compiled);
+            "^[$₩€]?[0-9.,:]+ ?(/ ?[$₩€]?[0-9.,:]+ ?)?(ft|m|km|h|hr|min|s|x|K|M|G|L|kg|lb|mph|km/h|XP|xp|%)?$", RegexOptions.Compiled);
         // "v0.4.6f13"
         private static readonly Regex VersionRx = new Regex("^v[0-9][A-Za-z0-9.]*$", RegexOptions.Compiled);
 
