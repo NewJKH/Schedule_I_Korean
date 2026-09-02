@@ -220,7 +220,9 @@ namespace KoreanTextFixer
                 string cur = tmp.text;
                 string outp = Check(cur, tmp.GetInstanceID());
                 if (outp != null) { tmp.text = outp; _replaced++; }
-                else if (LooksEnglish(cur)) MissingLog.Record(cur);
+                // 원문=번역인 항등 항목(PGR, 키캡 등)은 번역이 "있는" 것이다.
+                // 조회 없이 수집하면 매 세션 같은 줄이 쌓인다.
+                else if (LooksEnglish(cur) && Translations.LookupExact(cur) == null) MissingLog.Record(cur);
             }
             catch { }
         }
@@ -233,7 +235,7 @@ namespace KoreanTextFixer
                 string cur = ut.text;
                 string outp = Check(cur, ut.GetInstanceID());
                 if (outp != null) { ut.text = outp; _replaced++; }
-                else if (LooksEnglish(cur)) MissingLog.Record(cur);
+                else if (LooksEnglish(cur) && Translations.LookupExact(cur) == null) MissingLog.Record(cur);
             }
             catch { }
         }

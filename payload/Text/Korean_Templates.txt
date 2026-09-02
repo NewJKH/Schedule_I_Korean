@@ -199,8 +199,8 @@ sr:"^You\ can\ now\ order\ (.*?)\ from\ (.*?)\.\ \1\ can\ be\ used\ to\ (.*?)\.$
 sr:"^You\ got\ (.*?)\?\ I'll\ pay\ (.*?)\ for\ it$"=$1 있어? $2 줄게
 sr:"^You\ got\ some\ good\ stuff!\ You\ should\ go\ talk\ to\ (.*?)\ -\ I\ think\ (?:they|she|he)'ll\ like\ your\ stuff$"=물건 좋은데! $1한테 가서 얘기해 봐 - 네 물건 마음에 들어 할 거야
 sr:"^Your\ drop\ is\ ready\.\ Grab\ it\ (.*?)$"=드랍 준비됐어. $1에서 가져가
-sr:"^Hmm\.\.\.\ Oscar\ seen\ one\ lying\ around\ somewhere\ in\ <color\=blue>(.*?)</color>\ I\ think\.\.\.$"=음... 오스카가 <color=blue>$1</color> 어딘가에 하나 굴러다니는 거 본 것 같은데...
-sr:"^Oh! and I remember hearing <color\=blue>(.*?)</color> has one! Sorry, Oscar isn't very good with names\. Hope this helps\.$"=아! 그리고 <color\=blue>$1</color>이(가) 하나 갖고 있다고 들었어! 미안, 오스카가 이름은 잘 못 외워. 도움이 됐으면 좋겠네.
+sr:"^Hmm\.\.\.\ Oscar\ seen\ one\ lying\ around\ somewhere\ in\ <color\=blue>(.*?)</color>\ I\ think\.\.\.$"=음... 오스카가 <color=blue>$1</color> 어디선가 굴러댕기는 거 본 것 닮수다...
+sr:"^Oh! and I remember hearing <color\=blue>(.*?)</color> has one! Sorry, Oscar isn't very good with names\. Hope this helps\.$"=아! 겅허고 <color\=blue>$1</color>신디 하나 이신 걸 들었수다! 미안허우다, 오스카가 이름은 잘 몰람수다. 도움 됐으면 좋키어.
 sr:"^Must be recommended by one of (.*?)'s connections$"=$1의 소개가 필요합니다
 sr:"^MUST BE RECOMMENDED BY ONE OF (.*?)'S CONNECTIONS$"=$1의 소개가 필요합니다
 sr:"^Oh!\ and\ I\ remember\ hearing\ <color\=blue>(.*?)</color>\ has\ one!\ Sorry,\ Oscar\ isn't\ very\ good\ with\ names\.\ Hope\ this\ helps\.$"=아! 그리고 <color=blue>$1</color>이(가) 하나 갖고 있다고 들었어! 미안, 오스카가 이름은 잘 못 외워. 도움이 됐으면 좋겠네.
@@ -273,8 +273,8 @@ r:"^When holding an item, press (.+?) or (.+?) to rotate it\.$"=아이템을 든
 
 // --- 자동 탐지 (4차) ---
 r:"^Wait (\d+)s$"=$1초 대기
-r:"^Reach the rank of (.+) to access this area\.$"=이 지역에 들어가려면 $1 등급에 도달해야 합니다.
-r:"^Reach the rank of (.+) to unlock this area\.$"=이 지역을 열려면 $1 등급에 도달해야 합니다.
+sr:"^Reach the rank of (<color[^<>]*>)?(.+?)(</color>)? to access this area\.$"=이 지역에 들어가려면 $1$2$3 등급에 도달해야 합니다.
+sr:"^Reach the rank of (<color[^<>]*>)?(.+?)(</color>)? to unlock this area\.$"=이 지역을 열려면 $1$2$3 등급에 도달해야 합니다.
 r:"^(.+?) is paying (.+?) for:$"=$1 지불액 $2:
 r:"^Earn (.+?) \((.+?) / (.+?)\)$"=$1 벌기 ($2 / $3)
 r:"^UNLOCK ONE OF (.+)\x27S CONNECTIONS FIRST$"=먼저 $1의 인맥 중 하나를 뚫으세요
@@ -301,3 +301,8 @@ r:"^([0-9]+) low-severity drugs? confiscated$"=저위험 마약 $1개 압수됨
 r:"^([0-9]+) medium-severity drugs? confiscated$"=중위험 마약 $1개 압수됨
 r:"^([0-9]+) high-severity drugs? confiscated$"=고위험 마약 $1개 압수됨
 sr:"^WAITING FOR (.+)$"=$1 대기 중
+
+// 수집 8차 — 오스카 하수도 열쇠 문의(REGION/NPC_DESCRIPTION 치환, 제주 사투리), 딜러 상태, 효과 배지, 은닉처
+sr:"^(.+?) is out dealing$"=$1 거래하러 나감
+sr:"^(<color\=#[0-9A-Fa-f]{3,8}>)• ([A-Za-z][^<>]*)(</color>)$"=$1• $2$3
+sr:"^View (.+?)'s? [Ss]tash$"=$1의 은닉처 보기

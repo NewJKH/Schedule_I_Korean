@@ -5527,7 +5527,7 @@ Heat shimmer particles=열 아지랑이 파티클
 Heavy duty briefcase=고강도 서류가방
 Height Fog Global=높이 안개 글로벌
 Height Transition=높이 전환
-Hmm... Oscar seen one lying around somewhere in <color\=blue><REGION></color> I think...=음... 오스카가 <color\=blue><REGION></color> 어딘가에 하나 굴러다니는 거 본 것 같은데...
+Hmm... Oscar seen one lying around somewhere in <color\=blue><REGION></color> I think...=음... 오스카가 <color\=blue><REGION></color> 어디선가 굴러댕기는 거 본 것 닮수다...
 Hmmm... I guess there's some <color\=red>RDX</color> down at the plant. That would definitely get the job done.=음... 공장 쪽에 <color\=red>RDX</color>가 좀 있을 거야.\n그거면 확실히 해결되겠지.
 Hole Cross has less than 3 Vertices: Can't create Caps!=홀 크로스의 정점이 3개 미만입니다: 캡을 생성할 수 없습니다!
 Hot Trail=열 궤적
@@ -9828,7 +9828,7 @@ around 48 days=약 48일
 Big metal locker, can be assigned to employees or used for general storage.\t=직원에게 할당하거나 일반 보관용으로 쓸 수 있는 큰 금속 사물함.
 Big metal locker, can be assigned to employees or used for general storage.=직원에게 할당하거나 일반 보관용으로 쓸 수 있는 큰 금속 사물함.
 Your best bet for getting the tools you need is the <h1>warehouse.</h> It's the local spot where you can do business with... like-minded individuals. Weapons, specialized equipment, workers for hire - all the good stuff.=필요한 장비를 구하려면 <h1>창고</h>가 최선이야.\n뜻이 맞는 사람들과 거래할 수 있는 동네 아지트지.\n무기, 특수 장비, 고용할 인력까지 다 있어.
-Oh! and I remember hearing <color\=blue><NPC_DESCRIPTION></color> has one! Sorry, Oscar isn't very good with names. Hope this helps.=아!\n그리고 <color\=blue><NPC_DESCRIPTION></color>이(가) 하나 갖고 있다고 들었어!\n미안, 오스카가 이름은 잘 못 외워.\n도움이 됐으면 좋겠네.
+Oh! and I remember hearing <color\=blue><NPC_DESCRIPTION></color> has one! Sorry, Oscar isn't very good with names. Hope this helps.=아!\n겅허고 <color\=blue><NPC_DESCRIPTION></color>신디 하나 이신 걸 들었수다!\n미안허우다, 오스카가 이름은 잘 몰람수다.\n도움 됐으면 좋키어.
 Must be recommended by one of =다음 인물의 소개가 필요합니다: 
 's connections=의 인맥
 the blonde guy with the jacket=재킷 입은 금발 남자
