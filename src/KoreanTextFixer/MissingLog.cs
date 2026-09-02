@@ -73,6 +73,13 @@ namespace KoreanTextFixer
         // 키캡 표기(Esc), 공급자 이니셜(S.W), 개발용 자리 문구가 실측상 반복 수집됐다.
         private static bool IsNoise(string s)
         {
+            // 한글이 섞여 있으면 번역이 이미 한 번 닿은 문자열이다(자리표시자 치환 또는
+            // 우리 결과물). 미번역 목록에 들어가면 사람이 손댈 게 없는 줄만 쌓인다.
+            for (int i = 0; i < s.Length; i++)
+            {
+                char c = s[i];
+                if (c >= 0xAC00 && c <= 0xD7A3) return true;
+            }
             if (s == "Esc" || s == "Tab" || s == "Del" || s == "End" || s == "Ins") return true;
             if (s.Length == 3 && s[1] == '.' && char.IsUpper(s[0]) && char.IsUpper(s[2])) return true;
             if (s.StartsWith("Lorem ipsum", StringComparison.Ordinal)) return true;
