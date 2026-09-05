@@ -7552,3 +7552,5 @@ the motel manager=모텔 관리자
 // NPC 대사 전수 감사에서 발견 (수집 9차)
 [VIEW MORE OPTIONS]=[옵션 더 보기]
 Oscar will sell everything you need to make meth, with the exception of <h1>pseudo</h>. For that, you're gonna need to hook yourself up with a supplier.=메스 만드는 데 필요한 건 오스카가 다 팔아. <h1>슈도</h>만 빼고.\n그건 따로 공급책을 하나 잡아야 해.
+// 전수 검사 후속 (수집 9차)
+'Sup=안녕
